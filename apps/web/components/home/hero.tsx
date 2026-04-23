@@ -17,9 +17,7 @@ export function Hero() {
       className="relative min-h-dvh flex flex-col justify-between overflow-hidden bg-cobalt text-cream grain-overlay"
     >
       {/* top meta strip */}
-      <div className="relative z-10 flex items-center justify-between gap-4 px-6 md:px-10 pt-28 text-cream/80">
-        <span className="eyebrow">Portfolio · Rev. 2026.04</span>
-        <span className="eyebrow hidden sm:inline">Ghent · Remote</span>
+      <div className="relative z-10 flex items-center justify-end px-6 md:px-10 pt-28 text-cream/80">
         <span className="eyebrow">AI-native developer</span>
       </div>
 
@@ -92,18 +90,6 @@ export function Hero() {
               </Link>
             </Magnetic>
           </div>
-        </motion.div>
-
-        {/* scroll cue */}
-        <motion.div
-          initial={shouldAnimate ? { opacity: 0 } : false}
-          animate={{ opacity: 1 }}
-          transition={{ delay: shouldAnimate ? 0.35 : 0, duration: shouldAnimate ? 0.45 : 0.01 }}
-          className="mt-14 hidden md:flex items-center gap-3 text-cream/70"
-        >
-          <span className="eyebrow">Scroll</span>
-          <span className="block h-[1px] w-12 bg-cream/60" />
-          <span className="eyebrow">01 / 07</span>
         </motion.div>
       </div>
     </section>
