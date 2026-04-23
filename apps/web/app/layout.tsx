@@ -19,6 +19,7 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://julestack.dev"),
   title: "Jules Antoine Tack — AI-native developer",
   description:
     "Portfolio and case-study archive of Jules Antoine Tack. Builds machine-learning interfaces, AI-native tooling, and technical products with judgment.",
