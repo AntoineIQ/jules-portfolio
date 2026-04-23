@@ -105,7 +105,16 @@ const TONE_MAP: Record<
 export function HorizontalWork() {
   const reduce = useReducedMotion();
   if (reduce) return <FallbackStack />;
-  return <HorizontalTrack />;
+  return (
+    <>
+      <div className="lg:hidden">
+        <FallbackStack />
+      </div>
+      <div className="hidden lg:block">
+        <HorizontalTrack />
+      </div>
+    </>
+  );
 }
 
 function HorizontalTrack() {

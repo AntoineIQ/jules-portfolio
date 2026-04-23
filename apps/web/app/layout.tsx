@@ -3,7 +3,6 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { PageTransition } from "@/components/motion/page-transition";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -34,9 +33,7 @@ export default function RootLayout({
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body className="min-h-dvh bg-cream text-ink antialiased">
         <Nav />
-        <PageTransition>
-          <main>{children}</main>
-        </PageTransition>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

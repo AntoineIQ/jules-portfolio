@@ -49,9 +49,7 @@ export function ReliabilityPlot({
           stroke="#0a0a0a"
           strokeWidth={1.3}
         >
-          <title>
-            {bin.lo.toFixed(1)}-{bin.hi.toFixed(1)} · n={bin.n}
-          </title>
+          <title>{`${bin.lo.toFixed(1)}-${bin.hi.toFixed(1)} · n=${bin.n}`}</title>
         </circle>
       ))}
       {[0, 0.5, 1].map((value) => (

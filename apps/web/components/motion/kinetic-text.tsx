@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
+import { useHasVisitedCurrentPath } from "@/components/motion/route-visit";
 
 type Props = {
   children: string;
@@ -24,7 +25,9 @@ export function KineticText({
   once = true,
 }: Props) {
   const reduce = useReducedMotion();
+  const hasVisited = useHasVisitedCurrentPath();
   const units = splitBy === "word" ? children.split(" ") : [children];
+  const shouldAnimate = !reduce && !hasVisited;
 
   return (
     <span className={`kinetic-line ${className}`}>
@@ -33,14 +36,16 @@ export function KineticText({
           key={`${unit}-${i}`}
           className="kinetic-word"
           style={{ marginRight: i < units.length - 1 ? "0.26em" : 0 }}
-          initial={reduce ? undefined : { transform: "translate3d(0px, 110%, 0px)" }}
-          whileInView={reduce ? undefined : { transform: "translate3d(0px, 0%, 0px)" }}
-          animate={reduce ? { transform: "translate3d(0px, 0%, 0px)" } : undefined}
-          viewport={{ once, margin: "-10%" }}
+          initial={
+            shouldAnimate
+              ? { transform: "translate3d(0px, 110%, 0px)" }
+              : { transform: "translate3d(0px, 0%, 0px)" }
+          }
+          animate={{ transform: "translate3d(0px, 0%, 0px)" }}
           transition={{
-            duration: 0.9,
+            duration: shouldAnimate ? 0.72 : 0.01,
             ease: [0.16, 1, 0.3, 1] as const,
-            delay: delay + i * stagger,
+            delay: shouldAnimate ? delay + i * stagger : 0,
           }}
         >
           {unit}

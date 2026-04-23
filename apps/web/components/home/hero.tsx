@@ -6,9 +6,12 @@ import { Magnetic } from "@/components/motion/magnetic";
 import { ArrowGraphic } from "@/components/decoration/arrow";
 import { StampBadge } from "@/components/decoration/stamp";
 import { motion, useReducedMotion } from "framer-motion";
+import { useHasVisitedCurrentPath } from "@/components/motion/route-visit";
 
 export function Hero() {
   const reduce = useReducedMotion();
+  const hasVisited = useHasVisitedCurrentPath();
+  const shouldAnimate = !reduce && !hasVisited;
   return (
     <section
       className="relative min-h-dvh flex flex-col justify-between overflow-hidden bg-cobalt text-cream grain-overlay"
@@ -22,9 +25,17 @@ export function Hero() {
 
       {/* stamp decoration */}
       <motion.div
-        initial={reduce ? false : { opacity: 0, transform: "translate3d(20px, -20px, 0px) scale(0.85)" }}
+        initial={
+          shouldAnimate
+            ? { opacity: 0, transform: "translate3d(20px, -20px, 0px) scale(0.85)" }
+            : false
+        }
         animate={{ opacity: 1, transform: "translate3d(0px, 0px, 0px) scale(1)" }}
-        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const, delay: 0.9 }}
+        transition={{
+          duration: shouldAnimate ? 0.85 : 0.01,
+          ease: [0.16, 1, 0.3, 1] as const,
+          delay: shouldAnimate ? 0.35 : 0,
+        }}
         className="absolute right-6 md:right-16 top-32 md:top-36 z-20 hidden sm:block"
       >
         <StampBadge text="CRAFTED · WITH · INTENT · " bg="var(--yellow)" color="var(--ink)" size={120} />
@@ -46,9 +57,15 @@ export function Hero() {
 
         {/* sub block */}
         <motion.div
-          initial={reduce ? false : { opacity: 0, transform: "translate3d(0px, 30px, 0px)" }}
+          initial={
+            shouldAnimate ? { opacity: 0, transform: "translate3d(0px, 30px, 0px)" } : false
+          }
           animate={{ opacity: 1, transform: "translate3d(0px, 0px, 0px)" }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] as const, delay: 1 }}
+          transition={{
+            duration: shouldAnimate ? 0.7 : 0.01,
+            ease: [0.16, 1, 0.3, 1] as const,
+            delay: shouldAnimate ? 0.15 : 0,
+          }}
           className="mt-12 grid gap-10 md:grid-cols-[1.2fr_0.8fr] items-end"
         >
           <p className="max-w-2xl text-[18px] md:text-[22px] leading-snug text-cream/90">
@@ -79,9 +96,9 @@ export function Hero() {
 
         {/* scroll cue */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={shouldAnimate ? { opacity: 0 } : false}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.6, duration: 0.8 }}
+          transition={{ delay: shouldAnimate ? 0.35 : 0, duration: shouldAnimate ? 0.45 : 0.01 }}
           className="mt-14 hidden md:flex items-center gap-3 text-cream/70"
         >
           <span className="eyebrow">Scroll</span>

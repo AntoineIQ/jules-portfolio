@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
+import { useHasVisitedCurrentPath } from "@/components/motion/route-visit";
 
 export function ScrollReveal({
   children,
@@ -17,13 +18,22 @@ export function ScrollReveal({
   once?: boolean;
 }) {
   const reduce = useReducedMotion();
+  const hasVisited = useHasVisitedCurrentPath();
+  const shouldAnimate = !reduce && !hasVisited;
   return (
     <motion.div
       className={className}
-      initial={reduce ? { opacity: 1 } : { opacity: 0, transform: `translate3d(0px, ${y}px, 0px)` }}
-      whileInView={{ opacity: 1, transform: "translate3d(0px, 0px, 0px)" }}
-      viewport={{ once, margin: "-10%" }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const, delay }}
+      initial={
+        shouldAnimate
+          ? { opacity: 0, transform: `translate3d(0px, ${y}px, 0px)` }
+          : { opacity: 1, transform: "translate3d(0px, 0px, 0px)" }
+      }
+      animate={{ opacity: 1, transform: "translate3d(0px, 0px, 0px)" }}
+      transition={{
+        duration: shouldAnimate ? 0.7 : 0.01,
+        ease: [0.16, 1, 0.3, 1] as const,
+        delay: shouldAnimate ? delay : 0,
+      }}
     >
       {children}
     </motion.div>
@@ -44,6 +54,8 @@ export function Stagger({
   once?: boolean;
 }) {
   const reduce = useReducedMotion();
+  const hasVisited = useHasVisitedCurrentPath();
+  const shouldAnimate = !reduce && !hasVisited;
   return (
     <motion.div
       className={className}
@@ -51,14 +63,13 @@ export function Stagger({
         hidden: {},
         visible: {
           transition: {
-            delayChildren: reduce ? 0 : delayChildren,
-            staggerChildren: reduce ? 0 : staggerChildren,
+            delayChildren: shouldAnimate ? delayChildren : 0,
+            staggerChildren: shouldAnimate ? staggerChildren : 0,
           },
         },
       }}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once, margin: "-10%" }}
+      animate="visible"
     >
       {children}
     </motion.div>
@@ -75,17 +86,22 @@ export function StaggerItem({
   y?: number;
 }) {
   const reduce = useReducedMotion();
+  const hasVisited = useHasVisitedCurrentPath();
+  const shouldAnimate = !reduce && !hasVisited;
   return (
     <motion.div
       className={className}
       variants={{
-        hidden: reduce
+        hidden: !shouldAnimate
           ? { opacity: 1, transform: "translate3d(0px,0px,0px)" }
           : { opacity: 0, transform: `translate3d(0px, ${y}px, 0px)` },
         visible: {
           opacity: 1,
           transform: "translate3d(0px, 0px, 0px)",
-          transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] as const },
+          transition: {
+            duration: shouldAnimate ? 0.7 : 0.01,
+            ease: [0.16, 1, 0.3, 1] as const,
+          },
         },
       }}
     >
