@@ -23,7 +23,7 @@ export default async function F1Page() {
         <div className="mx-auto max-w-wide">
           <ScrollReveal>
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <span className="eyebrow text-ink/60">№ 001 · flagship project · self-refreshing</span>
+              <span className="eyebrow text-ink/60">Flagship project · self-refreshing</span>
               <Link href="/projects" className="group inline-flex items-center gap-3 press-scale">
                 <ArrowBack className="h-[14px] w-[44px] transition-transform duration-300 group-hover:-translate-x-1" />
                 <span className="eyebrow">All projects</span>
@@ -35,17 +35,21 @@ export default async function F1Page() {
             <div>
               <h1 className="font-display uppercase text-hero-xl text-[#d93e2b]">
                 <span className="block">
-                  <KineticText>F1 prediction</KineticText>
+                  <KineticText>F1 machine</KineticText>
                 </span>
                 <span className="block text-ink">
-                  <KineticText delay={0.12}>lab.</KineticText>
+                  <KineticText delay={0.12}>learning</KineticText>
+                </span>
+                <span className="block text-ink">
+                  <KineticText delay={0.24}>project.</KineticText>
                 </span>
               </h1>
               <ScrollReveal delay={0.08}>
                 <p className="mt-8 max-w-[56ch] text-[18px] md:text-[22px] leading-relaxed text-ink/82">
-                  A recruiter-facing ML case study that doubles as a real product: historical season
-                  landscapes, race dossiers, calibrated evaluation, and a session-aware GitHub Actions
-                  pipeline that retrains the model after every F1 weekend and republishes predictions.
+                  A recruiter-facing machine learning project that doubles as a real product:
+                  historical season landscapes, race dossiers, calibrated evaluation, and a
+                  session-aware GitHub Actions pipeline that retrains the model after every F1
+                  weekend and republishes predictions.
                 </p>
               </ScrollReveal>
             </div>

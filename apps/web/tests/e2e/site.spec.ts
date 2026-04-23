@@ -4,21 +4,21 @@ test("homepage highlights the F1 flagship", async ({ page }) => {
   await page.goto("/");
 
   await expect(page.getByRole("heading", { name: /Jules Tack\. Builds with AI\. Ships seriously\./i })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /F1 prediction lab, live\./i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /F1 machine learning project\./i })).toBeVisible();
 });
 
-test("projects archive links into the F1 case study", async ({ page }) => {
+test("projects archive links into the F1 project", async ({ page }) => {
   await page.goto("/projects");
 
   await expect(page.getByRole("heading", { name: /selected work/i })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /f1 prediction lab/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /f1 machine learning project/i })).toBeVisible();
 });
 
 test("F1 hub shows the live system framing", async ({ page }) => {
   await page.goto("/projects/f1");
 
-  await expect(page.getByRole("heading", { name: /F1 prediction lab/i })).toBeVisible();
-  await expect(page.getByText(/recruiter-facing ML case study/i)).toBeVisible();
+  await expect(page.getByRole("heading", { name: /F1 machine learning project/i })).toBeVisible();
+  await expect(page.getByText(/recruiter-facing machine learning project/i)).toBeVisible();
 });
 
 test("season explorer renders the 3D surface on desktop", async ({ page }) => {

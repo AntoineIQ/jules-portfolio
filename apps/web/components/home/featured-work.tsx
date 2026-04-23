@@ -47,17 +47,17 @@ export function FeaturedWork() {
                     <span className="eyebrow text-ink/70">Flagship · 2026</span>
                     <span className="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-pink px-3 py-1">
                       <span className="h-[6px] w-[6px] rounded-full bg-ink" />
-                      <span className="eyebrow">Case study</span>
+                      <span className="eyebrow">Flagship project</span>
                     </span>
                   </div>
 
                   <h3 className="font-display uppercase text-[clamp(40px,7vw,96px)] leading-[0.88] tracking-tightest">
-                    F1 race-<br />outcome<br />predictor.
+                    F1 machine-<br />learning<br />project.
                   </h3>
 
                   <p className="max-w-[42ch] text-[16px] md:text-[17px] leading-relaxed text-ink/85">
-                    End-to-end machine-learning system that predicts F1 race outcomes
-                    — and, more importantly, <em className="not-italic font-semibold">shows its work</em>.
+                    End-to-end machine learning system that predicts F1 race outcomes and makes
+                    the reasoning inspectable.
                   </p>
 
                   <div className="mt-auto flex flex-wrap gap-2">
@@ -121,7 +121,7 @@ export function FeaturedWork() {
                   <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
                     <span className="eyebrow text-cream/80">Schematic · not live demo</span>
                     <span className="inline-flex items-center gap-2 rounded-full border-2 border-cream bg-ink/40 backdrop-blur px-3 py-1 text-cream">
-                      <span className="eyebrow">Read case study</span>
+                      <span className="eyebrow">Explore project</span>
                       <ArrowDiagonal className="h-3.5 w-3.5" />
                     </span>
                   </div>
@@ -134,8 +134,8 @@ export function FeaturedWork() {
         {/* other project placeholders */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
           {[
-            { n: "02", title: "Eval harness for coding agents", when: "2026 · In progress", bg: "bg-mint" },
-            { n: "03", title: "Reserved for next case study", when: "Soon", bg: "bg-yellow" },
+            { n: "02", title: "Evaluation harness for coding agents", when: "2026 · In progress", bg: "bg-mint" },
+            { n: "03", title: "Reserved for next project", when: "Soon", bg: "bg-yellow" },
           ].map((c) => (
             <ScrollReveal key={c.n} delay={0.05}>
               <article className={`relative rounded-[20px] border-[2.5px] border-ink ${c.bg} p-8 min-h-[180px]`}>

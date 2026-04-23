@@ -9,7 +9,7 @@ import { WavyDivider } from "@/components/decoration/wavy-divider";
 
 export const metadata: Metadata = {
   title: "Projects · Jules Tack",
-  description: "Selected technical case studies and AI-native product work.",
+  description: "Selected technical projects and AI-native product work.",
 };
 
 type Row = {
@@ -23,9 +23,9 @@ type Row = {
 
 const ROWS: Row[] = [
   {
-    title: "F1 prediction lab",
+    title: "F1 machine learning project",
     summary:
-      "A live ML case study with a 3D season explorer, race dossiers, automated refresh pipelines, and a Python API running behind the site.",
+      "A live machine learning project with a 3D season explorer, race dossiers, automated refresh pipelines, and a Python API running behind the site.",
     tags: ["LightGBM", "Calibration", "Next.js", "FastAPI", "Railway"],
     href: "/projects/f1",
     status: "live",
@@ -40,9 +40,9 @@ const ROWS: Row[] = [
     bg: "bg-mint",
   },
   {
-    title: "Reserved for next case study",
+    title: "Reserved for next project",
     summary:
-      "Space kept for the next serious piece. I'd rather have three case studies worth reading than ten projects worth skimming.",
+      "Space kept for the next serious piece. I'd rather have three strong projects than ten projects worth skimming.",
     tags: [],
     status: "reserved",
     bg: "bg-yellow",
@@ -71,8 +71,8 @@ export default function ProjectsPage() {
             <ScrollReveal>
               <p className="max-w-2xl text-[18px] md:text-[22px] leading-snug text-ink/90">
                 A short list on purpose. Each entry is something I actually built, shipped, or am
-                actively working on. The flagship gets a full case study — the rest get a line or
-                two until they deserve more.
+                actively working on. The flagship gets a full project walkthrough — the rest get a
+                line or two until they deserve more.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
@@ -131,7 +131,7 @@ export default function ProjectsPage() {
                     <div className="flex items-center justify-end gap-2 text-ink lg:pt-2">
                       {r.href ? (
                         <span className="inline-flex items-center gap-3">
-                          <span className="eyebrow">Read</span>
+                          <span className="eyebrow">Open project</span>
                           <ArrowDiagonal className="h-5 w-5 transition-transform duration-300" />
                         </span>
                       ) : (

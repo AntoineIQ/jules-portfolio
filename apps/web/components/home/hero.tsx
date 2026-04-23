@@ -4,7 +4,6 @@ import Link from "next/link";
 import { KineticText } from "@/components/motion/kinetic-text";
 import { Magnetic } from "@/components/motion/magnetic";
 import { ArrowGraphic } from "@/components/decoration/arrow";
-import { StampBadge } from "@/components/decoration/stamp";
 import { motion, useReducedMotion } from "framer-motion";
 import { useHasVisitedCurrentPath } from "@/components/motion/route-visit";
 
@@ -12,35 +11,13 @@ export function Hero() {
   const reduce = useReducedMotion();
   const hasVisited = useHasVisitedCurrentPath();
   const shouldAnimate = !reduce && !hasVisited;
+
   return (
     <section
       className="relative min-h-dvh flex flex-col justify-between overflow-hidden bg-cobalt text-cream grain-overlay"
     >
-      {/* top meta strip */}
-      <div className="relative z-10 flex items-center justify-end px-6 md:px-10 pt-28 text-cream/80">
-        <span className="eyebrow">AI-native developer</span>
-      </div>
-
-      {/* stamp decoration */}
-      <motion.div
-        initial={
-          shouldAnimate
-            ? { opacity: 0, transform: "translate3d(20px, -20px, 0px) scale(0.85)" }
-            : false
-        }
-        animate={{ opacity: 1, transform: "translate3d(0px, 0px, 0px) scale(1)" }}
-        transition={{
-          duration: shouldAnimate ? 0.85 : 0.01,
-          ease: [0.16, 1, 0.3, 1] as const,
-          delay: shouldAnimate ? 0.35 : 0,
-        }}
-        className="absolute right-6 md:right-16 top-32 md:top-36 z-20 hidden sm:block"
-      >
-        <StampBadge text="CRAFTED · WITH · INTENT · " bg="var(--yellow)" color="var(--ink)" size={120} />
-      </motion.div>
-
       {/* headline */}
-      <div className="relative z-10 px-6 md:px-10 pb-10 md:pb-14">
+      <div className="relative z-10 px-6 pb-10 pt-36 md:px-10 md:pb-14 md:pt-40">
         <h1 className="font-display uppercase text-hero-xl">
           <span className="block">
             <KineticText>Jules Tack.</KineticText>
@@ -67,8 +44,8 @@ export function Hero() {
           className="mt-12 grid gap-10 md:grid-cols-[1.2fr_0.8fr] items-end"
         >
           <p className="max-w-2xl text-[18px] md:text-[22px] leading-snug text-cream/90">
-            I build polished technical products and case studies that show how AI coding tools
-            accelerate thinking, execution, and explanation — without replacing judgment.
+            I build polished technical products and projects that show how AI coding tools
+            accelerate thinking, execution, and explanation without replacing judgment.
           </p>
 
           <div className="flex flex-wrap gap-4">
