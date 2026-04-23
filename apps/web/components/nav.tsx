@@ -7,10 +7,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Magnetic } from "@/components/motion/magnetic";
 
 const LINKS = [
-  { href: "/", label: "Home", num: "01" },
-  { href: "/projects", label: "Projects", num: "02" },
-  { href: "/about", label: "About", num: "03" },
-  { href: "/#contact", label: "Contact", num: "04" },
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Projects" },
+  { href: "/about", label: "About" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Nav() {
@@ -63,8 +63,7 @@ export function Nav() {
                   ? false
                   : pathname.startsWith(l.href);
               return (
-                <li key={l.href} className="flex items-baseline gap-1.5">
-                  <span className="eyebrow opacity-60">{l.num}</span>
+                <li key={l.href}>
                   <Link
                     href={l.href}
                     className={`link-underline-grow text-[14px] font-medium ${
@@ -113,8 +112,7 @@ export function Nav() {
           >
             <ul className="flex flex-col px-6 py-6 gap-5">
               {LINKS.map((l) => (
-                <li key={l.href} className="flex items-baseline gap-3">
-                  <span className="eyebrow opacity-60">{l.num}</span>
+                <li key={l.href}>
                   <Link href={l.href} className="font-display text-[40px] leading-none tracking-tightest">
                     {l.label}
                   </Link>
