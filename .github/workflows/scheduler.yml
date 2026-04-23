@@ -1,0 +1,43 @@
+name: Regenerate refresh schedule
+
+# Rewrites .github/workflows/refresh-sessions.yml so its cron triggers
+# fire about 30 minutes after each F1 session in the next 7 days.
+
+on:
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install project
+        working-directory: ml
+        run: uv sync --extra train
+
+      - name: Regenerate refresh-sessions.yml
+        working-directory: ml
+        run: uv run python -m f1_prediction.scripts.generate_workflow
+
+      - name: Commit updated workflow (if changed)
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .github/workflows/refresh-sessions.yml
+          if ! git diff --cached --quiet; then
+            git commit -m "ci: regenerate refresh-sessions.yml for upcoming week"
+            git push
+          else
+            echo 'refresh-sessions.yml unchanged'
+          fi

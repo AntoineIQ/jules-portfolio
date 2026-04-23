@@ -1,0 +1,57 @@
+{
+  "target": "sprint_grid_top5",
+  "metrics": [
+    {
+      "log_loss": 0.35497913004103215,
+      "brier": 0.10321785306230007,
+      "accuracy_at_0.5": 0.875,
+      "positive_rate": 0.25,
+      "n": 120,
+      "label": "features_logit (final)",
+      "ece": 0.07910066522506698
+    },
+    {
+      "log_loss": 0.4115921326026884,
+      "brier": 0.11337189153439227,
+      "accuracy_at_0.5": 0.85,
+      "positive_rate": 0.25,
+      "n": 120,
+      "label": "gbm (untuned, final)",
+      "ece": 0.0917276571702792
+    },
+    {
+      "log_loss": 0.3947712058545346,
+      "brier": 0.11610329682836057,
+      "accuracy_at_0.5": 0.8333333333333334,
+      "positive_rate": 0.25,
+      "n": 120,
+      "label": "gbm (tuned, final)",
+      "ece": 0.09647873212717546
+    },
+    {
+      "log_loss": 0.38673790983782524,
+      "brier": 0.11945889787867878,
+      "accuracy_at_0.5": 0.8416666666666667,
+      "positive_rate": 0.25,
+      "n": 120,
+      "label": "ensemble (weighted)",
+      "ece": 0.08619736104055853
+    }
+  ],
+  "ensemble_weights": {
+    "features_logit": 0.06643505244558282,
+    "gbm_plain": 0.0,
+    "gbm_tuned": 0.9335649475544172
+  },
+  "tuned_params": {
+    "n_estimators": 550,
+    "learning_rate": 0.02325951592241212,
+    "num_leaves": 18,
+    "max_depth": 7,
+    "min_child_samples": 15,
+    "reg_lambda": 8.105016126411584,
+    "reg_alpha": 0.7365344466688368,
+    "colsample_bytree": 0.9697494707820946,
+    "subsample": 0.9474136752138245
+  }
+}

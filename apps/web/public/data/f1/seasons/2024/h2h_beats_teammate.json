@@ -1,0 +1,4892 @@
+{
+  "season": 2024,
+  "target": "h2h_beats_teammate",
+  "target_display": "Head-to-head \u2014 driver beats their teammate in the race",
+  "model": "gbm",
+  "metrics": {
+    "log_loss": 0.5685921980947954,
+    "brier": 0.19175220687399774,
+    "accuracy_at_0.5": 0.7096069868995634,
+    "positive_rate": 0.5,
+    "n": 458,
+    "label": "h2h_beats_teammate_2024",
+    "ece": 0.07054624169772981
+  },
+  "drivers": [
+    {
+      "driver": "DOO",
+      "team": "Alpine"
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine"
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine"
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin"
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin"
+    },
+    {
+      "driver": "BEA",
+      "team": "Ferrari"
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari"
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari"
+    },
+    {
+      "driver": "BEA",
+      "team": "Haas F1 Team"
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team"
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team"
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber"
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber"
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren"
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren"
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes"
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes"
+    },
+    {
+      "driver": "LAW",
+      "team": "RB"
+    },
+    {
+      "driver": "RIC",
+      "team": "RB"
+    },
+    {
+      "driver": "TSU",
+      "team": "RB"
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing"
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing"
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams"
+    },
+    {
+      "driver": "COL",
+      "team": "Williams"
+    },
+    {
+      "driver": "SAR",
+      "team": "Williams"
+    }
+  ],
+  "races": [
+    {
+      "round": 2,
+      "event_name": "Saudi Arabian Grand Prix",
+      "event_date": "2024-03-09"
+    },
+    {
+      "round": 3,
+      "event_name": "Australian Grand Prix",
+      "event_date": "2024-03-24"
+    },
+    {
+      "round": 4,
+      "event_name": "Japanese Grand Prix",
+      "event_date": "2024-04-07"
+    },
+    {
+      "round": 5,
+      "event_name": "Chinese Grand Prix",
+      "event_date": "2024-04-21"
+    },
+    {
+      "round": 6,
+      "event_name": "Miami Grand Prix",
+      "event_date": "2024-05-05"
+    },
+    {
+      "round": 7,
+      "event_name": "Emilia Romagna Grand Prix",
+      "event_date": "2024-05-19"
+    },
+    {
+      "round": 8,
+      "event_name": "Monaco Grand Prix",
+      "event_date": "2024-05-26"
+    },
+    {
+      "round": 9,
+      "event_name": "Canadian Grand Prix",
+      "event_date": "2024-06-09"
+    },
+    {
+      "round": 10,
+      "event_name": "Spanish Grand Prix",
+      "event_date": "2024-06-23"
+    },
+    {
+      "round": 11,
+      "event_name": "Austrian Grand Prix",
+      "event_date": "2024-06-30"
+    },
+    {
+      "round": 12,
+      "event_name": "British Grand Prix",
+      "event_date": "2024-07-07"
+    },
+    {
+      "round": 13,
+      "event_name": "Hungarian Grand Prix",
+      "event_date": "2024-07-21"
+    },
+    {
+      "round": 14,
+      "event_name": "Belgian Grand Prix",
+      "event_date": "2024-07-28"
+    },
+    {
+      "round": 15,
+      "event_name": "Dutch Grand Prix",
+      "event_date": "2024-08-25"
+    },
+    {
+      "round": 16,
+      "event_name": "Italian Grand Prix",
+      "event_date": "2024-09-01"
+    },
+    {
+      "round": 17,
+      "event_name": "Azerbaijan Grand Prix",
+      "event_date": "2024-09-15"
+    },
+    {
+      "round": 18,
+      "event_name": "Singapore Grand Prix",
+      "event_date": "2024-09-22"
+    },
+    {
+      "round": 19,
+      "event_name": "United States Grand Prix",
+      "event_date": "2024-10-20"
+    },
+    {
+      "round": 20,
+      "event_name": "Mexico City Grand Prix",
+      "event_date": "2024-10-27"
+    },
+    {
+      "round": 21,
+      "event_name": "S\u00e3o Paulo Grand Prix",
+      "event_date": "2024-11-03"
+    },
+    {
+      "round": 22,
+      "event_name": "Las Vegas Grand Prix",
+      "event_date": "2024-11-23"
+    },
+    {
+      "round": 23,
+      "event_name": "Qatar Grand Prix",
+      "event_date": "2024-12-01"
+    },
+    {
+      "round": 24,
+      "event_name": "Abu Dhabi Grand Prix",
+      "event_date": "2024-12-08"
+    }
+  ],
+  "cells": [
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 2,
+      "p": 0.6191051666231743,
+      "actual": 1,
+      "surprise": 0.3808948333768257,
+      "grid_position": 12,
+      "finish_position": 11
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 2,
+      "p": 0.7587728482906205,
+      "actual": 1,
+      "surprise": 0.24122715170937947,
+      "grid_position": 4,
+      "finish_position": 5
+    },
+    {
+      "driver": "BEA",
+      "team": "Ferrari",
+      "round": 2,
+      "p": 0.2689794726817818,
+      "actual": 0,
+      "surprise": 0.2689794726817818,
+      "grid_position": 11,
+      "finish_position": 7
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 2,
+      "p": 0.615037400452879,
+      "actual": 1,
+      "surprise": 0.384962599547121,
+      "grid_position": 16,
+      "finish_position": 17
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 2,
+      "p": 0.4876307134414373,
+      "actual": 0,
+      "surprise": 0.4876307134414373,
+      "grid_position": 18,
+      "finish_position": 20
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 2,
+      "p": 0.37948264640883594,
+      "actual": 0,
+      "surprise": 0.37948264640883594,
+      "grid_position": 8,
+      "finish_position": 9
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 2,
+      "p": 0.47530011742806977,
+      "actual": 1,
+      "surprise": 0.5246998825719302,
+      "grid_position": 15,
+      "finish_position": 10
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 2,
+      "p": 0.7754719940119363,
+      "actual": 1,
+      "surprise": 0.22452800598806366,
+      "grid_position": 2,
+      "finish_position": 3
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 2,
+      "p": 0.5647333703033286,
+      "actual": 0,
+      "surprise": 0.5647333703033286,
+      "grid_position": 13,
+      "finish_position": 12
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 2,
+      "p": 0.5400621059290132,
+      "actual": 0,
+      "surprise": 0.5400621059290132,
+      "grid_position": 6,
+      "finish_position": 8
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 2,
+      "p": 0.4933179592088148,
+      "actual": 1,
+      "surprise": 0.5066820407911852,
+      "grid_position": 17,
+      "finish_position": 13
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 2,
+      "p": 0.33357702788152077,
+      "actual": 0,
+      "surprise": 0.33357702788152077,
+      "grid_position": 3,
+      "finish_position": 2
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 2,
+      "p": 0.4414494929708601,
+      "actual": 1,
+      "surprise": 0.5585505070291399,
+      "grid_position": 5,
+      "finish_position": 4
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 2,
+      "p": 0.3535006768067039,
+      "actual": 0,
+      "surprise": 0.3535006768067039,
+      "grid_position": 14,
+      "finish_position": 16
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 2,
+      "p": 0.5882303341322058,
+      "actual": 1,
+      "surprise": 0.4117696658677942,
+      "grid_position": 7,
+      "finish_position": 6
+    },
+    {
+      "driver": "SAR",
+      "team": "Williams",
+      "round": 2,
+      "p": 0.27026452845855414,
+      "actual": 0,
+      "surprise": 0.27026452845855414,
+      "grid_position": 19,
+      "finish_position": 14
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 2,
+      "p": 0.32043098177313883,
+      "actual": 0,
+      "surprise": 0.32043098177313883,
+      "grid_position": 10,
+      "finish_position": 19
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 2,
+      "p": 0.5922152920666289,
+      "actual": 1,
+      "surprise": 0.40778470793337107,
+      "grid_position": 9,
+      "finish_position": 15
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 2,
+      "p": 0.7317961303473376,
+      "actual": 1,
+      "surprise": 0.2682038696526624,
+      "grid_position": 1,
+      "finish_position": 1
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 2,
+      "p": 0.3610545924039855,
+      "actual": 0,
+      "surprise": 0.3610545924039855,
+      "grid_position": 20,
+      "finish_position": 18
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 3,
+      "p": 0.5154263691680222,
+      "actual": 0,
+      "surprise": 0.5154263691680222,
+      "grid_position": 10,
+      "finish_position": 8
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 3,
+      "p": 0.7352022718276088,
+      "actual": 1,
+      "surprise": 0.2647977281723912,
+      "grid_position": 13,
+      "finish_position": 14
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 3,
+      "p": 0.41510526069140985,
+      "actual": 1,
+      "surprise": 0.5848947393085902,
+      "grid_position": 17,
+      "finish_position": 13
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 3,
+      "p": 0.35016165775335323,
+      "actual": 0,
+      "surprise": 0.35016165775335323,
+      "grid_position": 11,
+      "finish_position": 18
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 3,
+      "p": 0.39034730030588843,
+      "actual": 1,
+      "surprise": 0.6096526996941116,
+      "grid_position": 16,
+      "finish_position": 9
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 3,
+      "p": 0.3433826563598137,
+      "actual": 0,
+      "surprise": 0.3433826563598137,
+      "grid_position": 4,
+      "finish_position": 2
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 3,
+      "p": 0.5669697661856056,
+      "actual": 0,
+      "surprise": 0.5669697661856056,
+      "grid_position": 14,
+      "finish_position": 10
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 3,
+      "p": 0.6235710319245105,
+      "actual": 1,
+      "surprise": 0.37642896807548953,
+      "grid_position": 3,
+      "finish_position": 3
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 3,
+      "p": 0.6650818236340906,
+      "actual": 0,
+      "surprise": 0.6650818236340906,
+      "grid_position": 15,
+      "finish_position": 16
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 3,
+      "p": 0.27086294475526396,
+      "actual": 1,
+      "surprise": 0.729137055244736,
+      "grid_position": 6,
+      "finish_position": 5
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 3,
+      "p": 0.36232771765261895,
+      "actual": 0,
+      "surprise": 0.36232771765261895,
+      "grid_position": 5,
+      "finish_position": 4
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 3,
+      "p": 0.2572064679429393,
+      "actual": 0,
+      "surprise": 0.2572064679429393,
+      "grid_position": 18,
+      "finish_position": 12
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 3,
+      "p": 0.6960087959333133,
+      "actual": 1,
+      "surprise": 0.30399120406668667,
+      "grid_position": 7,
+      "finish_position": 17
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 3,
+      "p": 0.5385620062422394,
+      "actual": 1,
+      "surprise": 0.4614379937577606,
+      "grid_position": 2,
+      "finish_position": 1
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 3,
+      "p": 0.43917371203349226,
+      "actual": 1,
+      "surprise": 0.5608262879665078,
+      "grid_position": 9,
+      "finish_position": 6
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 3,
+      "p": 0.6731865448610985,
+      "actual": 1,
+      "surprise": 0.3268134551389015,
+      "grid_position": 8,
+      "finish_position": 7
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 3,
+      "p": 0.806352512670647,
+      "actual": 0,
+      "surprise": 0.806352512670647,
+      "grid_position": 1,
+      "finish_position": 19
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 3,
+      "p": 0.2382804040206091,
+      "actual": 0,
+      "surprise": 0.2382804040206091,
+      "grid_position": 19,
+      "finish_position": 15
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 4,
+      "p": 0.6711728392444701,
+      "actual": 0,
+      "surprise": 0.6711728392444701,
+      "grid_position": 14,
+      "finish_position": 20
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 4,
+      "p": 0.7426606379723791,
+      "actual": 1,
+      "surprise": 0.25733936202762087,
+      "grid_position": 5,
+      "finish_position": 6
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 4,
+      "p": 0.6499293042251079,
+      "actual": 1,
+      "surprise": 0.35007069577489214,
+      "grid_position": 13,
+      "finish_position": 14
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 4,
+      "p": 0.40638396277813826,
+      "actual": 0,
+      "surprise": 0.40638396277813826,
+      "grid_position": 17,
+      "finish_position": 16
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 4,
+      "p": 0.632163888372557,
+      "actual": 0,
+      "surprise": 0.632163888372557,
+      "grid_position": 7,
+      "finish_position": 9
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 4,
+      "p": 0.7050496861171395,
+      "actual": 1,
+      "surprise": 0.2949503138828605,
+      "grid_position": 12,
+      "finish_position": 11
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 4,
+      "p": 0.3428475105189029,
+      "actual": 0,
+      "surprise": 0.3428475105189029,
+      "grid_position": 8,
+      "finish_position": 4
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 4,
+      "p": 0.2774214202260918,
+      "actual": 0,
+      "surprise": 0.2774214202260918,
+      "grid_position": 18,
+      "finish_position": 13
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 4,
+      "p": 0.705372129241168,
+      "actual": 1,
+      "surprise": 0.294627870758832,
+      "grid_position": 3,
+      "finish_position": 5
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 4,
+      "p": 0.5400234779042967,
+      "actual": 1,
+      "surprise": 0.4599765220957033,
+      "grid_position": 15,
+      "finish_position": 15
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 4,
+      "p": 0.42799738492991146,
+      "actual": 0,
+      "surprise": 0.42799738492991146,
+      "grid_position": 2,
+      "finish_position": 2
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 4,
+      "p": 0.3155401921011586,
+      "actual": 0,
+      "surprise": 0.3155401921011586,
+      "grid_position": 6,
+      "finish_position": 8
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 4,
+      "p": 0.5214315363270432,
+      "actual": 0,
+      "surprise": 0.5214315363270432,
+      "grid_position": 11,
+      "finish_position": 19
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 4,
+      "p": 0.3567081243508273,
+      "actual": 1,
+      "surprise": 0.6432918756491727,
+      "grid_position": 9,
+      "finish_position": 7
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 4,
+      "p": 0.5252992043342514,
+      "actual": 1,
+      "surprise": 0.47470079566574863,
+      "grid_position": 4,
+      "finish_position": 3
+    },
+    {
+      "driver": "SAR",
+      "team": "Williams",
+      "round": 4,
+      "p": 0.3255090363833409,
+      "actual": 1,
+      "surprise": 0.6744909636166592,
+      "grid_position": 19,
+      "finish_position": 17
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 4,
+      "p": 0.22121016857658127,
+      "actual": 0,
+      "surprise": 0.22121016857658127,
+      "grid_position": 16,
+      "finish_position": 12
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 4,
+      "p": 0.43567778247800126,
+      "actual": 1,
+      "surprise": 0.5643222175219987,
+      "grid_position": 10,
+      "finish_position": 10
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 4,
+      "p": 0.6477215428051724,
+      "actual": 1,
+      "surprise": 0.35227845719482764,
+      "grid_position": 1,
+      "finish_position": 1
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 4,
+      "p": 0.24933802101518673,
+      "actual": 0,
+      "surprise": 0.24933802101518673,
+      "grid_position": 20,
+      "finish_position": 18
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 5,
+      "p": 0.7063794408843037,
+      "actual": 1,
+      "surprise": 0.2936205591156963,
+      "grid_position": 14,
+      "finish_position": 12
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 5,
+      "p": 0.7698965442298852,
+      "actual": 1,
+      "surprise": 0.23010345577011482,
+      "grid_position": 3,
+      "finish_position": 7
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 5,
+      "p": 0.7553321824242378,
+      "actual": 0,
+      "surprise": 0.7553321824242378,
+      "grid_position": 10,
+      "finish_position": 20
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 5,
+      "p": 0.3943532707520118,
+      "actual": 0,
+      "surprise": 0.3943532707520118,
+      "grid_position": 15,
+      "finish_position": 13
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 5,
+      "p": 0.25815976463923274,
+      "actual": 0,
+      "surprise": 0.25815976463923274,
+      "grid_position": 18,
+      "finish_position": 9
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 5,
+      "p": 0.6775412042761808,
+      "actual": 1,
+      "surprise": 0.3224587957238192,
+      "grid_position": 9,
+      "finish_position": 10
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 5,
+      "p": 0.5930932278266272,
+      "actual": 1,
+      "surprise": 0.4069067721733728,
+      "grid_position": 6,
+      "finish_position": 4
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 5,
+      "p": 0.211802093925173,
+      "actual": 0,
+      "surprise": 0.211802093925173,
+      "grid_position": 17,
+      "finish_position": 16
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 5,
+      "p": 0.5733160533557192,
+      "actual": 1,
+      "surprise": 0.4266839466442808,
+      "grid_position": 4,
+      "finish_position": 2
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 5,
+      "p": 0.6042648984553654,
+      "actual": 1,
+      "surprise": 0.39573510154463465,
+      "grid_position": 13,
+      "finish_position": 11
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 5,
+      "p": 0.37775904416812917,
+      "actual": 0,
+      "surprise": 0.37775904416812917,
+      "grid_position": 2,
+      "finish_position": 3
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 5,
+      "p": 0.4505647519284681,
+      "actual": 0,
+      "surprise": 0.4505647519284681,
+      "grid_position": 5,
+      "finish_position": 8
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 5,
+      "p": 0.7313463809516578,
+      "actual": 1,
+      "surprise": 0.2686536190483422,
+      "grid_position": 12,
+      "finish_position": 18
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 5,
+      "p": 0.7291194344574815,
+      "actual": 1,
+      "surprise": 0.2708805655425185,
+      "grid_position": 8,
+      "finish_position": 6
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 5,
+      "p": 0.5501302173078523,
+      "actual": 0,
+      "surprise": 0.5501302173078523,
+      "grid_position": 7,
+      "finish_position": 5
+    },
+    {
+      "driver": "SAR",
+      "team": "Williams",
+      "round": 5,
+      "p": 0.25912836042463006,
+      "actual": 0,
+      "surprise": 0.25912836042463006,
+      "grid_position": 20,
+      "finish_position": 17
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 5,
+      "p": 0.36041956035433564,
+      "actual": 0,
+      "surprise": 0.36041956035433564,
+      "grid_position": 11,
+      "finish_position": 15
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 5,
+      "p": 0.2859287842765499,
+      "actual": 0,
+      "surprise": 0.2859287842765499,
+      "grid_position": 19,
+      "finish_position": 19
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 5,
+      "p": 0.6736643087425314,
+      "actual": 1,
+      "surprise": 0.32633569125746864,
+      "grid_position": 1,
+      "finish_position": 1
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 5,
+      "p": 0.25409702854282534,
+      "actual": 1,
+      "surprise": 0.7459029714571747,
+      "grid_position": 16,
+      "finish_position": 14
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 6,
+      "p": 0.5364632542795206,
+      "actual": 1,
+      "surprise": 0.4635367457204794,
+      "grid_position": 14,
+      "finish_position": 18
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 6,
+      "p": 0.32715181254620646,
+      "actual": 1,
+      "surprise": 0.6728481874537935,
+      "grid_position": 15,
+      "finish_position": 9
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 6,
+      "p": 0.6595960057818785,
+      "actual": 0,
+      "surprise": 0.6595960057818785,
+      "grid_position": 16,
+      "finish_position": 16
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 6,
+      "p": 0.5104317146815586,
+      "actual": 0,
+      "surprise": 0.5104317146815586,
+      "grid_position": 12,
+      "finish_position": 12
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 6,
+      "p": 0.5578613500376751,
+      "actual": 1,
+      "surprise": 0.4421386499623249,
+      "grid_position": 8,
+      "finish_position": 6
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 6,
+      "p": 0.6519761100027354,
+      "actual": 1,
+      "surprise": 0.34802388999726463,
+      "grid_position": 9,
+      "finish_position": 11
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 6,
+      "p": 0.6341300706344176,
+      "actual": 1,
+      "surprise": 0.3658699293655824,
+      "grid_position": 2,
+      "finish_position": 3
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 6,
+      "p": 0.24757315927847356,
+      "actual": 0,
+      "surprise": 0.24757315927847356,
+      "grid_position": 18,
+      "finish_position": 19
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 6,
+      "p": 0.64940491088549,
+      "actual": 1,
+      "surprise": 0.35059508911451,
+      "grid_position": 5,
+      "finish_position": 1
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 6,
+      "p": 0.499620852851252,
+      "actual": 1,
+      "surprise": 0.500379147148748,
+      "grid_position": 13,
+      "finish_position": 10
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 6,
+      "p": 0.3388526632349144,
+      "actual": 0,
+      "surprise": 0.3388526632349144,
+      "grid_position": 4,
+      "finish_position": 4
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 6,
+      "p": 0.4844341743711647,
+      "actual": 0,
+      "surprise": 0.4844341743711647,
+      "grid_position": 6,
+      "finish_position": 13
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 6,
+      "p": 0.2533122306471719,
+      "actual": 0,
+      "surprise": 0.2533122306471719,
+      "grid_position": 20,
+      "finish_position": 15
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 6,
+      "p": 0.48306461872310297,
+      "actual": 0,
+      "surprise": 0.48306461872310297,
+      "grid_position": 7,
+      "finish_position": 8
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 6,
+      "p": 0.5046033385539033,
+      "actual": 0,
+      "surprise": 0.5046033385539033,
+      "grid_position": 3,
+      "finish_position": 5
+    },
+    {
+      "driver": "SAR",
+      "team": "Williams",
+      "round": 6,
+      "p": 0.41185256295966394,
+      "actual": 0,
+      "surprise": 0.41185256295966394,
+      "grid_position": 17,
+      "finish_position": 20
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 6,
+      "p": 0.6557479103179069,
+      "actual": 0,
+      "surprise": 0.6557479103179069,
+      "grid_position": 11,
+      "finish_position": 17
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 6,
+      "p": 0.672657591353958,
+      "actual": 1,
+      "surprise": 0.327342408646042,
+      "grid_position": 10,
+      "finish_position": 7
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 6,
+      "p": 0.7223805140379876,
+      "actual": 1,
+      "surprise": 0.27761948596201236,
+      "grid_position": 1,
+      "finish_position": 2
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 6,
+      "p": 0.40073776352916163,
+      "actual": 1,
+      "surprise": 0.5992622364708384,
+      "grid_position": 19,
+      "finish_position": 14
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 7,
+      "p": 0.6439562820603755,
+      "actual": 0,
+      "surprise": 0.6439562820603755,
+      "grid_position": 14,
+      "finish_position": 20
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 7,
+      "p": 0.2804379011671227,
+      "actual": 0,
+      "surprise": 0.2804379011671227,
+      "grid_position": 20,
+      "finish_position": 19
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 7,
+      "p": 0.5575935271963978,
+      "actual": 0,
+      "surprise": 0.5575935271963978,
+      "grid_position": 16,
+      "finish_position": 18
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 7,
+      "p": 0.4808282448013828,
+      "actual": 0,
+      "surprise": 0.4808282448013828,
+      "grid_position": 15,
+      "finish_position": 16
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 7,
+      "p": 0.3824146501886743,
+      "actual": 1,
+      "surprise": 0.6175853498113257,
+      "grid_position": 8,
+      "finish_position": 6
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 7,
+      "p": 0.6854842365714529,
+      "actual": 1,
+      "surprise": 0.31451576342854715,
+      "grid_position": 10,
+      "finish_position": 11
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 7,
+      "p": 0.6663972241250053,
+      "actual": 1,
+      "surprise": 0.33360277587499465,
+      "grid_position": 3,
+      "finish_position": 3
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 7,
+      "p": 0.2207334249446967,
+      "actual": 0,
+      "surprise": 0.2207334249446967,
+      "grid_position": 18,
+      "finish_position": 12
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 7,
+      "p": 0.6688511951192214,
+      "actual": 1,
+      "surprise": 0.3311488048807786,
+      "grid_position": 2,
+      "finish_position": 2
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 7,
+      "p": 0.4258003461904357,
+      "actual": 1,
+      "surprise": 0.5741996538095643,
+      "grid_position": 12,
+      "finish_position": 14
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 7,
+      "p": 0.2278600073169148,
+      "actual": 0,
+      "surprise": 0.2278600073169148,
+      "grid_position": 11,
+      "finish_position": 8
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 7,
+      "p": 0.4457866723907103,
+      "actual": 0,
+      "surprise": 0.4457866723907103,
+      "grid_position": 5,
+      "finish_position": 4
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 7,
+      "p": 0.4227516672158741,
+      "actual": 0,
+      "surprise": 0.4227516672158741,
+      "grid_position": 9,
+      "finish_position": 13
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 7,
+      "p": 0.710130727905978,
+      "actual": 0,
+      "surprise": 0.710130727905978,
+      "grid_position": 6,
+      "finish_position": 7
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 7,
+      "p": 0.4521463671987995,
+      "actual": 0,
+      "surprise": 0.4521463671987995,
+      "grid_position": 4,
+      "finish_position": 5
+    },
+    {
+      "driver": "SAR",
+      "team": "Williams",
+      "round": 7,
+      "p": 0.3173020880466604,
+      "actual": 1,
+      "surprise": 0.6826979119533396,
+      "grid_position": 19,
+      "finish_position": 17
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 7,
+      "p": 0.7254851906481906,
+      "actual": 1,
+      "surprise": 0.2745148093518094,
+      "grid_position": 13,
+      "finish_position": 9
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 7,
+      "p": 0.67157487833274,
+      "actual": 1,
+      "surprise": 0.32842512166726,
+      "grid_position": 7,
+      "finish_position": 10
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 7,
+      "p": 0.8118422730707117,
+      "actual": 1,
+      "surprise": 0.18815772692928834,
+      "grid_position": 1,
+      "finish_position": 1
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 7,
+      "p": 0.47281623377405857,
+      "actual": 1,
+      "surprise": 0.5271837662259414,
+      "grid_position": 17,
+      "finish_position": 15
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 8,
+      "p": 0.6854582509270649,
+      "actual": 1,
+      "surprise": 0.3145417490729351,
+      "grid_position": 9,
+      "finish_position": 9
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 8,
+      "p": 0.3593886089680279,
+      "actual": 1,
+      "surprise": 0.6406113910319722,
+      "grid_position": 14,
+      "finish_position": 11
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 8,
+      "p": 0.5881351769793485,
+      "actual": 1,
+      "surprise": 0.4118648230206515,
+      "grid_position": 17,
+      "finish_position": 13
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 8,
+      "p": 0.6375373606631491,
+      "actual": 1,
+      "surprise": 0.36246263933685086,
+      "grid_position": 10,
+      "finish_position": 10
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 8,
+      "p": 0.3967897732502869,
+      "actual": 0,
+      "surprise": 0.3967897732502869,
+      "grid_position": 7,
+      "finish_position": 7
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 8,
+      "p": 0.4255480165089577,
+      "actual": 1,
+      "surprise": 0.5744519834910423,
+      "grid_position": 19,
+      "finish_position": 19
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 8,
+      "p": 0.7345446326063783,
+      "actual": 1,
+      "surprise": 0.26545536739362174,
+      "grid_position": 1,
+      "finish_position": 1
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 8,
+      "p": 0.40577438618447587,
+      "actual": 0,
+      "surprise": 0.40577438618447587,
+      "grid_position": 20,
+      "finish_position": 20
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 8,
+      "p": 0.3458809973772056,
+      "actual": 0,
+      "surprise": 0.3458809973772056,
+      "grid_position": 4,
+      "finish_position": 4
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 8,
+      "p": 0.4409234428295469,
+      "actual": 0,
+      "surprise": 0.4409234428295469,
+      "grid_position": 11,
+      "finish_position": 17
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 8,
+      "p": 0.23188313962325666,
+      "actual": 0,
+      "surprise": 0.23188313962325666,
+      "grid_position": 16,
+      "finish_position": 18
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 8,
+      "p": 0.6906817756988729,
+      "actual": 1,
+      "surprise": 0.3093182243011271,
+      "grid_position": 2,
+      "finish_position": 2
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 8,
+      "p": 0.37183039671809454,
+      "actual": 0,
+      "surprise": 0.37183039671809454,
+      "grid_position": 12,
+      "finish_position": 12
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 8,
+      "p": 0.6992114548512309,
+      "actual": 1,
+      "surprise": 0.30078854514876907,
+      "grid_position": 5,
+      "finish_position": 5
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 8,
+      "p": 0.3138864249831908,
+      "actual": 0,
+      "surprise": 0.3138864249831908,
+      "grid_position": 3,
+      "finish_position": 3
+    },
+    {
+      "driver": "SAR",
+      "team": "Williams",
+      "round": 8,
+      "p": 0.2708994762598676,
+      "actual": 0,
+      "surprise": 0.2708994762598676,
+      "grid_position": 15,
+      "finish_position": 15
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 8,
+      "p": 0.6455332288788138,
+      "actual": 0,
+      "surprise": 0.6455332288788138,
+      "grid_position": 13,
+      "finish_position": 14
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 8,
+      "p": 0.5640106705233636,
+      "actual": 1,
+      "surprise": 0.4359893294766364,
+      "grid_position": 8,
+      "finish_position": 8
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 8,
+      "p": 0.8263677559909183,
+      "actual": 1,
+      "surprise": 0.17363224400908173,
+      "grid_position": 6,
+      "finish_position": 6
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 8,
+      "p": 0.40962703876172213,
+      "actual": 0,
+      "surprise": 0.40962703876172213,
+      "grid_position": 18,
+      "finish_position": 16
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 9,
+      "p": 0.6016045407318366,
+      "actual": 1,
+      "surprise": 0.39839545926816344,
+      "grid_position": 10,
+      "finish_position": 17
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 9,
+      "p": 0.7062974658174748,
+      "actual": 1,
+      "surprise": 0.29370253418252523,
+      "grid_position": 6,
+      "finish_position": 6
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 9,
+      "p": 0.6490981390179679,
+      "actual": 1,
+      "surprise": 0.35090186098203213,
+      "grid_position": 19,
+      "finish_position": 13
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 9,
+      "p": 0.5172603839033781,
+      "actual": 1,
+      "surprise": 0.48273961609662186,
+      "grid_position": 15,
+      "finish_position": 9
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 9,
+      "p": 0.2902207762001998,
+      "actual": 0,
+      "surprise": 0.2902207762001998,
+      "grid_position": 7,
+      "finish_position": 4
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 9,
+      "p": 0.33043315586890143,
+      "actual": 1,
+      "surprise": 0.6695668441310986,
+      "grid_position": 17,
+      "finish_position": 11
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 9,
+      "p": 0.5919335731060256,
+      "actual": 0,
+      "surprise": 0.5919335731060256,
+      "grid_position": 11,
+      "finish_position": 19
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 9,
+      "p": 0.5996678715215731,
+      "actual": 0,
+      "surprise": 0.5996678715215731,
+      "grid_position": 14,
+      "finish_position": 12
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 9,
+      "p": 0.6447777007608242,
+      "actual": 1,
+      "surprise": 0.3552222992391758,
+      "grid_position": 3,
+      "finish_position": 2
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 9,
+      "p": 0.3507398380761818,
+      "actual": 0,
+      "surprise": 0.3507398380761818,
+      "grid_position": 18,
+      "finish_position": 10
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 9,
+      "p": 0.24176121713117454,
+      "actual": 0,
+      "surprise": 0.24176121713117454,
+      "grid_position": 16,
+      "finish_position": 18
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 9,
+      "p": 0.4659906999800025,
+      "actual": 0,
+      "surprise": 0.4659906999800025,
+      "grid_position": 4,
+      "finish_position": 5
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 9,
+      "p": 0.6896867768287146,
+      "actual": 1,
+      "surprise": 0.3103132231712854,
+      "grid_position": 5,
+      "finish_position": 8
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 9,
+      "p": 0.657176679092008,
+      "actual": 1,
+      "surprise": 0.34282332090799195,
+      "grid_position": 1,
+      "finish_position": 3
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 9,
+      "p": 0.48189308594417873,
+      "actual": 1,
+      "surprise": 0.5181069140558212,
+      "grid_position": 12,
+      "finish_position": 16
+    },
+    {
+      "driver": "SAR",
+      "team": "Williams",
+      "round": 9,
+      "p": 0.4122610845733811,
+      "actual": 0,
+      "surprise": 0.4122610845733811,
+      "grid_position": 13,
+      "finish_position": 20
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 9,
+      "p": 0.31774756898270534,
+      "actual": 0,
+      "surprise": 0.31774756898270534,
+      "grid_position": 9,
+      "finish_position": 7
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 9,
+      "p": 0.4013480877527915,
+      "actual": 0,
+      "surprise": 0.4013480877527915,
+      "grid_position": 8,
+      "finish_position": 14
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 9,
+      "p": 0.8182266521191015,
+      "actual": 1,
+      "surprise": 0.1817733478808985,
+      "grid_position": 2,
+      "finish_position": 1
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 9,
+      "p": 0.38430139609278474,
+      "actual": 0,
+      "surprise": 0.38430139609278474,
+      "grid_position": 20,
+      "finish_position": 15
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 10,
+      "p": 0.4868297115117618,
+      "actual": 1,
+      "surprise": 0.5131702884882382,
+      "grid_position": 20,
+      "finish_position": 18
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 10,
+      "p": 0.49145808400663843,
+      "actual": 1,
+      "surprise": 0.5085419159933615,
+      "grid_position": 10,
+      "finish_position": 12
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 10,
+      "p": 0.7442513870211183,
+      "actual": 0,
+      "surprise": 0.7442513870211183,
+      "grid_position": 12,
+      "finish_position": 16
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 10,
+      "p": 0.4319530152777073,
+      "actual": 1,
+      "surprise": 0.5680469847222926,
+      "grid_position": 7,
+      "finish_position": 9
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 10,
+      "p": 0.5007525440531279,
+      "actual": 1,
+      "surprise": 0.49924745594687214,
+      "grid_position": 3,
+      "finish_position": 3
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 10,
+      "p": 0.5352449620462939,
+      "actual": 1,
+      "surprise": 0.4647550379537061,
+      "grid_position": 13,
+      "finish_position": 11
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 10,
+      "p": 0.6139455132933657,
+      "actual": 1,
+      "surprise": 0.38605448670663434,
+      "grid_position": 5,
+      "finish_position": 5
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 10,
+      "p": 0.40592415244127283,
+      "actual": 0,
+      "surprise": 0.40592415244127283,
+      "grid_position": 16,
+      "finish_position": 17
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 10,
+      "p": 0.7886845106616782,
+      "actual": 1,
+      "surprise": 0.21131548933832178,
+      "grid_position": 1,
+      "finish_position": 2
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 10,
+      "p": 0.4084179649544057,
+      "actual": 0,
+      "surprise": 0.4084179649544057,
+      "grid_position": 8,
+      "finish_position": 10
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 10,
+      "p": 0.26592905684050433,
+      "actual": 0,
+      "surprise": 0.26592905684050433,
+      "grid_position": 11,
+      "finish_position": 8
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 10,
+      "p": 0.25603843767360046,
+      "actual": 0,
+      "surprise": 0.25603843767360046,
+      "grid_position": 9,
+      "finish_position": 7
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 10,
+      "p": 0.4704269150913779,
+      "actual": 1,
+      "surprise": 0.5295730849086221,
+      "grid_position": 18,
+      "finish_position": 15
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 10,
+      "p": 0.4821738918920213,
+      "actual": 0,
+      "surprise": 0.4821738918920213,
+      "grid_position": 4,
+      "finish_position": 4
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 10,
+      "p": 0.48004855011614894,
+      "actual": 0,
+      "surprise": 0.48004855011614894,
+      "grid_position": 6,
+      "finish_position": 6
+    },
+    {
+      "driver": "SAR",
+      "team": "Williams",
+      "round": 10,
+      "p": 0.5817360969927616,
+      "actual": 0,
+      "surprise": 0.5817360969927616,
+      "grid_position": 19,
+      "finish_position": 20
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 10,
+      "p": 0.4100714715845049,
+      "actual": 0,
+      "surprise": 0.4100714715845049,
+      "grid_position": 14,
+      "finish_position": 14
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 10,
+      "p": 0.5009320510961475,
+      "actual": 0,
+      "surprise": 0.5009320510961475,
+      "grid_position": 17,
+      "finish_position": 19
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 10,
+      "p": 0.8270796806495926,
+      "actual": 1,
+      "surprise": 0.17292031935040741,
+      "grid_position": 2,
+      "finish_position": 1
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 10,
+      "p": 0.4042020824444215,
+      "actual": 1,
+      "surprise": 0.5957979175555785,
+      "grid_position": 15,
+      "finish_position": 13
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 11,
+      "p": 0.44304512473820673,
+      "actual": 1,
+      "surprise": 0.5569548752617932,
+      "grid_position": 16,
+      "finish_position": 15
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 11,
+      "p": 0.4436395697752813,
+      "actual": 0,
+      "surprise": 0.4436395697752813,
+      "grid_position": 15,
+      "finish_position": 18
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 11,
+      "p": 0.6756620411368963,
+      "actual": 1,
+      "surprise": 0.3243379588631037,
+      "grid_position": 18,
+      "finish_position": 16
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 11,
+      "p": 0.3909520178435302,
+      "actual": 1,
+      "surprise": 0.6090479821564698,
+      "grid_position": 13,
+      "finish_position": 10
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 11,
+      "p": 0.37103588259388337,
+      "actual": 0,
+      "surprise": 0.37103588259388337,
+      "grid_position": 5,
+      "finish_position": 4
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 11,
+      "p": 0.4958726550263127,
+      "actual": 1,
+      "surprise": 0.5041273449736873,
+      "grid_position": 9,
+      "finish_position": 6
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 11,
+      "p": 0.4065834034164539,
+      "actual": 0,
+      "surprise": 0.4065834034164539,
+      "grid_position": 6,
+      "finish_position": 11
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 11,
+      "p": 0.39044007098923617,
+      "actual": 0,
+      "surprise": 0.39044007098923617,
+      "grid_position": 12,
+      "finish_position": 8
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 11,
+      "p": 0.7836192562554519,
+      "actual": 0,
+      "surprise": 0.7836192562554519,
+      "grid_position": 2,
+      "finish_position": 20
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 11,
+      "p": 0.632998708652429,
+      "actual": 0,
+      "surprise": 0.632998708652429,
+      "grid_position": 10,
+      "finish_position": 12
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 11,
+      "p": 0.2903807036019875,
+      "actual": 0,
+      "surprise": 0.2903807036019875,
+      "grid_position": 8,
+      "finish_position": 7
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 11,
+      "p": 0.26814185488817327,
+      "actual": 1,
+      "surprise": 0.7318581451118267,
+      "grid_position": 7,
+      "finish_position": 2
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 11,
+      "p": 0.6335403226085469,
+      "actual": 1,
+      "surprise": 0.36645967739145313,
+      "grid_position": 11,
+      "finish_position": 9
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 11,
+      "p": 0.6653903445644296,
+      "actual": 1,
+      "surprise": 0.3346096554355704,
+      "grid_position": 3,
+      "finish_position": 1
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 11,
+      "p": 0.5221082813669895,
+      "actual": 1,
+      "surprise": 0.4778917186330105,
+      "grid_position": 4,
+      "finish_position": 3
+    },
+    {
+      "driver": "SAR",
+      "team": "Williams",
+      "round": 11,
+      "p": 0.37593880425842274,
+      "actual": 0,
+      "surprise": 0.37593880425842274,
+      "grid_position": 19,
+      "finish_position": 19
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 11,
+      "p": 0.39338457575622626,
+      "actual": 1,
+      "surprise": 0.6066154242437738,
+      "grid_position": 17,
+      "finish_position": 13
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 11,
+      "p": 0.5059389383562874,
+      "actual": 0,
+      "surprise": 0.5059389383562874,
+      "grid_position": 14,
+      "finish_position": 14
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 11,
+      "p": 0.8184113111229142,
+      "actual": 1,
+      "surprise": 0.1815886888770858,
+      "grid_position": 1,
+      "finish_position": 5
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 11,
+      "p": 0.5032839190484987,
+      "actual": 0,
+      "surprise": 0.5032839190484987,
+      "grid_position": 20,
+      "finish_position": 17
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 12,
+      "p": 0.5021533022659348,
+      "actual": 1,
+      "surprise": 0.4978466977340652,
+      "grid_position": 9,
+      "finish_position": 9
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 12,
+      "p": 0.3522908306422583,
+      "actual": 0,
+      "surprise": 0.3522908306422583,
+      "grid_position": 10,
+      "finish_position": 8
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 12,
+      "p": 0.37282915214225765,
+      "actual": 1,
+      "surprise": 0.6271708478577424,
+      "grid_position": 16,
+      "finish_position": 15
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 12,
+      "p": 0.37658750693208504,
+      "actual": 0,
+      "surprise": 0.37658750693208504,
+      "grid_position": 19,
+      "finish_position": 20
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 12,
+      "p": 0.420004338840184,
+      "actual": 1,
+      "surprise": 0.579995661159816,
+      "grid_position": 2,
+      "finish_position": 1
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 12,
+      "p": 0.7365695494781435,
+      "actual": 1,
+      "surprise": 0.26343045052185654,
+      "grid_position": 6,
+      "finish_position": 6
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 12,
+      "p": 0.29155833847900814,
+      "actual": 0,
+      "surprise": 0.29155833847900814,
+      "grid_position": 11,
+      "finish_position": 14
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 12,
+      "p": 0.24212818629122734,
+      "actual": 0,
+      "surprise": 0.24212818629122734,
+      "grid_position": 17,
+      "finish_position": 12
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 12,
+      "p": 0.6887819678259239,
+      "actual": 1,
+      "surprise": 0.31121803217407606,
+      "grid_position": 3,
+      "finish_position": 3
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 12,
+      "p": 0.6673522047861843,
+      "actual": 1,
+      "surprise": 0.3326477952138157,
+      "grid_position": 18,
+      "finish_position": 16
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 12,
+      "p": 0.24400467396583,
+      "actual": 0,
+      "surprise": 0.24400467396583,
+      "grid_position": 20,
+      "finish_position": 17
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 12,
+      "p": 0.38083890849782104,
+      "actual": 0,
+      "surprise": 0.38083890849782104,
+      "grid_position": 5,
+      "finish_position": 4
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 12,
+      "p": 0.34597185523241597,
+      "actual": 0,
+      "surprise": 0.34597185523241597,
+      "grid_position": 15,
+      "finish_position": 13
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 12,
+      "p": 0.6318079678603421,
+      "actual": 0,
+      "surprise": 0.6318079678603421,
+      "grid_position": 1,
+      "finish_position": 19
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 12,
+      "p": 0.7454997431489565,
+      "actual": 1,
+      "surprise": 0.2545002568510435,
+      "grid_position": 7,
+      "finish_position": 5
+    },
+    {
+      "driver": "SAR",
+      "team": "Williams",
+      "round": 12,
+      "p": 0.3321407486460313,
+      "actual": 0,
+      "surprise": 0.3321407486460313,
+      "grid_position": 12,
+      "finish_position": 11
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 12,
+      "p": 0.4425008425263476,
+      "actual": 1,
+      "surprise": 0.5574991574736524,
+      "grid_position": 8,
+      "finish_position": 7
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 12,
+      "p": 0.5303515524102795,
+      "actual": 1,
+      "surprise": 0.46964844758972046,
+      "grid_position": 13,
+      "finish_position": 10
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 12,
+      "p": 0.830488609352441,
+      "actual": 1,
+      "surprise": 0.16951139064755905,
+      "grid_position": 4,
+      "finish_position": 2
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 12,
+      "p": 0.6797819042060037,
+      "actual": 0,
+      "surprise": 0.6797819042060037,
+      "grid_position": 14,
+      "finish_position": 18
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 13,
+      "p": 0.42823506907922504,
+      "actual": 1,
+      "surprise": 0.571764930920775,
+      "grid_position": 13,
+      "finish_position": 14
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 13,
+      "p": 0.5140828101929765,
+      "actual": 0,
+      "surprise": 0.5140828101929765,
+      "grid_position": 7,
+      "finish_position": 11
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 13,
+      "p": 0.6561264750468957,
+      "actual": 1,
+      "surprise": 0.3438735249531043,
+      "grid_position": 12,
+      "finish_position": 16
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 13,
+      "p": 0.4885422842945161,
+      "actual": 0,
+      "surprise": 0.4885422842945161,
+      "grid_position": 20,
+      "finish_position": 20
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 13,
+      "p": 0.8061700916870103,
+      "actual": 1,
+      "surprise": 0.19382990831298974,
+      "grid_position": 5,
+      "finish_position": 3
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 13,
+      "p": 0.5835238024683783,
+      "actual": 1,
+      "surprise": 0.4164761975316217,
+      "grid_position": 11,
+      "finish_position": 13
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 13,
+      "p": 0.3350106358559105,
+      "actual": 1,
+      "surprise": 0.6649893641440895,
+      "grid_position": 6,
+      "finish_position": 4
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 13,
+      "p": 0.39832598022683874,
+      "actual": 0,
+      "surprise": 0.39832598022683874,
+      "grid_position": 15,
+      "finish_position": 15
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 13,
+      "p": 0.5892411183680498,
+      "actual": 0,
+      "surprise": 0.5892411183680498,
+      "grid_position": 1,
+      "finish_position": 2
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 13,
+      "p": 0.42197253265834755,
+      "actual": 1,
+      "surprise": 0.5780274673416524,
+      "grid_position": 19,
+      "finish_position": 18
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 13,
+      "p": 0.25735469538298517,
+      "actual": 0,
+      "surprise": 0.25735469538298517,
+      "grid_position": 16,
+      "finish_position": 7
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 13,
+      "p": 0.5119583059063731,
+      "actual": 1,
+      "surprise": 0.48804169409362685,
+      "grid_position": 2,
+      "finish_position": 1
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 13,
+      "p": 0.4753400523675303,
+      "actual": 0,
+      "surprise": 0.4753400523675303,
+      "grid_position": 9,
+      "finish_position": 12
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 13,
+      "p": 0.2587099836480058,
+      "actual": 0,
+      "surprise": 0.2587099836480058,
+      "grid_position": 17,
+      "finish_position": 8
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 13,
+      "p": 0.6907388443251233,
+      "actual": 0,
+      "surprise": 0.6907388443251233,
+      "grid_position": 4,
+      "finish_position": 6
+    },
+    {
+      "driver": "SAR",
+      "team": "Williams",
+      "round": 13,
+      "p": 0.4755149876024867,
+      "actual": 0,
+      "surprise": 0.4755149876024867,
+      "grid_position": 14,
+      "finish_position": 17
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 13,
+      "p": 0.5297947372868094,
+      "actual": 1,
+      "surprise": 0.47020526271319063,
+      "grid_position": 8,
+      "finish_position": 10
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 13,
+      "p": 0.5403321940191722,
+      "actual": 1,
+      "surprise": 0.4596678059808278,
+      "grid_position": 10,
+      "finish_position": 9
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 13,
+      "p": 0.8061700916870103,
+      "actual": 1,
+      "surprise": 0.19382990831298974,
+      "grid_position": 3,
+      "finish_position": 5
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 13,
+      "p": 0.23081055057039124,
+      "actual": 0,
+      "surprise": 0.23081055057039124,
+      "grid_position": 18,
+      "finish_position": 19
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 14,
+      "p": 0.6947413809201856,
+      "actual": 1,
+      "surprise": 0.30525861907981444,
+      "grid_position": 10,
+      "finish_position": 12
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 14,
+      "p": 0.7237137921927101,
+      "actual": 1,
+      "surprise": 0.27628620780728985,
+      "grid_position": 8,
+      "finish_position": 8
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 14,
+      "p": 0.7316253077603483,
+      "actual": 1,
+      "surprise": 0.2683746922396517,
+      "grid_position": 14,
+      "finish_position": 15
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 14,
+      "p": 0.38782893419153464,
+      "actual": 0,
+      "surprise": 0.38782893419153464,
+      "grid_position": 12,
+      "finish_position": 13
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 14,
+      "p": 0.763110473722455,
+      "actual": 1,
+      "surprise": 0.236889526277545,
+      "grid_position": 3,
+      "finish_position": 1
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 14,
+      "p": 0.5022558171469736,
+      "actual": 0,
+      "surprise": 0.5022558171469736,
+      "grid_position": 16,
+      "finish_position": 18
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 14,
+      "p": 0.6472971016968121,
+      "actual": 1,
+      "surprise": 0.3527028983031879,
+      "grid_position": 1,
+      "finish_position": 3
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 14,
+      "p": 0.42798081297424895,
+      "actual": 1,
+      "surprise": 0.572019187025751,
+      "grid_position": 17,
+      "finish_position": 14
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 14,
+      "p": 0.6063920174210456,
+      "actual": 0,
+      "surprise": 0.6063920174210456,
+      "grid_position": 4,
+      "finish_position": 5
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 14,
+      "p": 0.6117686319529646,
+      "actual": 1,
+      "surprise": 0.3882313680470354,
+      "grid_position": 9,
+      "finish_position": 9
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 14,
+      "p": 0.5998938372545347,
+      "actual": 0,
+      "surprise": 0.5998938372545347,
+      "grid_position": 2,
+      "finish_position": 7
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 14,
+      "p": 0.46394951663352607,
+      "actual": 1,
+      "surprise": 0.5360504833664739,
+      "grid_position": 5,
+      "finish_position": 2
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 14,
+      "p": 0.7288186859878122,
+      "actual": 1,
+      "surprise": 0.2711813140121878,
+      "grid_position": 13,
+      "finish_position": 10
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 14,
+      "p": 0.41358922125772113,
+      "actual": 0,
+      "surprise": 0.41358922125772113,
+      "grid_position": 6,
+      "finish_position": 20
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 14,
+      "p": 0.29205290805420825,
+      "actual": 0,
+      "surprise": 0.29205290805420825,
+      "grid_position": 7,
+      "finish_position": 6
+    },
+    {
+      "driver": "SAR",
+      "team": "Williams",
+      "round": 14,
+      "p": 0.23314279104799732,
+      "actual": 0,
+      "surprise": 0.23314279104799732,
+      "grid_position": 18,
+      "finish_position": 17
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 14,
+      "p": 0.2809607111747726,
+      "actual": 0,
+      "surprise": 0.2809607111747726,
+      "grid_position": 15,
+      "finish_position": 11
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 14,
+      "p": 0.22151305141895072,
+      "actual": 0,
+      "surprise": 0.22151305141895072,
+      "grid_position": 20,
+      "finish_position": 16
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 14,
+      "p": 0.3127480206308066,
+      "actual": 1,
+      "surprise": 0.6872519793691934,
+      "grid_position": 11,
+      "finish_position": 4
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 14,
+      "p": 0.25222447507448176,
+      "actual": 0,
+      "surprise": 0.25222447507448176,
+      "grid_position": 19,
+      "finish_position": 19
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 15,
+      "p": 0.4570238991077636,
+      "actual": 1,
+      "surprise": 0.5429761008922365,
+      "grid_position": 19,
+      "finish_position": 14
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 15,
+      "p": 0.5437800885744654,
+      "actual": 1,
+      "surprise": 0.45621991142553464,
+      "grid_position": 7,
+      "finish_position": 10
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 15,
+      "p": 0.6846241053540763,
+      "actual": 1,
+      "surprise": 0.31537589464592375,
+      "grid_position": 16,
+      "finish_position": 19
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 15,
+      "p": 0.7171923100781495,
+      "actual": 1,
+      "surprise": 0.28280768992185046,
+      "grid_position": 9,
+      "finish_position": 9
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 15,
+      "p": 0.2283205210369661,
+      "actual": 0,
+      "surprise": 0.2283205210369661,
+      "grid_position": 14,
+      "finish_position": 8
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 15,
+      "p": 0.6089436063255765,
+      "actual": 1,
+      "surprise": 0.39105639367442346,
+      "grid_position": 12,
+      "finish_position": 11
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 15,
+      "p": 0.7173508743643204,
+      "actual": 1,
+      "surprise": 0.28264912563567957,
+      "grid_position": 6,
+      "finish_position": 3
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 15,
+      "p": 0.402612159118245,
+      "actual": 0,
+      "surprise": 0.402612159118245,
+      "grid_position": 20,
+      "finish_position": 18
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 15,
+      "p": 0.7838226518003961,
+      "actual": 1,
+      "surprise": 0.21617734819960388,
+      "grid_position": 1,
+      "finish_position": 1
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 15,
+      "p": 0.2504756615304015,
+      "actual": 0,
+      "surprise": 0.2504756615304015,
+      "grid_position": 15,
+      "finish_position": 15
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 15,
+      "p": 0.32427636875767546,
+      "actual": 0,
+      "surprise": 0.32427636875767546,
+      "grid_position": 5,
+      "finish_position": 6
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 15,
+      "p": 0.315076761116701,
+      "actual": 0,
+      "surprise": 0.315076761116701,
+      "grid_position": 3,
+      "finish_position": 4
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 15,
+      "p": 0.320024322030591,
+      "actual": 1,
+      "surprise": 0.679975677969409,
+      "grid_position": 13,
+      "finish_position": 12
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 15,
+      "p": 0.6951970936625158,
+      "actual": 1,
+      "surprise": 0.3048029063374842,
+      "grid_position": 4,
+      "finish_position": 7
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 15,
+      "p": 0.29322590116626207,
+      "actual": 0,
+      "surprise": 0.29322590116626207,
+      "grid_position": 10,
+      "finish_position": 5
+    },
+    {
+      "driver": "SAR",
+      "team": "Williams",
+      "round": 15,
+      "p": 0.6815644550964294,
+      "actual": 0,
+      "surprise": 0.6815644550964294,
+      "grid_position": 18,
+      "finish_position": 16
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 15,
+      "p": 0.49442723534296024,
+      "actual": 0,
+      "surprise": 0.49442723534296024,
+      "grid_position": 8,
+      "finish_position": 13
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 15,
+      "p": 0.6623169768192636,
+      "actual": 0,
+      "surprise": 0.6623169768192636,
+      "grid_position": 11,
+      "finish_position": 17
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 15,
+      "p": 0.7494737506678962,
+      "actual": 1,
+      "surprise": 0.25052624933210377,
+      "grid_position": 2,
+      "finish_position": 2
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 15,
+      "p": 0.36712775375329393,
+      "actual": 0,
+      "surprise": 0.36712775375329393,
+      "grid_position": 17,
+      "finish_position": 20
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 16,
+      "p": 0.747920762342389,
+      "actual": 1,
+      "surprise": 0.252079237657611,
+      "grid_position": 9,
+      "finish_position": 9
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 16,
+      "p": 0.6089663235503089,
+      "actual": 1,
+      "surprise": 0.3910336764496911,
+      "grid_position": 11,
+      "finish_position": 11
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 16,
+      "p": 0.551779164549956,
+      "actual": 1,
+      "surprise": 0.448220835450044,
+      "grid_position": 19,
+      "finish_position": 16
+    },
+    {
+      "driver": "COL",
+      "team": "Williams",
+      "round": 16,
+      "p": 0.2689794726817818,
+      "actual": 0,
+      "surprise": 0.2689794726817818,
+      "grid_position": 18,
+      "finish_position": 12
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 16,
+      "p": 0.4050387932808305,
+      "actual": 0,
+      "surprise": 0.4050387932808305,
+      "grid_position": 14,
+      "finish_position": 15
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 16,
+      "p": 0.36764152108887294,
+      "actual": 1,
+      "surprise": 0.6323584789111271,
+      "grid_position": 6,
+      "finish_position": 5
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 16,
+      "p": 0.49518468421256256,
+      "actual": 0,
+      "surprise": 0.49518468421256256,
+      "grid_position": 10,
+      "finish_position": 17
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 16,
+      "p": 0.5414556844381259,
+      "actual": 1,
+      "surprise": 0.45854431556187414,
+      "grid_position": 4,
+      "finish_position": 1
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 16,
+      "p": 0.3670133828563913,
+      "actual": 1,
+      "surprise": 0.6329866171436087,
+      "grid_position": 13,
+      "finish_position": 10
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 16,
+      "p": 0.6175678696456053,
+      "actual": 0,
+      "surprise": 0.6175678696456053,
+      "grid_position": 1,
+      "finish_position": 3
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 16,
+      "p": 0.47590819946118407,
+      "actual": 1,
+      "surprise": 0.524091800538816,
+      "grid_position": 15,
+      "finish_position": 14
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 16,
+      "p": 0.378610248657142,
+      "actual": 0,
+      "surprise": 0.378610248657142,
+      "grid_position": 8,
+      "finish_position": 8
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 16,
+      "p": 0.4215063607320139,
+      "actual": 1,
+      "surprise": 0.578493639267986,
+      "grid_position": 2,
+      "finish_position": 2
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 16,
+      "p": 0.7230205248073729,
+      "actual": 1,
+      "surprise": 0.2769794751926271,
+      "grid_position": 12,
+      "finish_position": 13
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 16,
+      "p": 0.6039234002115935,
+      "actual": 0,
+      "surprise": 0.6039234002115935,
+      "grid_position": 3,
+      "finish_position": 7
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 16,
+      "p": 0.4681620304870159,
+      "actual": 0,
+      "surprise": 0.4681620304870159,
+      "grid_position": 5,
+      "finish_position": 4
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 16,
+      "p": 0.34623358778087676,
+      "actual": 0,
+      "surprise": 0.34623358778087676,
+      "grid_position": 17,
+      "finish_position": 19
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 16,
+      "p": 0.3498095964602973,
+      "actual": 0,
+      "surprise": 0.3498095964602973,
+      "grid_position": 16,
+      "finish_position": 20
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 16,
+      "p": 0.6845179240742364,
+      "actual": 1,
+      "surprise": 0.3154820759257636,
+      "grid_position": 7,
+      "finish_position": 6
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 16,
+      "p": 0.41833019419681494,
+      "actual": 0,
+      "surprise": 0.41833019419681494,
+      "grid_position": 20,
+      "finish_position": 18
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 17,
+      "p": 0.4229516731144443,
+      "actual": 1,
+      "surprise": 0.5770483268855557,
+      "grid_position": 9,
+      "finish_position": 7
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 17,
+      "p": 0.7267242917069614,
+      "actual": 1,
+      "surprise": 0.2732757082930386,
+      "grid_position": 7,
+      "finish_position": 6
+    },
+    {
+      "driver": "BEA",
+      "team": "Haas F1 Team",
+      "round": 17,
+      "p": 0.6517627260216265,
+      "actual": 1,
+      "surprise": 0.34823727397837345,
+      "grid_position": 10,
+      "finish_position": 10
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 17,
+      "p": 0.5309065538696537,
+      "actual": 0,
+      "surprise": 0.5309065538696537,
+      "grid_position": 16,
+      "finish_position": 16
+    },
+    {
+      "driver": "COL",
+      "team": "Williams",
+      "round": 17,
+      "p": 0.6226283651992075,
+      "actual": 0,
+      "surprise": 0.6226283651992075,
+      "grid_position": 8,
+      "finish_position": 8
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 17,
+      "p": 0.7210471353515477,
+      "actual": 1,
+      "surprise": 0.27895286464845226,
+      "grid_position": 18,
+      "finish_position": 12
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 17,
+      "p": 0.23756128901316678,
+      "actual": 0,
+      "surprise": 0.23756128901316678,
+      "grid_position": 19,
+      "finish_position": 9
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 17,
+      "p": 0.43277032527665704,
+      "actual": 0,
+      "surprise": 0.43277032527665704,
+      "grid_position": 12,
+      "finish_position": 11
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 17,
+      "p": 0.7703953672024298,
+      "actual": 1,
+      "surprise": 0.22960463279757015,
+      "grid_position": 1,
+      "finish_position": 2
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 17,
+      "p": 0.21592765567414543,
+      "actual": 0,
+      "surprise": 0.21592765567414543,
+      "grid_position": 15,
+      "finish_position": 4
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 17,
+      "p": 0.2916609475189201,
+      "actual": 0,
+      "surprise": 0.2916609475189201,
+      "grid_position": 20,
+      "finish_position": 15
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 17,
+      "p": 0.7056206018986744,
+      "actual": 0,
+      "surprise": 0.7056206018986744,
+      "grid_position": 4,
+      "finish_position": 17
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 17,
+      "p": 0.8222033686033726,
+      "actual": 1,
+      "surprise": 0.17779663139662738,
+      "grid_position": 2,
+      "finish_position": 1
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 17,
+      "p": 0.3272100910493184,
+      "actual": 1,
+      "surprise": 0.6727899089506816,
+      "grid_position": 14,
+      "finish_position": 13
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 17,
+      "p": 0.6933927879752243,
+      "actual": 1,
+      "surprise": 0.3066072120247757,
+      "grid_position": 5,
+      "finish_position": 3
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 17,
+      "p": 0.29121022517185124,
+      "actual": 0,
+      "surprise": 0.29121022517185124,
+      "grid_position": 3,
+      "finish_position": 18
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 17,
+      "p": 0.3010422479369098,
+      "actual": 0,
+      "surprise": 0.3010422479369098,
+      "grid_position": 13,
+      "finish_position": 19
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 17,
+      "p": 0.5244942854012764,
+      "actual": 0,
+      "surprise": 0.5244942854012764,
+      "grid_position": 11,
+      "finish_position": 20
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 17,
+      "p": 0.3469367919084885,
+      "actual": 1,
+      "surprise": 0.6530632080915115,
+      "grid_position": 6,
+      "finish_position": 5
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 17,
+      "p": 0.3747749660896411,
+      "actual": 1,
+      "surprise": 0.6252250339103589,
+      "grid_position": 17,
+      "finish_position": 14
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 18,
+      "p": 0.4371761706019413,
+      "actual": 0,
+      "surprise": 0.4371761706019413,
+      "grid_position": 11,
+      "finish_position": 20
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 18,
+      "p": 0.6738275145904706,
+      "actual": 1,
+      "surprise": 0.32617248540952937,
+      "grid_position": 7,
+      "finish_position": 8
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 18,
+      "p": 0.524792711427627,
+      "actual": 0,
+      "surprise": 0.524792711427627,
+      "grid_position": 19,
+      "finish_position": 16
+    },
+    {
+      "driver": "COL",
+      "team": "Williams",
+      "round": 18,
+      "p": 0.5047326992036403,
+      "actual": 1,
+      "surprise": 0.4952673007963597,
+      "grid_position": 12,
+      "finish_position": 11
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 18,
+      "p": 0.2938376150448147,
+      "actual": 0,
+      "surprise": 0.2938376150448147,
+      "grid_position": 18,
+      "finish_position": 17
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 18,
+      "p": 0.5873328465844875,
+      "actual": 0,
+      "surprise": 0.5873328465844875,
+      "grid_position": 3,
+      "finish_position": 6
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 18,
+      "p": 0.7092362775628497,
+      "actual": 1,
+      "surprise": 0.2907637224371503,
+      "grid_position": 6,
+      "finish_position": 9
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 18,
+      "p": 0.6766554160796467,
+      "actual": 1,
+      "surprise": 0.32334458392035326,
+      "grid_position": 9,
+      "finish_position": 5
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 18,
+      "p": 0.25447832724833896,
+      "actual": 0,
+      "surprise": 0.25447832724833896,
+      "grid_position": 14,
+      "finish_position": 19
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 18,
+      "p": 0.7155518312901066,
+      "actual": 1,
+      "surprise": 0.2844481687098934,
+      "grid_position": 1,
+      "finish_position": 1
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 18,
+      "p": 0.6303759812856637,
+      "actual": 1,
+      "surprise": 0.36962401871433626,
+      "grid_position": 15,
+      "finish_position": 13
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 18,
+      "p": 0.2155966983255626,
+      "actual": 0,
+      "surprise": 0.2155966983255626,
+      "grid_position": 13,
+      "finish_position": 10
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 18,
+      "p": 0.31627630458505623,
+      "actual": 0,
+      "surprise": 0.31627630458505623,
+      "grid_position": 5,
+      "finish_position": 3
+    },
+    {
+      "driver": "RIC",
+      "team": "RB",
+      "round": 18,
+      "p": 0.22352034335720244,
+      "actual": 0,
+      "surprise": 0.22352034335720244,
+      "grid_position": 16,
+      "finish_position": 18
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 18,
+      "p": 0.4696923084820414,
+      "actual": 1,
+      "surprise": 0.5303076915179585,
+      "grid_position": 4,
+      "finish_position": 4
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 18,
+      "p": 0.3959287449609535,
+      "actual": 0,
+      "surprise": 0.3959287449609535,
+      "grid_position": 10,
+      "finish_position": 7
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 18,
+      "p": 0.21717054256678417,
+      "actual": 0,
+      "surprise": 0.21717054256678417,
+      "grid_position": 17,
+      "finish_position": 14
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 18,
+      "p": 0.6993350043300307,
+      "actual": 1,
+      "surprise": 0.3006649956699693,
+      "grid_position": 8,
+      "finish_position": 12
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 18,
+      "p": 0.8267932057143368,
+      "actual": 1,
+      "surprise": 0.1732067942856632,
+      "grid_position": 2,
+      "finish_position": 2
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 18,
+      "p": 0.33617693275513255,
+      "actual": 1,
+      "surprise": 0.6638230672448675,
+      "grid_position": 20,
+      "finish_position": 15
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 19,
+      "p": 0.4723077647431934,
+      "actual": 0,
+      "surprise": 0.4723077647431934,
+      "grid_position": 14,
+      "finish_position": 16
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 19,
+      "p": 0.7007543665685882,
+      "actual": 1,
+      "surprise": 0.29924563343141175,
+      "grid_position": 7,
+      "finish_position": 13
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 19,
+      "p": 0.41703455018977537,
+      "actual": 1,
+      "surprise": 0.5829654498102246,
+      "grid_position": 16,
+      "finish_position": 17
+    },
+    {
+      "driver": "COL",
+      "team": "Williams",
+      "round": 19,
+      "p": 0.47761990784832115,
+      "actual": 1,
+      "surprise": 0.5223800921516788,
+      "grid_position": 15,
+      "finish_position": 10
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 19,
+      "p": 0.6942667890156095,
+      "actual": 1,
+      "surprise": 0.30573321098439055,
+      "grid_position": 6,
+      "finish_position": 12
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 19,
+      "p": 0.6560896914699542,
+      "actual": 0,
+      "surprise": 0.6560896914699542,
+      "grid_position": 17,
+      "finish_position": 20
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 19,
+      "p": 0.42687675887976795,
+      "actual": 1,
+      "surprise": 0.573123241120232,
+      "grid_position": 11,
+      "finish_position": 8
+    },
+    {
+      "driver": "LAW",
+      "team": "RB",
+      "round": 19,
+      "p": 0.3133518422937722,
+      "actual": 1,
+      "surprise": 0.6866481577062278,
+      "grid_position": 19,
+      "finish_position": 9
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 19,
+      "p": 0.43345812440683734,
+      "actual": 1,
+      "surprise": 0.5665418755931626,
+      "grid_position": 4,
+      "finish_position": 1
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 19,
+      "p": 0.577998799472972,
+      "actual": 0,
+      "surprise": 0.577998799472972,
+      "grid_position": 8,
+      "finish_position": 11
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 19,
+      "p": 0.7668102993650275,
+      "actual": 1,
+      "surprise": 0.23318970063497246,
+      "grid_position": 1,
+      "finish_position": 4
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 19,
+      "p": 0.2732019249083274,
+      "actual": 0,
+      "surprise": 0.2732019249083274,
+      "grid_position": 12,
+      "finish_position": 18
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 19,
+      "p": 0.3052530332622602,
+      "actual": 0,
+      "surprise": 0.3052530332622602,
+      "grid_position": 9,
+      "finish_position": 7
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 19,
+      "p": 0.32089168904740767,
+      "actual": 0,
+      "surprise": 0.32089168904740767,
+      "grid_position": 5,
+      "finish_position": 5
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 19,
+      "p": 0.41854062216645566,
+      "actual": 1,
+      "surprise": 0.5814593778335444,
+      "grid_position": 20,
+      "finish_position": 6
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 19,
+      "p": 0.5079141618316084,
+      "actual": 0,
+      "surprise": 0.5079141618316084,
+      "grid_position": 3,
+      "finish_position": 2
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 19,
+      "p": 0.2652133674107936,
+      "actual": 0,
+      "surprise": 0.2652133674107936,
+      "grid_position": 13,
+      "finish_position": 15
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 19,
+      "p": 0.6198639003835812,
+      "actual": 0,
+      "surprise": 0.6198639003835812,
+      "grid_position": 10,
+      "finish_position": 14
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 19,
+      "p": 0.8204592274567424,
+      "actual": 1,
+      "surprise": 0.17954077254325762,
+      "grid_position": 2,
+      "finish_position": 3
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 19,
+      "p": 0.4059445673496423,
+      "actual": 0,
+      "surprise": 0.4059445673496423,
+      "grid_position": 18,
+      "finish_position": 19
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 20,
+      "p": 0.6919225125165823,
+      "actual": 0,
+      "surprise": 0.6919225125165823,
+      "grid_position": 9,
+      "finish_position": 19
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 20,
+      "p": 0.5731194825331779,
+      "actual": 0,
+      "surprise": 0.5731194825331779,
+      "grid_position": 13,
+      "finish_position": 18
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 20,
+      "p": 0.5332694425592943,
+      "actual": 1,
+      "surprise": 0.4667305574407057,
+      "grid_position": 15,
+      "finish_position": 14
+    },
+    {
+      "driver": "COL",
+      "team": "Williams",
+      "round": 20,
+      "p": 0.35880375029912576,
+      "actual": 1,
+      "surprise": 0.6411962497008743,
+      "grid_position": 16,
+      "finish_position": 12
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 20,
+      "p": 0.736745592981566,
+      "actual": 1,
+      "surprise": 0.26325440701843394,
+      "grid_position": 8,
+      "finish_position": 10
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 20,
+      "p": 0.43308163419464796,
+      "actual": 1,
+      "surprise": 0.566918365805352,
+      "grid_position": 6,
+      "finish_position": 4
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 20,
+      "p": 0.39480259794979455,
+      "actual": 0,
+      "surprise": 0.39480259794979455,
+      "grid_position": 10,
+      "finish_position": 9
+    },
+    {
+      "driver": "LAW",
+      "team": "RB",
+      "round": 20,
+      "p": 0.44270517019390837,
+      "actual": 1,
+      "surprise": 0.5572948298060916,
+      "grid_position": 12,
+      "finish_position": 16
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 20,
+      "p": 0.30589463859096455,
+      "actual": 0,
+      "surprise": 0.30589463859096455,
+      "grid_position": 4,
+      "finish_position": 3
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 20,
+      "p": 0.5633049581099057,
+      "actual": 1,
+      "surprise": 0.43669504189009434,
+      "grid_position": 7,
+      "finish_position": 7
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 20,
+      "p": 0.830488609352441,
+      "actual": 1,
+      "surprise": 0.16951139064755905,
+      "grid_position": 3,
+      "finish_position": 2
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 20,
+      "p": 0.2455288221052506,
+      "actual": 0,
+      "surprise": 0.2455288221052506,
+      "grid_position": 20,
+      "finish_position": 13
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 20,
+      "p": 0.2497541154462633,
+      "actual": 0,
+      "surprise": 0.2497541154462633,
+      "grid_position": 18,
+      "finish_position": 17
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 20,
+      "p": 0.21592765567414543,
+      "actual": 0,
+      "surprise": 0.21592765567414543,
+      "grid_position": 17,
+      "finish_position": 8
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 20,
+      "p": 0.6154416184517043,
+      "actual": 0,
+      "surprise": 0.6154416184517043,
+      "grid_position": 5,
+      "finish_position": 5
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 20,
+      "p": 0.6696385763200233,
+      "actual": 1,
+      "surprise": 0.3303614236799767,
+      "grid_position": 1,
+      "finish_position": 1
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 20,
+      "p": 0.4037008027542889,
+      "actual": 1,
+      "surprise": 0.5962991972457111,
+      "grid_position": 14,
+      "finish_position": 11
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 20,
+      "p": 0.5748366906559865,
+      "actual": 0,
+      "surprise": 0.5748366906559865,
+      "grid_position": 11,
+      "finish_position": 20
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 20,
+      "p": 0.8061700916870103,
+      "actual": 1,
+      "surprise": 0.19382990831298974,
+      "grid_position": 2,
+      "finish_position": 6
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 20,
+      "p": 0.3454293210757791,
+      "actual": 0,
+      "surprise": 0.3454293210757791,
+      "grid_position": 19,
+      "finish_position": 15
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 21,
+      "p": 0.6933813458686183,
+      "actual": 0,
+      "surprise": 0.6933813458686183,
+      "grid_position": 7,
+      "finish_position": 18
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 21,
+      "p": 0.5354676294138114,
+      "actual": 1,
+      "surprise": 0.46453237058618857,
+      "grid_position": 9,
+      "finish_position": 14
+    },
+    {
+      "driver": "BEA",
+      "team": "Haas F1 Team",
+      "round": 21,
+      "p": 0.6305876501575421,
+      "actual": 1,
+      "surprise": 0.36941234984245785,
+      "grid_position": 15,
+      "finish_position": 12
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 21,
+      "p": 0.6947137488519507,
+      "actual": 1,
+      "surprise": 0.3052862511480493,
+      "grid_position": 11,
+      "finish_position": 13
+    },
+    {
+      "driver": "COL",
+      "team": "Williams",
+      "round": 21,
+      "p": 0.24275658122447383,
+      "actual": 1,
+      "surprise": 0.7572434187755261,
+      "grid_position": 16,
+      "finish_position": 17
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 21,
+      "p": 0.21075937689399346,
+      "actual": 0,
+      "surprise": 0.21075937689399346,
+      "grid_position": 13,
+      "finish_position": 3
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 21,
+      "p": 0.24160708342355391,
+      "actual": 0,
+      "surprise": 0.24160708342355391,
+      "grid_position": 14,
+      "finish_position": 10
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 21,
+      "p": 0.3352283292903588,
+      "actual": 0,
+      "surprise": 0.3352283292903588,
+      "grid_position": 18,
+      "finish_position": 20
+    },
+    {
+      "driver": "LAW",
+      "team": "RB",
+      "round": 21,
+      "p": 0.3731992008547474,
+      "actual": 0,
+      "surprise": 0.3731992008547474,
+      "grid_position": 5,
+      "finish_position": 9
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 21,
+      "p": 0.7989807094313475,
+      "actual": 1,
+      "surprise": 0.20101929056865253,
+      "grid_position": 6,
+      "finish_position": 5
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 21,
+      "p": 0.8167168470527614,
+      "actual": 1,
+      "surprise": 0.18328315294723863,
+      "grid_position": 1,
+      "finish_position": 6
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 21,
+      "p": 0.7547290992243098,
+      "actual": 1,
+      "surprise": 0.24527090077569025,
+      "grid_position": 4,
+      "finish_position": 2
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 21,
+      "p": 0.6104395548932806,
+      "actual": 0,
+      "surprise": 0.6104395548932806,
+      "grid_position": 12,
+      "finish_position": 11
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 21,
+      "p": 0.2426704841599753,
+      "actual": 0,
+      "surprise": 0.2426704841599753,
+      "grid_position": 8,
+      "finish_position": 8
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 21,
+      "p": 0.8170657076909451,
+      "actual": 1,
+      "surprise": 0.1829342923090549,
+      "grid_position": 2,
+      "finish_position": 4
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 21,
+      "p": 0.2373653349184918,
+      "actual": 0,
+      "surprise": 0.2373653349184918,
+      "grid_position": 20,
+      "finish_position": 16
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 21,
+      "p": 0.5643537482149776,
+      "actual": 0,
+      "surprise": 0.5643537482149776,
+      "grid_position": 10,
+      "finish_position": 19
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 21,
+      "p": 0.5105199617774298,
+      "actual": 1,
+      "surprise": 0.48948003822257025,
+      "grid_position": 3,
+      "finish_position": 7
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 21,
+      "p": 0.34102917471930916,
+      "actual": 1,
+      "surprise": 0.6589708252806908,
+      "grid_position": 17,
+      "finish_position": 1
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 21,
+      "p": 0.2183745133025144,
+      "actual": 0,
+      "surprise": 0.2183745133025144,
+      "grid_position": 19,
+      "finish_position": 15
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 22,
+      "p": 0.4150662617440964,
+      "actual": 0,
+      "surprise": 0.4150662617440964,
+      "grid_position": 17,
+      "finish_position": 19
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 22,
+      "p": 0.6279669437549156,
+      "actual": 1,
+      "surprise": 0.3720330562450844,
+      "grid_position": 16,
+      "finish_position": 11
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 22,
+      "p": 0.27526900132971416,
+      "actual": 0,
+      "surprise": 0.27526900132971416,
+      "grid_position": 19,
+      "finish_position": 18
+    },
+    {
+      "driver": "COL",
+      "team": "Williams",
+      "round": 22,
+      "p": 0.47452190688947954,
+      "actual": 1,
+      "surprise": 0.5254780931105205,
+      "grid_position": 20,
+      "finish_position": 14
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 22,
+      "p": 0.7064819495345759,
+      "actual": 0,
+      "surprise": 0.7064819495345759,
+      "grid_position": 3,
+      "finish_position": 20
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 22,
+      "p": 0.30288248728882927,
+      "actual": 0,
+      "surprise": 0.30288248728882927,
+      "grid_position": 10,
+      "finish_position": 2
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 22,
+      "p": 0.54829714089458,
+      "actual": 1,
+      "surprise": 0.45170285910541996,
+      "grid_position": 9,
+      "finish_position": 8
+    },
+    {
+      "driver": "LAW",
+      "team": "RB",
+      "round": 22,
+      "p": 0.2543972297502464,
+      "actual": 0,
+      "surprise": 0.2543972297502464,
+      "grid_position": 14,
+      "finish_position": 16
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 22,
+      "p": 0.31428645418482837,
+      "actual": 0,
+      "surprise": 0.31428645418482837,
+      "grid_position": 4,
+      "finish_position": 4
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 22,
+      "p": 0.36147741987528303,
+      "actual": 0,
+      "surprise": 0.36147741987528303,
+      "grid_position": 12,
+      "finish_position": 12
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 22,
+      "p": 0.680824013790313,
+      "actual": 1,
+      "surprise": 0.319175986209687,
+      "grid_position": 6,
+      "finish_position": 6
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 22,
+      "p": 0.3047886706966509,
+      "actual": 1,
+      "surprise": 0.6952113293033491,
+      "grid_position": 11,
+      "finish_position": 17
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 22,
+      "p": 0.2370322173113994,
+      "actual": 0,
+      "surprise": 0.2370322173113994,
+      "grid_position": 15,
+      "finish_position": 10
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 22,
+      "p": 0.4852630629192507,
+      "actual": 0,
+      "surprise": 0.4852630629192507,
+      "grid_position": 8,
+      "finish_position": 7
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 22,
+      "p": 0.7992386950757616,
+      "actual": 1,
+      "surprise": 0.20076130492423838,
+      "grid_position": 1,
+      "finish_position": 1
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 22,
+      "p": 0.7299560339593923,
+      "actual": 1,
+      "surprise": 0.27004396604060765,
+      "grid_position": 2,
+      "finish_position": 3
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 22,
+      "p": 0.4649548117815054,
+      "actual": 0,
+      "surprise": 0.4649548117815054,
+      "grid_position": 18,
+      "finish_position": 15
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 22,
+      "p": 0.6638075095625254,
+      "actual": 1,
+      "surprise": 0.33619249043747457,
+      "grid_position": 7,
+      "finish_position": 9
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 22,
+      "p": 0.8061700916870103,
+      "actual": 1,
+      "surprise": 0.19382990831298974,
+      "grid_position": 5,
+      "finish_position": 5
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 22,
+      "p": 0.6823767489880593,
+      "actual": 1,
+      "surprise": 0.31762325101194067,
+      "grid_position": 13,
+      "finish_position": 13
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 23,
+      "p": 0.461449000125932,
+      "actual": 1,
+      "surprise": 0.5385509998740681,
+      "grid_position": 16,
+      "finish_position": 15
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 23,
+      "p": 0.6987436266281937,
+      "actual": 1,
+      "surprise": 0.30125637337180633,
+      "grid_position": 8,
+      "finish_position": 7
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 23,
+      "p": 0.49232773802182617,
+      "actual": 0,
+      "surprise": 0.49232773802182617,
+      "grid_position": 13,
+      "finish_position": 11
+    },
+    {
+      "driver": "COL",
+      "team": "Williams",
+      "round": 23,
+      "p": 0.48956017065006713,
+      "actual": 0,
+      "surprise": 0.48956017065006713,
+      "grid_position": 19,
+      "finish_position": 19
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 23,
+      "p": 0.6696255706908202,
+      "actual": 1,
+      "surprise": 0.3303744293091798,
+      "grid_position": 11,
+      "finish_position": 5
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 23,
+      "p": 0.3145593855266015,
+      "actual": 0,
+      "surprise": 0.3145593855266015,
+      "grid_position": 6,
+      "finish_position": 12
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 23,
+      "p": 0.267580143186921,
+      "actual": 0,
+      "surprise": 0.267580143186921,
+      "grid_position": 18,
+      "finish_position": 16
+    },
+    {
+      "driver": "LAW",
+      "team": "RB",
+      "round": 23,
+      "p": 0.3658372050075066,
+      "actual": 0,
+      "surprise": 0.3658372050075066,
+      "grid_position": 17,
+      "finish_position": 14
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 23,
+      "p": 0.729044683826336,
+      "actual": 1,
+      "surprise": 0.270955316173664,
+      "grid_position": 5,
+      "finish_position": 2
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 23,
+      "p": 0.6810807589733737,
+      "actual": 1,
+      "surprise": 0.3189192410266263,
+      "grid_position": 10,
+      "finish_position": 9
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 23,
+      "p": 0.6223793035094699,
+      "actual": 0,
+      "surprise": 0.6223793035094699,
+      "grid_position": 3,
+      "finish_position": 10
+    },
+    {
+      "driver": "OCO",
+      "team": "Alpine",
+      "round": 23,
+      "p": 0.23210695941396625,
+      "actual": 0,
+      "surprise": 0.23210695941396625,
+      "grid_position": 20,
+      "finish_position": 20
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 23,
+      "p": 0.2558477083302546,
+      "actual": 0,
+      "surprise": 0.2558477083302546,
+      "grid_position": 9,
+      "finish_position": 17
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 23,
+      "p": 0.4371399262149473,
+      "actual": 1,
+      "surprise": 0.5628600737850527,
+      "grid_position": 4,
+      "finish_position": 3
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 23,
+      "p": 0.7833850589577602,
+      "actual": 1,
+      "surprise": 0.21661494104223977,
+      "grid_position": 1,
+      "finish_position": 4
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 23,
+      "p": 0.45788191942089107,
+      "actual": 0,
+      "surprise": 0.45788191942089107,
+      "grid_position": 7,
+      "finish_position": 6
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 23,
+      "p": 0.2621537976507577,
+      "actual": 0,
+      "surprise": 0.2621537976507577,
+      "grid_position": 15,
+      "finish_position": 18
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 23,
+      "p": 0.5365099584752209,
+      "actual": 1,
+      "surprise": 0.46349004152477913,
+      "grid_position": 14,
+      "finish_position": 13
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 23,
+      "p": 0.802392091617058,
+      "actual": 1,
+      "surprise": 0.19760790838294195,
+      "grid_position": 2,
+      "finish_position": 1
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 23,
+      "p": 0.5944235715058531,
+      "actual": 1,
+      "surprise": 0.4055764284941469,
+      "grid_position": 12,
+      "finish_position": 8
+    },
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "round": 24,
+      "p": 0.44129921376514214,
+      "actual": 1,
+      "surprise": 0.5587007862348579,
+      "grid_position": 18,
+      "finish_position": 11
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "round": 24,
+      "p": 0.5749952261373178,
+      "actual": 1,
+      "surprise": 0.4250047738626822,
+      "grid_position": 8,
+      "finish_position": 9
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 24,
+      "p": 0.6565341793205052,
+      "actual": 0,
+      "surprise": 0.6565341793205052,
+      "grid_position": 9,
+      "finish_position": 18
+    },
+    {
+      "driver": "COL",
+      "team": "Williams",
+      "round": 24,
+      "p": 0.3767807139014222,
+      "actual": 0,
+      "surprise": 0.3767807139014222,
+      "grid_position": 20,
+      "finish_position": 19
+    },
+    {
+      "driver": "DOO",
+      "team": "Alpine",
+      "round": 24,
+      "p": 0.2740117270526707,
+      "actual": 0,
+      "surprise": 0.2740117270526707,
+      "grid_position": 17,
+      "finish_position": 15
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "round": 24,
+      "p": 0.7231593740169026,
+      "actual": 1,
+      "surprise": 0.27684062598309744,
+      "grid_position": 5,
+      "finish_position": 7
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 24,
+      "p": 0.23002208647560415,
+      "actual": 1,
+      "surprise": 0.7699779135243958,
+      "grid_position": 16,
+      "finish_position": 4
+    },
+    {
+      "driver": "HUL",
+      "team": "Haas F1 Team",
+      "round": 24,
+      "p": 0.7277419298373083,
+      "actual": 1,
+      "surprise": 0.27225807016269166,
+      "grid_position": 7,
+      "finish_position": 8
+    },
+    {
+      "driver": "LAW",
+      "team": "RB",
+      "round": 24,
+      "p": 0.46529814650734264,
+      "actual": 0,
+      "surprise": 0.46529814650734264,
+      "grid_position": 12,
+      "finish_position": 17
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "round": 24,
+      "p": 0.231196613767422,
+      "actual": 0,
+      "surprise": 0.231196613767422,
+      "grid_position": 19,
+      "finish_position": 3
+    },
+    {
+      "driver": "MAG",
+      "team": "Haas F1 Team",
+      "round": 24,
+      "p": 0.28627494861103664,
+      "actual": 0,
+      "surprise": 0.28627494861103664,
+      "grid_position": 14,
+      "finish_position": 16
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 24,
+      "p": 0.5891657063073559,
+      "actual": 1,
+      "surprise": 0.4108342936926441,
+      "grid_position": 1,
+      "finish_position": 1
+    },
+    {
+      "driver": "PER",
+      "team": "Red Bull Racing",
+      "round": 24,
+      "p": 0.3284093165214237,
+      "actual": 0,
+      "surprise": 0.3284093165214237,
+      "grid_position": 10,
+      "finish_position": 20
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "round": 24,
+      "p": 0.4144496095776558,
+      "actual": 0,
+      "surprise": 0.4144496095776558,
+      "grid_position": 2,
+      "finish_position": 10
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 24,
+      "p": 0.8061700916870103,
+      "actual": 0,
+      "surprise": 0.8061700916870103,
+      "grid_position": 6,
+      "finish_position": 5
+    },
+    {
+      "driver": "SAI",
+      "team": "Ferrari",
+      "round": 24,
+      "p": 0.7630502570368657,
+      "actual": 1,
+      "surprise": 0.2369497429631343,
+      "grid_position": 3,
+      "finish_position": 2
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "round": 24,
+      "p": 0.2772424922955304,
+      "actual": 0,
+      "surprise": 0.2772424922955304,
+      "grid_position": 13,
+      "finish_position": 14
+    },
+    {
+      "driver": "TSU",
+      "team": "RB",
+      "round": 24,
+      "p": 0.5058754520509818,
+      "actual": 1,
+      "surprise": 0.49412454794901817,
+      "grid_position": 11,
+      "finish_position": 12
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 24,
+      "p": 0.8035360026734718,
+      "actual": 1,
+      "surprise": 0.1964639973265282,
+      "grid_position": 4,
+      "finish_position": 6
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 24,
+      "p": 0.316250202641032,
+      "actual": 1,
+      "surprise": 0.683749797358968,
+      "grid_position": 15,
+      "finish_position": 13
+    }
+  ],
+  "highlights": [
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "round": 3,
+      "event_name": "Australian Grand Prix",
+      "p": 0.806352512670647,
+      "actual": 0,
+      "surprise": 0.806352512670647
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "round": 24,
+      "event_name": "Abu Dhabi Grand Prix",
+      "p": 0.8061700916870103,
+      "actual": 0,
+      "surprise": 0.8061700916870103
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "round": 11,
+      "event_name": "Austrian Grand Prix",
+      "p": 0.7836192562554519,
+      "actual": 0,
+      "surprise": 0.7836192562554519
+    },
+    {
+      "driver": "HAM",
+      "team": "Mercedes",
+      "round": 24,
+      "event_name": "Abu Dhabi Grand Prix",
+      "p": 0.23002208647560415,
+      "actual": 1,
+      "surprise": 0.7699779135243958
+    },
+    {
+      "driver": "COL",
+      "team": "Williams",
+      "round": 21,
+      "event_name": "S\u00e3o Paulo Grand Prix",
+      "p": 0.24275658122447383,
+      "actual": 1,
+      "surprise": 0.7572434187755261
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 5,
+      "event_name": "Chinese Grand Prix",
+      "p": 0.7553321824242378,
+      "actual": 0,
+      "surprise": 0.7553321824242378
+    },
+    {
+      "driver": "ZHO",
+      "team": "Kick Sauber",
+      "round": 5,
+      "event_name": "Chinese Grand Prix",
+      "p": 0.25409702854282534,
+      "actual": 1,
+      "surprise": 0.7459029714571747
+    },
+    {
+      "driver": "BOT",
+      "team": "Kick Sauber",
+      "round": 10,
+      "event_name": "Spanish Grand Prix",
+      "p": 0.7442513870211183,
+      "actual": 0,
+      "surprise": 0.7442513870211183
+    }
+  ],
+  "model_version": "local-20260423101332",
+  "generated_at": "2026-04-23T10:13:32+00:00"
+}

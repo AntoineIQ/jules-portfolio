@@ -1,0 +1,133 @@
+{
+  "generated_at": "2026-04-23T10:13:32+00:00",
+  "model_version": "local-20260423101332",
+  "seasons": [
+    2024,
+    2025,
+    2026
+  ],
+  "targets": {
+    "race_points": {
+      "display": "Race \u2014 driver scores points (top 10)",
+      "model": "gbm",
+      "features": [
+        "grid_position",
+        "quali_gap_to_pole",
+        "driver_points_last_3",
+        "driver_points_last_5",
+        "driver_finish_last_3",
+        "driver_track_history",
+        "team_points_last_3",
+        "circuit_finish_std",
+        "circuit_grid_to_finish",
+        "regulation_era"
+      ],
+      "explanation_kind": "shap",
+      "trained_through_season": 2026
+    },
+    "quali_top10": {
+      "display": "Qualifying \u2014 driver reaches Q3 (top 10)",
+      "model": "features_logit",
+      "features": [
+        "driver_quali_gap_last_3",
+        "driver_quali_top10_rate_last_10",
+        "fp_best_gap_to_fastest",
+        "fp_long_run_gap_to_fastest",
+        "driver_points_last_3",
+        "driver_points_last_5",
+        "driver_finish_last_3",
+        "driver_track_history",
+        "team_points_last_3",
+        "circuit_finish_std",
+        "circuit_grid_to_finish",
+        "regulation_era"
+      ],
+      "explanation_kind": "linear",
+      "trained_through_season": 2026
+    },
+    "sprint_points": {
+      "display": "Sprint \u2014 driver scores points (top 8)",
+      "model": "features_logit",
+      "features": [
+        "sprint_grid_position",
+        "driver_points_last_3",
+        "driver_points_last_5",
+        "driver_finish_last_3",
+        "driver_track_history",
+        "team_points_last_3",
+        "circuit_finish_std",
+        "circuit_grid_to_finish",
+        "regulation_era"
+      ],
+      "explanation_kind": "linear",
+      "trained_through_season": 2026
+    },
+    "sprint_grid_top5": {
+      "display": "Sprint Qualifying \u2014 driver starts top 5",
+      "model": "features_logit",
+      "features": [
+        "driver_quali_gap_last_3",
+        "driver_quali_top10_rate_last_10",
+        "driver_points_last_3",
+        "driver_points_last_5",
+        "driver_finish_last_3",
+        "driver_track_history",
+        "team_points_last_3",
+        "circuit_finish_std",
+        "circuit_grid_to_finish",
+        "regulation_era"
+      ],
+      "explanation_kind": "linear",
+      "trained_through_season": 2026
+    },
+    "race_podium": {
+      "display": "Race \u2014 driver finishes on the podium (top 3)",
+      "model": "gbm",
+      "features": [
+        "grid_position",
+        "quali_gap_to_pole",
+        "driver_points_last_3",
+        "driver_points_last_5",
+        "driver_finish_last_3",
+        "driver_track_history",
+        "team_points_last_3",
+        "circuit_finish_std",
+        "circuit_grid_to_finish",
+        "regulation_era"
+      ],
+      "explanation_kind": "shap",
+      "trained_through_season": 2026
+    },
+    "race_winner": {
+      "display": "Race \u2014 driver WINS (1st place)",
+      "model": "gbm",
+      "features": [
+        "grid_position",
+        "quali_gap_to_pole",
+        "driver_points_last_3",
+        "driver_points_last_5",
+        "driver_finish_last_3",
+        "driver_track_history",
+        "team_points_last_3",
+        "circuit_finish_std",
+        "circuit_grid_to_finish",
+        "regulation_era"
+      ],
+      "explanation_kind": "shap",
+      "trained_through_season": 2026
+    },
+    "h2h_beats_teammate": {
+      "display": "Head-to-head \u2014 driver beats their teammate in the race",
+      "model": "gbm",
+      "features": [
+        "grid_vs_teammate",
+        "quali_gap_vs_teammate",
+        "driver_points_last_5",
+        "driver_finish_last_3",
+        "driver_track_history"
+      ],
+      "explanation_kind": "shap",
+      "trained_through_season": 2026
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "target": "sprint_points",
+  "metrics": [
+    {
+      "log_loss": 0.4844282958043421,
+      "brier": 0.13621790593081032,
+      "accuracy_at_0.5": 0.8083333333333333,
+      "positive_rate": 0.4,
+      "n": 120,
+      "label": "features_logit (final)",
+      "ece": 0.12728874540128518
+    },
+    {
+      "log_loss": 0.609950030265985,
+      "brier": 0.16863237356226307,
+      "accuracy_at_0.5": 0.7916666666666666,
+      "positive_rate": 0.4,
+      "n": 120,
+      "label": "gbm (untuned, final)",
+      "ece": 0.1290983868337402
+    },
+    {
+      "log_loss": 0.5579725250841375,
+      "brier": 0.15912648017754255,
+      "accuracy_at_0.5": 0.7666666666666667,
+      "positive_rate": 0.4,
+      "n": 120,
+      "label": "gbm (tuned, final)",
+      "ece": 0.13869658634989307
+    },
+    {
+      "log_loss": 0.4936543314674699,
+      "brier": 0.1401495184692865,
+      "accuracy_at_0.5": 0.8083333333333333,
+      "positive_rate": 0.4,
+      "n": 120,
+      "label": "ensemble (weighted)",
+      "ece": 0.12993831939258882
+    }
+  ],
+  "ensemble_weights": {
+    "features_logit": 1.0,
+    "gbm_plain": 1.467347021812098e-17,
+    "gbm_tuned": 0.0
+  },
+  "tuned_params": {
+    "n_estimators": 550,
+    "learning_rate": 0.010044882097965252,
+    "num_leaves": 23,
+    "max_depth": 5,
+    "min_child_samples": 19,
+    "reg_lambda": 0.17248776148881528,
+    "reg_alpha": 0.0031275974570122264,
+    "colsample_bytree": 0.6949628191602378,
+    "subsample": 0.7284768088233625
+  }
+}

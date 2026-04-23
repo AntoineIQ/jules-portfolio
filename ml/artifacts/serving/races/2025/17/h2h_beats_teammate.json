@@ -1,0 +1,581 @@
+{
+  "season": 2025,
+  "round": 17,
+  "event_name": "Azerbaijan Grand Prix",
+  "event_date": "2025-09-21",
+  "target": "h2h_beats_teammate",
+  "target_display": "Head-to-head \u2014 driver beats their teammate in the race",
+  "model": "gbm",
+  "model_version": "local-20260423101332",
+  "generated_at": "2026-04-23T10:13:32+00:00",
+  "features": [
+    "grid_vs_teammate",
+    "quali_gap_vs_teammate",
+    "driver_points_last_5",
+    "driver_finish_last_3",
+    "driver_track_history"
+  ],
+  "explanation_kind": "shap",
+  "rows": [
+    {
+      "driver": "ALB",
+      "team": "Williams",
+      "grid_position": 19,
+      "finish_position": 13,
+      "actual": 0,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": -0.9450838779719385
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": -0.49929516239468086
+        },
+        {
+          "feature": "driver_finish_last_3",
+          "value": 0.0621779976112308
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": 17.0,
+        "quali_gap_vs_teammate": 2.183000000000007,
+        "driver_points_last_5": 5.6,
+        "driver_finish_last_3": 9.0,
+        "driver_track_history": 10.333333333333334
+      }
+    },
+    {
+      "driver": "ALO",
+      "team": "Aston Martin",
+      "grid_position": 11,
+      "finish_position": 15,
+      "actual": 1,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": 0.45342163295092475
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": 0.2576186307382489
+        },
+        {
+          "feature": "driver_track_history",
+          "value": 0.1468313473186236
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": -3.0,
+        "quali_gap_vs_teammate": -0.24399999999999977,
+        "driver_points_last_5": 3.2,
+        "driver_finish_last_3": 10.666666666666666,
+        "driver_track_history": 5.666666666666667
+      }
+    },
+    {
+      "driver": "ANT",
+      "team": "Mercedes",
+      "grid_position": 4,
+      "finish_position": 4,
+      "actual": 0,
+      "top_factors": [
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": -0.20743223201273084
+        },
+        {
+          "feature": "driver_points_last_5",
+          "value": -0.08118369914569007
+        },
+        {
+          "feature": "grid_vs_teammate",
+          "value": 0.08002087047602008
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": -1.0,
+        "quali_gap_vs_teammate": 0.009000000000000341,
+        "driver_points_last_5": 0.6,
+        "driver_finish_last_3": 11.666666666666666,
+        "driver_track_history": null
+      }
+    },
+    {
+      "driver": "BEA",
+      "team": "Haas F1 Team",
+      "grid_position": 15,
+      "finish_position": 12,
+      "actual": 1,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": 0.6767007749679865
+        },
+        {
+          "feature": "driver_track_history",
+          "value": 0.1258716031181086
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": -0.056325412727962786
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": -5.0,
+        "quali_gap_vs_teammate": null,
+        "driver_points_last_5": 1.6,
+        "driver_finish_last_3": 12.666666666666666,
+        "driver_track_history": 10.0
+      }
+    },
+    {
+      "driver": "BOR",
+      "team": "Kick Sauber",
+      "grid_position": 13,
+      "finish_position": 11,
+      "actual": 1,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": 0.4019775402269564
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": 0.3230299288119723
+        },
+        {
+          "feature": "driver_points_last_5",
+          "value": -0.17931629477427283
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": -4.0,
+        "quali_gap_vs_teammate": -0.6389999999999958,
+        "driver_points_last_5": 2.8,
+        "driver_finish_last_3": 9.666666666666666,
+        "driver_track_history": null
+      }
+    },
+    {
+      "driver": "COL",
+      "team": "Alpine",
+      "grid_position": 16,
+      "finish_position": 19,
+      "actual": 0,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": 0.26912234499401566
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": 0.2077375278222803
+        },
+        {
+          "feature": "driver_finish_last_3",
+          "value": -0.1101856545584412
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": -2.0,
+        "quali_gap_vs_teammate": -0.35999999999999943,
+        "driver_points_last_5": 0.0,
+        "driver_finish_last_3": 15.333333333333334,
+        "driver_track_history": 8.0
+      }
+    },
+    {
+      "driver": "GAS",
+      "team": "Alpine",
+      "grid_position": 18,
+      "finish_position": 18,
+      "actual": 1,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": -0.17425947230544897
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": -0.1311880199298059
+        },
+        {
+          "feature": "driver_points_last_5",
+          "value": 0.09093854481212651
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": 2.0,
+        "quali_gap_vs_teammate": 0.35999999999999943,
+        "driver_points_last_5": 1.8,
+        "driver_finish_last_3": 17.333333333333332,
+        "driver_track_history": 10.333333333333334
+      }
+    },
+    {
+      "driver": "HAD",
+      "team": "Racing Bulls",
+      "grid_position": 8,
+      "finish_position": 10,
+      "actual": 0,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": -0.4701863205406217
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": -0.0948797131860465
+        },
+        {
+          "feature": "driver_points_last_5",
+          "value": 0.059558782103595005
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": 5.0,
+        "quali_gap_vs_teammate": 0.10999999999999943,
+        "driver_points_last_5": 3.2,
+        "driver_finish_last_3": 8.0,
+        "driver_track_history": null
+      }
+    },
+    {
+      "driver": "HAM",
+      "team": "Ferrari",
+      "grid_position": 12,
+      "finish_position": 8,
+      "actual": 1,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": -0.27963318765259565
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": -0.23312829277093014
+        },
+        {
+          "feature": "driver_points_last_5",
+          "value": -0.04353186722001531
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": 2.0,
+        "quali_gap_vs_teammate": 0.36299999999999955,
+        "driver_points_last_5": 5.2,
+        "driver_finish_last_3": 12.666666666666666,
+        "driver_track_history": 6.333333333333333
+      }
+    },
+    {
+      "driver": "HUL",
+      "team": "Kick Sauber",
+      "grid_position": 17,
+      "finish_position": 16,
+      "actual": 0,
+      "top_factors": [
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": -0.38912205299264707
+        },
+        {
+          "feature": "grid_vs_teammate",
+          "value": -0.3232947360792945
+        },
+        {
+          "feature": "driver_track_history",
+          "value": -0.07442356975922358
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": 4.0,
+        "quali_gap_vs_teammate": 0.6389999999999958,
+        "driver_points_last_5": 3.0,
+        "driver_finish_last_3": 15.666666666666666,
+        "driver_track_history": 14.0
+      }
+    },
+    {
+      "driver": "LAW",
+      "team": "Racing Bulls",
+      "grid_position": 3,
+      "finish_position": 5,
+      "actual": 1,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": 0.5240157314351083
+        },
+        {
+          "feature": "driver_track_history",
+          "value": -0.1149755219585521
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": 0.09096132391324402
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": -5.0,
+        "quali_gap_vs_teammate": -0.10999999999999943,
+        "driver_points_last_5": 1.6,
+        "driver_finish_last_3": 11.333333333333334,
+        "driver_track_history": null
+      }
+    },
+    {
+      "driver": "LEC",
+      "team": "Ferrari",
+      "grid_position": 10,
+      "finish_position": 9,
+      "actual": 0,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": 0.33995789143801675
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": 0.2208711950525694
+        },
+        {
+          "feature": "driver_track_history",
+          "value": 0.09240147169291091
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": -2.0,
+        "quali_gap_vs_teammate": -0.36299999999999955,
+        "driver_points_last_5": 7.8,
+        "driver_finish_last_3": 9.0,
+        "driver_track_history": 8.0
+      }
+    },
+    {
+      "driver": "NOR",
+      "team": "McLaren",
+      "grid_position": 7,
+      "finish_position": 7,
+      "actual": 1,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": 0.4303318649403429
+        },
+        {
+          "feature": "driver_finish_last_3",
+          "value": 0.25520557620221934
+        },
+        {
+          "feature": "driver_points_last_5",
+          "value": 0.13700250035776507
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": -2.0,
+        "quali_gap_vs_teammate": -0.09199999999999875,
+        "driver_points_last_5": 17.2,
+        "driver_finish_last_3": 7.0,
+        "driver_track_history": 7.333333333333333
+      }
+    },
+    {
+      "driver": "OCO",
+      "team": "Haas F1 Team",
+      "grid_position": 20,
+      "finish_position": 14,
+      "actual": 0,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": -0.6388754319122233
+        },
+        {
+          "feature": "driver_points_last_5",
+          "value": -0.15471458609724975
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": 0.06754760830689835
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": 5.0,
+        "quali_gap_vs_teammate": null,
+        "driver_points_last_5": 0.2,
+        "driver_finish_last_3": 13.666666666666666,
+        "driver_track_history": 13.333333333333334
+      }
+    },
+    {
+      "driver": "PIA",
+      "team": "McLaren",
+      "grid_position": 9,
+      "finish_position": 20,
+      "actual": 0,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": -0.40191118422076055
+        },
+        {
+          "feature": "driver_finish_last_3",
+          "value": -0.09805740311123584
+        },
+        {
+          "feature": "driver_track_history",
+          "value": -0.07340720713555728
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": 2.0,
+        "quali_gap_vs_teammate": 0.09199999999999875,
+        "driver_points_last_5": 20.2,
+        "driver_finish_last_3": 2.0,
+        "driver_track_history": 6.0
+      }
+    },
+    {
+      "driver": "RUS",
+      "team": "Mercedes",
+      "grid_position": 5,
+      "finish_position": 2,
+      "actual": 1,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": -0.19403611006738744
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": 0.18244502313029443
+        },
+        {
+          "feature": "driver_points_last_5",
+          "value": -0.037340408040650204
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": 1.0,
+        "quali_gap_vs_teammate": -0.009000000000000341,
+        "driver_points_last_5": 9.6,
+        "driver_finish_last_3": 4.0,
+        "driver_track_history": 4.666666666666667
+      }
+    },
+    {
+      "driver": "SAI",
+      "team": "Williams",
+      "grid_position": 2,
+      "finish_position": 3,
+      "actual": 1,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": 0.7626351259688574
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": 0.4783405964457773
+        },
+        {
+          "feature": "driver_points_last_5",
+          "value": -0.06858618220784003
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": -17.0,
+        "quali_gap_vs_teammate": -2.183000000000007,
+        "driver_points_last_5": 0.0,
+        "driver_finish_last_3": 12.666666666666666,
+        "driver_track_history": 14.333333333333334
+      }
+    },
+    {
+      "driver": "STR",
+      "team": "Aston Martin",
+      "grid_position": 14,
+      "finish_position": 17,
+      "actual": 0,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": -0.39797827218052945
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": -0.2501138293243858
+        },
+        {
+          "feature": "driver_points_last_5",
+          "value": -0.026515582824637868
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": 3.0,
+        "quali_gap_vs_teammate": 0.24399999999999977,
+        "driver_points_last_5": 3.6,
+        "driver_finish_last_3": 10.666666666666666,
+        "driver_track_history": 14.0
+      }
+    },
+    {
+      "driver": "TSU",
+      "team": "Red Bull Racing",
+      "grid_position": 6,
+      "finish_position": 6,
+      "actual": 0,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": -0.6430111260549247
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": -0.39086222357545725
+        },
+        {
+          "feature": "driver_points_last_5",
+          "value": -0.10998077810377684
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": 5.0,
+        "quali_gap_vs_teammate": 0.6709999999999923,
+        "driver_points_last_5": 0.4,
+        "driver_finish_last_3": 13.0,
+        "driver_track_history": 14.333333333333334
+      }
+    },
+    {
+      "driver": "VER",
+      "team": "Red Bull Racing",
+      "grid_position": 1,
+      "finish_position": 1,
+      "actual": 1,
+      "top_factors": [
+        {
+          "feature": "grid_vs_teammate",
+          "value": 0.8098928867089384
+        },
+        {
+          "feature": "quali_gap_vs_teammate",
+          "value": 0.5413021183456446
+        },
+        {
+          "feature": "driver_points_last_5",
+          "value": 0.22447359236347797
+        }
+      ],
+      "feature_values": {
+        "grid_vs_teammate": -5.0,
+        "quali_gap_vs_teammate": -0.6709999999999923,
+        "driver_points_last_5": 13.4,
+        "driver_finish_last_3": 4.0,
+        "driver_track_history": 2.6666666666666665
+      }
+    }
+  ]
+}

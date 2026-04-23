@@ -1,0 +1,231 @@
+{
+  "generated_at": "2026-04-23T10:13:32+00:00",
+  "model_version": "local-20260423101332",
+  "primary_target": "race_points",
+  "seasons": [
+    2024,
+    2025,
+    2026
+  ],
+  "available_rounds": {
+    "2024": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "2025": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "2026": [
+      1,
+      2,
+      3
+    ]
+  },
+  "targets": {
+    "race_points": {
+      "name": "race_points",
+      "display": "Race \u2014 driver scores points (top 10)",
+      "model": "gbm",
+      "metrics": {
+        "log_loss": 0.4833717178911301,
+        "brier": 0.15803561776364086,
+        "accuracy_at_0.5": 0.7661795407098121,
+        "positive_rate": 0.5010438413361169,
+        "n": 479,
+        "label": "race_points",
+        "ece": 0.035433745991711084,
+        "base_rate_log_loss": 0.6931450013488923,
+        "reduction_vs_floor": 0.30263982723605265,
+        "model": "gbm",
+        "display": "Race \u2014 driver scores points (top 10)"
+      },
+      "seasons": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    "quali_top10": {
+      "name": "quali_top10",
+      "display": "Qualifying \u2014 driver reaches Q3 (top 10)",
+      "model": "features_logit",
+      "metrics": {
+        "log_loss": 0.4757589277384228,
+        "brier": 0.1571854658022737,
+        "accuracy_at_0.5": 0.7620041753653445,
+        "positive_rate": 0.5010438413361169,
+        "n": 479,
+        "label": "quali_top10",
+        "ece": 0.06544164782197887,
+        "base_rate_log_loss": 0.6931450013488923,
+        "reduction_vs_floor": 0.3136227963664545,
+        "model": "features_logit",
+        "display": "Qualifying \u2014 driver reaches Q3 (top 10)"
+      },
+      "seasons": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    "sprint_points": {
+      "name": "sprint_points",
+      "display": "Sprint \u2014 driver scores points (top 8)",
+      "model": "features_logit",
+      "metrics": {
+        "log_loss": 0.4844282958043421,
+        "brier": 0.13621790593081032,
+        "accuracy_at_0.5": 0.8083333333333333,
+        "positive_rate": 0.4,
+        "n": 120,
+        "label": "sprint_points",
+        "ece": 0.12728874540128518,
+        "base_rate_log_loss": 0.6730116670092565,
+        "reduction_vs_floor": 0.28020817535444104,
+        "model": "features_logit",
+        "display": "Sprint \u2014 driver scores points (top 8)"
+      },
+      "seasons": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    "sprint_grid_top5": {
+      "name": "sprint_grid_top5",
+      "display": "Sprint Qualifying \u2014 driver starts top 5",
+      "model": "features_logit",
+      "metrics": {
+        "log_loss": 0.35497913004103215,
+        "brier": 0.10321785306230007,
+        "accuracy_at_0.5": 0.875,
+        "positive_rate": 0.25,
+        "n": 120,
+        "label": "sprint_grid_top5",
+        "ece": 0.07910066522506698,
+        "base_rate_log_loss": 0.5623351446188083,
+        "reduction_vs_floor": 0.3687409840235704,
+        "model": "features_logit",
+        "display": "Sprint Qualifying \u2014 driver starts top 5"
+      },
+      "seasons": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    "race_podium": {
+      "name": "race_podium",
+      "display": "Race \u2014 driver finishes on the podium (top 3)",
+      "model": "gbm",
+      "metrics": {
+        "log_loss": 0.1913456722167476,
+        "brier": 0.05756211853332257,
+        "accuracy_at_0.5": 0.9206680584551148,
+        "positive_rate": 0.15031315240083507,
+        "n": 479,
+        "label": "race_podium",
+        "ece": 0.025978124061077013,
+        "base_rate_log_loss": 0.4232518979447521,
+        "reduction_vs_floor": 0.5479153829057978,
+        "model": "gbm",
+        "display": "Race \u2014 driver finishes on the podium (top 3)"
+      },
+      "seasons": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    "race_winner": {
+      "name": "race_winner",
+      "display": "Race \u2014 driver WINS (1st place)",
+      "model": "gbm",
+      "metrics": {
+        "log_loss": 0.09113233753594052,
+        "brier": 0.030347132065284162,
+        "accuracy_at_0.5": 0.9436325678496869,
+        "positive_rate": 0.05010438413361169,
+        "n": 479,
+        "label": "race_winner",
+        "ece": 0.024377110039661986,
+        "base_rate_log_loss": 0.19882248143798598,
+        "reduction_vs_floor": 0.5416396733567311,
+        "model": "gbm",
+        "display": "Race \u2014 driver WINS (1st place)"
+      },
+      "seasons": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    "h2h_beats_teammate": {
+      "name": "h2h_beats_teammate",
+      "display": "Head-to-head \u2014 driver beats their teammate in the race",
+      "model": "gbm",
+      "metrics": {
+        "log_loss": 0.5798535480226379,
+        "brier": 0.19803709035695816,
+        "accuracy_at_0.5": 0.700836820083682,
+        "positive_rate": 0.5,
+        "n": 478,
+        "label": "h2h_beats_teammate",
+        "ece": 0.05112136776441439,
+        "base_rate_log_loss": 0.6931471805599453,
+        "reduction_vs_floor": 0.1634481618258699,
+        "model": "gbm",
+        "display": "Head-to-head \u2014 driver beats their teammate in the race"
+      },
+      "seasons": [
+        2024,
+        2025,
+        2026
+      ]
+    }
+  }
+}
