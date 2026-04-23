@@ -36,49 +36,9 @@ test("season explorer falls back to the matrix on mobile reduced-motion", async 
   await expect(page.getByText("Fallback matrix")).toBeVisible();
 });
 
-test("race dossier can call the live model probe", async ({ page }) => {
-  await page.route("**/api/f1/predict/race", async (route) => {
-    await route.fulfill({
-      status: 200,
-      contentType: "application/json",
-      body: JSON.stringify({
-        model_version: "playwright-probe",
-        generated_at: "2026-04-23T12:00:00Z",
-        summary: {
-          top_driver: { driver: "Max Verstappen", team: "Red Bull", p: 0.71 },
-          strongest_team: { team: "Red Bull", mean_p: 0.63 },
-          field_average: 0.28,
-          prediction_spread: 0.54,
-        },
-        drivers: [
-          {
-            driver: "Max Verstappen",
-            team: "Red Bull",
-            p: 0.71,
-            actual: 1,
-            top_factors: [
-              { feature: "grid_position", value: -0.21 },
-              { feature: "driver_points_last_5", value: 0.19 },
-            ],
-          },
-          {
-            driver: "Lando Norris",
-            team: "McLaren",
-            p: 0.59,
-            actual: 0,
-            top_factors: [{ feature: "driver_points_last_5", value: 0.12 }],
-          },
-        ],
-      }),
-    });
-  });
-
+test("race dossier renders auto-refresh framing", async ({ page }) => {
   await page.goto("/projects/f1/race/2025/24?target=race_points");
 
-  await expect(page.getByText("Live model probe")).toBeVisible();
-  await page.getByRole("button", { name: /run live model/i }).click();
-
-  await expect(page.getByText("Snapshot")).toBeVisible();
-  await expect(page.getByText(/Max Verstappen/).first()).toBeVisible();
-  await expect(page.getByText(/playwright-probe/)).toBeVisible();
+  await expect(page.getByText(/retrains after every F1 session/i)).toBeVisible();
+  await expect(page.getByText(/Summary/i).first()).toBeVisible();
 });
