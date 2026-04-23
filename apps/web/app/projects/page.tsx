@@ -13,8 +13,6 @@ export const metadata: Metadata = {
 };
 
 type Row = {
-  n: string;
-  year: string;
   title: string;
   summary: string;
   tags: string[];
@@ -25,8 +23,6 @@ type Row = {
 
 const ROWS: Row[] = [
   {
-    n: "01",
-    year: "2026",
     title: "F1 prediction lab",
     summary:
       "A live ML case study with a 3D season explorer, race dossiers, automated refresh pipelines, and a Python API running behind the site.",
@@ -36,8 +32,6 @@ const ROWS: Row[] = [
     bg: "bg-pink",
   },
   {
-    n: "02",
-    year: "2026",
     title: "Eval harness for coding agents",
     summary:
       "A lightweight, reproducible harness for stress-testing AI coding assistants on real tasks — because vibes-based benchmarks aren't benchmarks.",
@@ -46,8 +40,6 @@ const ROWS: Row[] = [
     bg: "bg-mint",
   },
   {
-    n: "03",
-    year: "—",
     title: "Reserved for next case study",
     summary:
       "Space kept for the next serious piece. I'd rather have three case studies worth reading than ten projects worth skimming.",
@@ -115,20 +107,9 @@ export default function ProjectsPage() {
                 <article
                   className={`relative rounded-[24px] border-[2.5px] border-ink ${r.bg} p-8 md:p-10 transition-transform press-scale`}
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-6 lg:gap-10 items-start">
-                    <span className="eyebrow text-ink/70">№ {r.n}</span>
+                  <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 lg:gap-10 items-start">
                     <div>
-                      <div className="flex flex-wrap items-center gap-3">
-                        <span
-                          className={`eyebrow rounded-full border-2 border-ink px-3 py-1 ${
-                            r.status === "live" ? "bg-cream" : r.status === "draft" ? "bg-white-warm" : "bg-transparent"
-                          }`}
-                        >
-                          {r.status === "live" ? "Case study" : r.status === "draft" ? "In progress" : "Reserved"}
-                        </span>
-                        <span className="eyebrow text-ink/70">{r.year}</span>
-                      </div>
-                      <h2 className="mt-5 font-display uppercase text-[clamp(32px,5vw,72px)] leading-[0.92] tracking-tightest">
+                      <h2 className="font-display uppercase text-[clamp(32px,5vw,72px)] leading-[0.92] tracking-tightest">
                         {r.title}
                       </h2>
                       <p className="mt-5 max-w-[56ch] text-[16px] md:text-[17px] leading-relaxed text-ink/85">
@@ -147,7 +128,7 @@ export default function ProjectsPage() {
                         </div>
                       )}
                     </div>
-                    <div className="flex items-center justify-end gap-2 text-ink">
+                    <div className="flex items-center justify-end gap-2 text-ink lg:pt-2">
                       {r.href ? (
                         <span className="inline-flex items-center gap-3">
                           <span className="eyebrow">Read</span>
@@ -155,7 +136,7 @@ export default function ProjectsPage() {
                         </span>
                       ) : (
                         <span className="eyebrow opacity-70">
-                          {r.status === "draft" ? "Write-up soon" : "—"}
+                          {r.status === "draft" ? "In progress" : "Reserved"}
                         </span>
                       )}
                     </div>
@@ -163,7 +144,7 @@ export default function ProjectsPage() {
                 </article>
               );
               return (
-                <StaggerItem key={r.n}>
+                <StaggerItem key={r.title}>
                   {r.href ? (
                     <Link href={r.href} className="block group">
                       {Inner}

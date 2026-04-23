@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import {
   motion,
   useScroll,
   useTransform,
   useSpring,
   useMotionTemplate,
-  useMotionValueEvent,
   useReducedMotion,
   type MotionValue,
 } from "framer-motion";
@@ -16,9 +15,6 @@ import { ArrowDiagonal } from "@/components/decoration/arrow";
 import { KineticText } from "@/components/motion/kinetic-text";
 
 type Project = {
-  n: string;
-  status: "Case study" | "In progress" | "Reserved";
-  year: string;
   title: string[];
   description: string;
   tags: string[];
@@ -28,9 +24,6 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    n: "01",
-    status: "Case study",
-    year: "2026",
     title: ["F1 prediction", "lab,", "live."],
     description:
       "A recruiter-facing ML case study with a live Python inference API, a 3D season explorer, and historical evaluation that stays honest about misses.",
@@ -39,9 +32,6 @@ const PROJECTS: Project[] = [
     tone: "cobalt",
   },
   {
-    n: "02",
-    status: "In progress",
-    year: "2026",
     title: ["Eval harness", "for coding", "agents."],
     description:
       "A lightweight, reproducible harness for stress-testing AI coding assistants on real tasks — because vibes-based benchmarks aren't benchmarks.",
@@ -49,9 +39,6 @@ const PROJECTS: Project[] = [
     tone: "pink",
   },
   {
-    n: "03",
-    status: "Reserved",
-    year: "—",
     title: ["Reserved", "for the", "next case."],
     description:
       "Space kept for the next serious piece. I'd rather have three case studies worth reading than ten projects worth skimming.",
@@ -62,42 +49,33 @@ const PROJECTS: Project[] = [
 
 const TONE_MAP: Record<
   Project["tone"],
-  { bg: string; fg: string; accent: string; chipBg: string; chipBorder: string; tagBg: string; tagBorder: string; tagText: string; dot: string; cta: string }
+  { bg: string; fg: string; accent: string; tagBg: string; tagBorder: string; tagText: string; cta: string }
 > = {
   cobalt: {
     bg: "bg-cobalt",
     fg: "text-cream",
     accent: "text-yellow",
-    chipBg: "bg-cobalt-deep",
-    chipBorder: "border-cream text-cream",
     tagBg: "bg-cobalt-deep",
     tagBorder: "border-cream",
     tagText: "text-cream",
-    dot: "bg-yellow",
     cta: "bg-yellow text-ink",
   },
   pink: {
     bg: "bg-pink",
     fg: "text-ink",
     accent: "text-cream",
-    chipBg: "bg-cream",
-    chipBorder: "border-ink text-ink",
     tagBg: "bg-cream",
     tagBorder: "border-ink",
     tagText: "text-ink",
-    dot: "bg-ink",
     cta: "bg-ink text-cream",
   },
   yellow: {
     bg: "bg-cream",
     fg: "text-ink",
     accent: "text-pink",
-    chipBg: "bg-cream-deep",
-    chipBorder: "border-ink text-ink",
     tagBg: "bg-cream-deep",
     tagBorder: "border-ink",
     tagText: "text-ink",
-    dot: "bg-pink",
     cta: "bg-ink text-cream",
   },
 };
@@ -119,7 +97,6 @@ export function HorizontalWork() {
 
 function HorizontalTrack() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [progressLabel, setProgressLabel] = useState("01 / 03");
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -129,14 +106,6 @@ function HorizontalTrack() {
   const rawX = useTransform(scrollYProgress, [0, 1], [0, -66.6667]);
   const smoothX = useSpring(rawX, { stiffness: 70, damping: 20, mass: 0.35 });
   const trackTransform = useMotionTemplate`translate3d(${smoothX}%, 0px, 0px)`;
-
-  const progressScale = useSpring(scrollYProgress, { stiffness: 120, damping: 24, mass: 0.3 });
-  const progressTransform = useMotionTemplate`scaleX(${progressScale})`;
-
-  useMotionValueEvent(scrollYProgress, "change", (v) => {
-    const n = Math.max(1, Math.min(PROJECTS.length, Math.floor(v * PROJECTS.length) + 1));
-    setProgressLabel(`0${n} / 0${PROJECTS.length}`);
-  });
 
   return (
     <>
@@ -163,41 +132,23 @@ function HorizontalTrack() {
       <section
         ref={sectionRef}
         className="relative bg-cream text-ink"
-        style={{ height: "320vh" }}
+        style={{ height: "300vh" }}
       >
-      <div className="sticky top-0 h-screen overflow-hidden">
-        <motion.div
-          className="flex h-full"
-          initial={false}
-          style={{
-            transform: trackTransform,
-            width: `${PROJECTS.length * 100}vw`,
-            willChange: "transform",
-          }}
-        >
-          {PROJECTS.map((p, i) => (
-            <Card key={p.n} project={p} index={i} scrollYProgress={scrollYProgress} />
-          ))}
-        </motion.div>
-
-        <div className="pointer-events-none absolute bottom-6 md:bottom-10 left-0 right-0 px-6 md:px-10">
-          <div className="mx-auto max-w-wide flex items-center justify-between gap-6">
-            <span className="eyebrow text-ink/70 bg-cream/85 backdrop-blur px-3 py-1.5 rounded-full border-2 border-ink/20">
-              Scroll to advance →
-            </span>
-            <span className="eyebrow text-ink font-semibold bg-cream/85 backdrop-blur px-3 py-1.5 rounded-full border-2 border-ink">
-              {progressLabel}
-            </span>
-            <div className="h-[3px] w-28 md:w-52 bg-ink/15 overflow-hidden rounded-full">
-              <motion.div
-                className="h-full w-full origin-left bg-ink"
-                initial={false}
-                style={{ transform: progressTransform }}
-              />
-            </div>
-          </div>
+        <div className="sticky top-0 h-screen overflow-hidden">
+          <motion.div
+            className="flex h-full"
+            initial={false}
+            style={{
+              transform: trackTransform,
+              width: `${PROJECTS.length * 100}vw`,
+              willChange: "transform",
+            }}
+          >
+            {PROJECTS.map((p, i) => (
+              <Card key={p.title.join("-")} project={p} index={i} scrollYProgress={scrollYProgress} />
+            ))}
+          </motion.div>
         </div>
-      </div>
       </section>
     </>
   );
@@ -230,21 +181,9 @@ function Card({
       className={`shrink-0 w-screen h-full ${tone.bg} ${tone.fg} relative overflow-hidden`}
     >
       <div className="absolute inset-0 flex items-center">
-        <div className="mx-auto max-w-wide w-full px-6 md:px-10 pt-32 pb-28 grid grid-cols-12 gap-6 items-center">
-          <div className="col-span-12 lg:col-span-6 xl:col-span-5 flex flex-col gap-6">
-            <div className="flex items-center gap-3 flex-wrap">
-              <span className="eyebrow opacity-70">
-                № {project.n} · {project.year}
-              </span>
-              <span
-                className={`eyebrow rounded-full border-2 px-3 py-1 inline-flex items-center gap-2 ${tone.chipBorder} ${tone.chipBg}`}
-              >
-                <span className={`h-[7px] w-[7px] rounded-full ${tone.dot}`} />
-                {project.status}
-              </span>
-            </div>
-
-            <h3 className="font-display uppercase leading-[0.86] tracking-tightest text-[clamp(44px,7vw,120px)]">
+        <div className="mx-auto max-w-wide w-full px-6 md:px-10 pt-28 pb-20 xl:pt-32 xl:pb-24 grid grid-cols-1 xl:grid-cols-[minmax(0,0.86fr)_minmax(540px,1.14fr)] gap-10 xl:gap-14 items-center">
+          <div className="flex max-w-[48rem] flex-col gap-6">
+            <h3 className="font-display uppercase leading-[0.88] tracking-tightest text-[clamp(42px,6vw,104px)]">
               {project.title.map((line, li) => (
                 <span key={li} className={`block ${li === 1 ? tone.accent : ""}`}>
                   <KineticText delay={0.08 * li} stagger={0.05}>
@@ -293,7 +232,7 @@ function Card({
           </div>
 
           <motion.div
-            className="col-span-12 lg:col-span-6 xl:col-span-7 relative h-[52vh] lg:h-[70vh]"
+            className="relative h-[46vh] xl:h-[66vh]"
             initial={false}
             style={{ transform: visualTransform }}
           >
@@ -302,15 +241,6 @@ function Card({
             {project.tone === "yellow" && <VisualReserved />}
           </motion.div>
         </div>
-      </div>
-
-      <div
-        className={`pointer-events-none absolute -bottom-8 right-4 md:right-10 font-display uppercase leading-none tracking-tightest text-[clamp(160px,28vw,460px)] ${
-          project.tone === "cobalt" ? "text-cream/10" : "text-ink/[0.06]"
-        }`}
-        aria-hidden
-      >
-        {project.n}
       </div>
     </article>
   );
@@ -473,21 +403,18 @@ function FallbackStack() {
             const tone = TONE_MAP[p.tone];
             const inner = (
               <article className={`rounded-[24px] border-[2.5px] border-ink ${tone.bg} ${tone.fg} p-8 md:p-12`}>
-                <span className="eyebrow opacity-70">
-                  № {p.n} · {p.year}
-                </span>
-                <h3 className="mt-4 font-display uppercase text-[clamp(32px,5vw,72px)] leading-[0.92] tracking-tightest">
+                <h3 className="font-display uppercase text-[clamp(32px,5vw,72px)] leading-[0.92] tracking-tightest">
                   {p.title.join(" ")}
                 </h3>
                 <p className="mt-5 max-w-[56ch]">{p.description}</p>
               </article>
             );
             return p.href ? (
-              <Link key={p.n} href={p.href}>
+              <Link key={p.title.join("-")} href={p.href}>
                 {inner}
               </Link>
             ) : (
-              <div key={p.n}>{inner}</div>
+              <div key={p.title.join("-")}>{inner}</div>
             );
           })}
         </div>
