@@ -66,8 +66,11 @@ export function Nav() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className={`link-underline-grow text-[14px] font-medium ${
-                      active ? "opacity-100" : "opacity-90"
+                    aria-current={active ? "page" : undefined}
+                    className={`relative text-[14px] font-medium transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-current after:transition-[width] after:duration-300 ${
+                      active
+                        ? "after:w-full"
+                        : "opacity-80 hover:opacity-100 after:w-0 hover:after:w-full"
                     }`}
                   >
                     {l.label}

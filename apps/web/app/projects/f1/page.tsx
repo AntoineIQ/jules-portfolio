@@ -25,73 +25,62 @@ export default async function F1Page() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-[#0b0b0d] px-6 pb-20 pt-36 text-cream md:px-10 md:pt-40">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(135deg, rgba(255,255,255,0.7) 0 16px, transparent 16px 32px)",
-          }}
-        />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[4px] bg-[#d93e2b]" aria-hidden />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[4px] bg-yellow" aria-hidden />
-
+      <section className="relative overflow-hidden bg-f1-dark px-6 pb-16 pt-32 text-cream md:px-10 md:pt-36">
         <div className="relative mx-auto max-w-wide">
           <ScrollReveal>
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <span className="eyebrow text-cream/55">Flagship project · self-refreshing</span>
-              <Link href="/projects" className="group inline-flex items-center gap-3 press-scale">
-                <ArrowBack className="h-[14px] w-[44px] transition-transform duration-300 group-hover:-translate-x-1" />
+            <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-3 text-[12px] text-cream/55">
+              <Link href="/projects" className="group inline-flex items-center gap-2 press-scale hover:text-cream">
+                <ArrowBack className="h-[12px] w-[32px] transition-transform duration-300 group-hover:-translate-x-1" />
                 <span className="eyebrow">All projects</span>
               </Link>
-            </div>
+              <span aria-hidden className="text-cream/25">/</span>
+              <span className="eyebrow text-cream/75">F1 machine learning project</span>
+            </nav>
           </ScrollReveal>
 
-          <div className="mt-10 grid gap-10 md:grid-cols-[1.05fr_0.95fr] md:items-end">
+          <div className="mt-10 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <div>
-              <h1 className="font-display uppercase text-hero-xl text-[#d93e2b]">
-                <span className="block">
+              <span className="inline-block rounded-full border border-f1-red/50 bg-f1-red/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-f1-red">
+                Flagship · self-refreshing
+              </span>
+              <h1 className="mt-6 font-display uppercase text-display-lg">
+                <span className="block text-f1-red">
                   <KineticText>F1 machine</KineticText>
                 </span>
                 <span className="block text-cream">
-                  <KineticText delay={0.12}>learning</KineticText>
-                </span>
-                <span className="block text-yellow">
-                  <KineticText delay={0.24}>project.</KineticText>
+                  <KineticText delay={0.12}>learning project.</KineticText>
                 </span>
               </h1>
               <ScrollReveal delay={0.08}>
-                <p className="mt-8 max-w-[56ch] text-[18px] md:text-[22px] leading-relaxed text-cream/82">
-                  A recruiter-facing machine learning project that doubles as a real product:
-                  historical race dossiers, calibrated evaluation, and a session-aware GitHub
-                  Actions pipeline that retrains the model after every F1 weekend and republishes
-                  predictions.
+                <p className="mt-6 max-w-[58ch] text-[16px] md:text-[18px] leading-relaxed text-cream/75">
+                  A machine learning project that doubles as a real product. Historical race
+                  dossiers, calibrated evaluation, and a session-aware GitHub Actions pipeline that
+                  retrains the model after every F1 weekend and republishes predictions.
                 </p>
               </ScrollReveal>
             </div>
 
             <ScrollReveal delay={0.12}>
-              <div className="rounded-[26px] border-[2.5px] border-cream/20 bg-cream/[0.04] p-6 md:p-7 backdrop-blur-sm">
+              <div className="glass-panel-dark rounded-[22px] p-5 md:p-6">
                 <p className="eyebrow text-cream/55">Current snapshot</p>
-                <div className="mt-5 grid grid-cols-2 gap-3">
-                  <div className="rounded-[18px] border border-cream/10 bg-cream/[0.03] p-4">
+                <div className="mt-4 grid grid-cols-2 gap-3">
+                  <div className="rounded-[14px] bg-cream/[0.04] p-4">
                     <p className="eyebrow text-cream/45">model version</p>
-                    <p className="mt-2 font-display text-[28px] tabular-nums tracking-tightest">{manifest.model_version}</p>
+                    <p className="mt-2 font-display text-[24px] tabular-nums tracking-tightest">{manifest.model_version}</p>
                   </div>
-                  <div className="rounded-[18px] border border-cream/10 bg-cream/[0.03] p-4">
+                  <div className="rounded-[14px] bg-cream/[0.04] p-4">
                     <p className="eyebrow text-cream/45">published</p>
-                    <p className="mt-2 text-[14px] font-semibold text-cream/80">{manifest.generated_at}</p>
+                    <p className="mt-2 text-[13px] font-semibold text-cream/80">{manifest.generated_at}</p>
                   </div>
-                  <div className="rounded-[18px] border border-cream/10 bg-cream/[0.03] p-4">
+                  <div className="rounded-[14px] bg-cream/[0.04] p-4">
                     <p className="eyebrow text-cream/45">held-out log-loss</p>
-                    <p className="mt-2 font-display text-[28px] tabular-nums tracking-tightest">
+                    <p className="mt-2 font-display text-[24px] tabular-nums tracking-tightest">
                       {primaryMetrics?.log_loss?.toFixed(3) ?? "—"}
                     </p>
                   </div>
-                  <div className="rounded-[18px] border border-cream/10 bg-cream/[0.03] p-4">
+                  <div className="rounded-[14px] bg-cream/[0.04] p-4">
                     <p className="eyebrow text-cream/45">seasons public</p>
-                    <p className="mt-2 font-display text-[28px] tabular-nums tracking-tightest">{manifest.seasons.join(" · ")}</p>
+                    <p className="mt-2 font-display text-[22px] tabular-nums tracking-tightest">{manifest.seasons.join(" · ")}</p>
                   </div>
                 </div>
               </div>
@@ -108,10 +97,10 @@ export default async function F1Page() {
           "CALIBRATION FIRST",
           "SEVEN TARGETS",
         ]}
-        separator="▲"
-        speedSeconds={30}
-        className="bg-[#d93e2b] py-4 text-cream border-y-[3px] border-ink"
-        trackClassName="font-display uppercase text-[clamp(22px,4vw,48px)] tracking-tighter"
+        separator="·"
+        speedSeconds={36}
+        className="bg-ink py-3 text-cream/80"
+        trackClassName="font-display uppercase text-[clamp(16px,2.6vw,28px)] tracking-tight"
       />
 
       <FeaturedRace />

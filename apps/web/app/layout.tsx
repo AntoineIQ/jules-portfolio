@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { SITE } from "@/lib/site-config";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -20,8 +21,8 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://julestack.dev"),
-  title: "Jules Antoine Tack — AI-native developer",
+  metadataBase: new URL(SITE.baseUrl),
+  title: `${SITE.fullName} — ${SITE.tagline}`,
   description:
     "Portfolio and case-study archive of Jules Antoine Tack. Builds machine-learning interfaces, AI-native tooling, and technical products with judgment.",
 };

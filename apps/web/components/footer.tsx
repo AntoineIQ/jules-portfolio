@@ -2,15 +2,14 @@ import Link from "next/link";
 import { ArrowDiagonal } from "@/components/decoration/arrow";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { Marquee } from "@/components/layout/marquee";
+import { SITE } from "@/lib/site-config";
 
-const EMAIL = "jules.tack@outlook.com";
-const AVAILABILITY = "Oct 2026";
 const FOOTER_NOTE = "Frontend systems · AI tooling · ML products";
 
 const CONTACT = [
-  { label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
-  { label: "GitHub", value: "github.com/AntoineIQ", href: "https://github.com/AntoineIQ" },
-  { label: "CV", value: "Download PDF", href: "#" },
+  { label: "Email", value: SITE.email, href: `mailto:${SITE.email}` },
+  { label: "GitHub", value: "github.com/AntoineIQ", href: SITE.links.github },
+  { label: "CV", value: "Download PDF", href: SITE.links.cv },
 ];
 
 export function Footer() {
@@ -20,8 +19,8 @@ export function Footer() {
       <Marquee
         items={[
           "LET'S TALK",
-          `AVAILABLE · ${AVAILABILITY.toUpperCase()}`,
-          "MONTREUX · CH",
+          `AVAILABLE · ${SITE.availability.toUpperCase()}`,
+          SITE.location.toUpperCase(),
           "BUILDING WITH AI",
           "EMPLOYER-READY",
         ]}
@@ -51,10 +50,10 @@ export function Footer() {
 
             <ScrollReveal delay={0.1}>
               <a
-                href={`mailto:${EMAIL}`}
+                href={`mailto:${SITE.email}`}
                 className="group mt-10 inline-flex flex-wrap items-baseline gap-x-4 gap-y-1 font-display uppercase tracking-tightest text-yellow text-[clamp(32px,6vw,72px)] leading-[0.96] press-scale max-w-full"
               >
-                <span className="link-underline-grow break-all">{EMAIL}</span>
+                <span className="link-underline-grow break-all">{SITE.email}</span>
                 <ArrowDiagonal className="h-8 w-8 sm:h-12 sm:w-12 translate-y-1 shrink-0 transition-transform duration-300 group-hover:translate-x-2 group-hover:-translate-y-1" />
               </a>
             </ScrollReveal>
@@ -82,7 +81,7 @@ export function Footer() {
 
             <div className="mt-10 flex items-center gap-2">
               <span className="dot-pulse" aria-hidden />
-              <span className="eyebrow text-cream/60">Available · {AVAILABILITY}</span>
+              <span className="eyebrow text-cream/60">Available · {SITE.availability}</span>
             </div>
           </div>
         </div>

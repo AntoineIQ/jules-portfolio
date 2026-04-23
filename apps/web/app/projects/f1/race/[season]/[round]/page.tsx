@@ -2,31 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowBack } from "@/components/decoration/arrow";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
-import { KineticText } from "@/components/motion/kinetic-text";
 import { loadManifest, loadRaceData } from "@/lib/f1-data";
-
-function featureLabel(feature: string) {
-  const labels: Record<string, string> = {
-    grid_position: "grid",
-    quali_gap_to_pole: "quali gap",
-    driver_points_last_3: "form 3",
-    driver_points_last_5: "form 5",
-    driver_finish_last_3: "finish 3",
-    driver_track_history: "track",
-    team_points_last_3: "team",
-    circuit_finish_std: "chaos",
-    circuit_grid_to_finish: "overtake",
-    regulation_era: "era",
-    fp_best_gap_to_fastest: "FP best",
-    fp_long_run_gap_to_fastest: "FP long",
-    driver_quali_gap_last_3: "quali form",
-    driver_quali_top10_rate_last_10: "Q3 rate",
-    sprint_grid_position: "sprint grid",
-    grid_vs_teammate: "vs teammate grid",
-    quali_gap_vs_teammate: "vs teammate quali",
-  };
-  return labels[feature] ?? feature;
-}
+import { FactorChart } from "@/components/f1/factor-chart";
 
 export async function generateStaticParams() {
   const manifest = await loadManifest();
@@ -53,144 +30,243 @@ export default async function RacePage({
   const data = await loadRaceData(season, round, target);
   if (!data) notFound();
 
+  const seasons = Object.keys(manifest.available_rounds)
+    .map(Number)
+    .sort((a, b) => a - b);
+  const roundsForSeason = (manifest.available_rounds[String(season)] ?? []).slice().sort((a, b) => a - b);
+  const currentRoundIndex = roundsForSeason.indexOf(round);
+  const prevRound = currentRoundIndex > 0 ? roundsForSeason[currentRoundIndex - 1] : null;
+  const nextRound =
+    currentRoundIndex >= 0 && currentRoundIndex < roundsForSeason.length - 1
+      ? roundsForSeason[currentRoundIndex + 1]
+      : null;
+
+  const top = [...data.drivers].sort((a, b) => b.p - a.p)[0] ?? data.drivers[0];
+  const ranking = [...data.drivers].sort((a, b) => b.p - a.p);
+
   return (
     <>
-      <section className="relative bg-[#f4eee4] px-6 pb-16 pt-32 text-ink md:px-10">
+      <section className="relative bg-cream px-6 pb-8 pt-28 text-ink md:px-10 md:pt-32">
         <div className="mx-auto max-w-wide">
-          <ScrollReveal>
-            <Link href={`/projects/f1/season/${season}?target=${target}`} className="group inline-flex items-center gap-3 press-scale">
-              <ArrowBack className="h-[14px] w-[44px] transition-transform duration-300 group-hover:-translate-x-1" />
-              <span className="eyebrow">Back to season explorer</span>
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-3 text-[12px] text-ink/55">
+            <Link href="/projects" className="group inline-flex items-center gap-2 press-scale hover:text-ink">
+              <ArrowBack className="h-[12px] w-[32px] transition-transform duration-300 group-hover:-translate-x-1" />
+              <span className="eyebrow">All projects</span>
             </Link>
-          </ScrollReveal>
+            <span aria-hidden className="text-ink/25">/</span>
+            <Link href="/projects/f1" className="eyebrow text-ink/55 hover:text-ink">F1 project</Link>
+            <span aria-hidden className="text-ink/25">/</span>
+            <span className="eyebrow text-ink/75">Race dossier</span>
+          </nav>
 
-          <div className="mt-8 grid gap-8 md:grid-cols-[0.92fr_1.08fr]">
+          <div className="mt-8 flex flex-wrap items-center gap-2">
+            <span className="eyebrow text-ink/45">Season</span>
+            {seasons.map((s) => {
+              const seasonRounds = manifest.available_rounds[String(s)] ?? [];
+              const targetRound = seasonRounds.includes(round)
+                ? round
+                : seasonRounds[seasonRounds.length - 1] ?? 1;
+              return (
+                <Link
+                  key={s}
+                  href={`/projects/f1/race/${s}/${String(targetRound).padStart(2, "0")}?target=${target}`}
+                  aria-current={s === season ? "page" : undefined}
+                  className={`rounded-full border-[1.5px] px-3 py-1 text-[12px] font-semibold tabular-nums transition-colors ${
+                    s === season
+                      ? "border-ink bg-ink text-cream"
+                      : "border-ink/20 bg-cream text-ink/65 hover:border-ink/60 hover:text-ink"
+                  }`}
+                >
+                  {s}
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="mt-4 flex flex-wrap items-center gap-1.5">
+            <span className="eyebrow text-ink/45 mr-2">Round</span>
+            {roundsForSeason.map((r) => (
+              <Link
+                key={r}
+                href={`/projects/f1/race/${season}/${String(r).padStart(2, "0")}?target=${target}`}
+                aria-current={r === round ? "page" : undefined}
+                className={`min-w-[34px] rounded-md border px-2 py-1 text-center text-[11px] font-semibold tabular-nums transition-colors ${
+                  r === round
+                    ? "border-f1-red bg-f1-red text-cream"
+                    : "border-ink/15 bg-white-warm text-ink/60 hover:border-ink/40 hover:text-ink"
+                }`}
+              >
+                {String(r).padStart(2, "0")}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative bg-cream px-6 pb-8 text-ink md:px-10">
+        <div className="mx-auto max-w-wide">
+          <div className="mt-4 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
-              <ScrollReveal>
-                <span className="eyebrow text-ink/55">
-                  § Race dossier · {season} / round {String(round).padStart(2, "0")}
-                </span>
-                <h1 className="mt-5 font-display uppercase text-hero-md">
-                  <KineticText>{data.event_name}</KineticText>
-                </h1>
-              </ScrollReveal>
-            </div>
-            <ScrollReveal delay={0.08}>
-              <p className="max-w-[58ch] text-[17px] leading-relaxed text-ink/72">
-                Historical evaluation for <strong>{data.target_display}</strong>. Ranking and top factors are taken from the held-out export for this race. The model retrains after every F1 session via GitHub Actions and republishes fresh predictions automatically.
+              <span className="eyebrow text-ink/55">
+                § Round {String(round).padStart(2, "0")} · {season}
+              </span>
+              <h1 className="mt-3 font-display uppercase text-display-md">{data.event_name}.</h1>
+              <p className="mt-2 text-[13px] text-ink/55 tabular-nums">
+                {data.event_date} · {data.metrics.n} drivers · held-out evaluation
               </p>
-            </ScrollReveal>
+            </div>
+            <div className="flex items-center gap-2">
+              {prevRound ? (
+                <Link
+                  href={`/projects/f1/race/${season}/${String(prevRound).padStart(2, "0")}?target=${target}`}
+                  className="inline-flex h-9 items-center gap-2 rounded-full border-[1.5px] border-ink/20 bg-white-warm px-3 text-[12px] font-semibold hover:border-ink"
+                >
+                  ← R{String(prevRound).padStart(2, "0")}
+                </Link>
+              ) : null}
+              {nextRound ? (
+                <Link
+                  href={`/projects/f1/race/${season}/${String(nextRound).padStart(2, "0")}?target=${target}`}
+                  className="inline-flex h-9 items-center gap-2 rounded-full border-[1.5px] border-ink/20 bg-white-warm px-3 text-[12px] font-semibold hover:border-ink"
+                >
+                  R{String(nextRound).padStart(2, "0")} →
+                </Link>
+              ) : null}
+            </div>
           </div>
 
           <div className="mt-6 flex flex-wrap gap-2">
             {Object.entries(manifest.targets).map(([name, entry]) => (
               <Link
                 key={name}
-                href={`/projects/f1/race/${season}/${round}?target=${name}`}
-                className={`rounded-full border px-3 py-2 text-[12px] font-semibold ${
-                  name === target ? "border-ink bg-[#d93e2b] text-white" : "border-ink/15 bg-white/70 text-ink/72"
+                href={`/projects/f1/race/${season}/${String(round).padStart(2, "0")}?target=${name}`}
+                aria-current={name === target ? "page" : undefined}
+                className={`rounded-full border-[1.5px] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.08em] transition-colors ${
+                  name === target
+                    ? "border-ink bg-f1-red text-cream"
+                    : "border-ink/15 bg-white-warm text-ink/65 hover:border-ink/40 hover:text-ink"
                 }`}
               >
-                {entry.display}
+                {entry.display.replace(/^Race — /, "").replace(/^Quali — /, "Q: ").replace(/^Sprint — /, "S: ").replace(/^H2H — /, "H2H: ")}
               </Link>
             ))}
           </div>
 
-          <div className="mt-8 grid gap-3 md:grid-cols-4">
-            <div className="rounded-[18px] border-[2px] border-ink bg-white-warm p-4">
-              <p className="eyebrow text-ink/45">drivers</p>
-              <p className="mt-2 font-display text-[30px]">{data.metrics.n}</p>
-            </div>
-            <div className="rounded-[18px] border-[2px] border-ink bg-white-warm p-4">
-              <p className="eyebrow text-ink/45">log-loss</p>
-              <p className="mt-2 font-display text-[30px]">{data.metrics.log_loss?.toFixed(3) ?? "—"}</p>
-            </div>
-            <div className="rounded-[18px] border-[2px] border-ink bg-white-warm p-4">
-              <p className="eyebrow text-ink/45">field average</p>
-              <p className="mt-2 font-display text-[30px]">{(data.summary.field_average * 100).toFixed(0)}%</p>
-            </div>
-            <div className="rounded-[18px] border-[2px] border-ink bg-white-warm p-4">
-              <p className="eyebrow text-ink/45">spread</p>
-              <p className="mt-2 font-display text-[30px]">{(data.summary.prediction_spread * 100).toFixed(0)}</p>
-            </div>
-          </div>
+          <dl className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-5">
+            {[
+              { label: "log-loss", value: data.metrics.log_loss?.toFixed(3) ?? "—" },
+              { label: "brier", value: data.metrics.brier?.toFixed(3) ?? "—" },
+              { label: "ECE", value: data.metrics.ece?.toFixed(3) ?? "—" },
+              { label: "field avg", value: `${(data.summary.field_average * 100).toFixed(0)}%` },
+              { label: "spread", value: (data.summary.prediction_spread * 100).toFixed(0) },
+            ].map((m) => (
+              <div key={m.label} className="rounded-[14px] border border-ink/12 bg-white-warm px-4 py-3">
+                <dt className="eyebrow text-ink/45">{m.label}</dt>
+                <dd className="mt-1 font-display text-[22px] tabular-nums tracking-tightest">{m.value}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
-      <section className="relative bg-cream px-6 pb-16 text-ink md:px-10">
-        <div className="mx-auto max-w-wide grid gap-6 lg:grid-cols-[1.12fr_0.88fr]">
-          <div className="rounded-[26px] border-[2.5px] border-ink bg-white-warm p-4 md:p-6">
-            <div className="grid grid-cols-[1.2fr_88px_1fr_0.9fr] gap-4 border-b border-ink/12 pb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-ink/45">
-              <span>Driver</span>
-              <span>Grid</span>
-              <span>Probability</span>
-              <span>Top factors</span>
-            </div>
-            <div className="divide-y divide-ink/10">
-              {data.drivers.map((driver) => (
-                <div key={driver.driver} className="grid grid-cols-[1.2fr_88px_1fr_0.9fr] gap-4 py-4">
-                  <div>
-                    <p className="font-semibold">{driver.driver}</p>
-                    <p className="text-[12px] text-ink/55">{driver.team}</p>
-                    <p className="mt-1 text-[11px] text-ink/45">
-                      finish {driver.finish_position ?? "—"} · {driver.actual ? "positive outcome" : "miss"}
+      <section className="relative bg-cream px-6 pb-20 text-ink md:px-10">
+        <div className="mx-auto max-w-wide">
+          <ScrollReveal>
+            <div className="grid gap-6 lg:grid-cols-[1.3fr_0.9fr] lg:items-start">
+              <div className="overflow-hidden rounded-[20px] border-[2px] border-ink bg-white-warm">
+                <div className="flex items-center justify-between border-b border-ink/10 px-5 py-3">
+                  <p className="eyebrow text-ink/55">Driver ranking</p>
+                  <p className="text-[11px] text-ink/45">
+                    coloured by outcome · <span className="inline-flex items-center gap-1">
+                      <span className="h-[6px] w-[6px] rounded-full bg-mint" aria-hidden /> hit
+                    </span>{" "}
+                    ·{" "}
+                    <span className="inline-flex items-center gap-1">
+                      <span className="h-[6px] w-[6px] rounded-full bg-f1-red" aria-hidden /> miss
+                    </span>
+                  </p>
+                </div>
+                <ol className="divide-y divide-ink/8">
+                  {ranking.map((driver, idx) => {
+                    const hit = driver.actual === 1;
+                    const widthPct = Math.max(4, Math.round(driver.p * 100));
+                    return (
+                      <li
+                        key={driver.driver}
+                        className="grid grid-cols-[32px_120px_1fr_60px_52px] items-center gap-3 px-5 py-2.5 text-[12px]"
+                      >
+                        <span className="font-display text-[14px] tabular-nums text-ink/50">
+                          {String(idx + 1).padStart(2, "0")}
+                        </span>
+                        <div className="min-w-0">
+                          <p className="truncate font-semibold">{driver.driver}</p>
+                          <p className="truncate text-[10px] text-ink/50">{driver.team}</p>
+                        </div>
+                        <div className="relative h-2.5 overflow-hidden rounded-full bg-[#efe7dc]">
+                          <div
+                            className={`absolute inset-y-0 left-0 ${hit ? "bg-mint" : "bg-f1-red"}`}
+                            style={{ width: `${widthPct}%` }}
+                          />
+                        </div>
+                        <span className="text-right font-display text-[14px] tabular-nums tracking-tightest text-ink">
+                          {(driver.p * 100).toFixed(0)}%
+                        </span>
+                        <span className="text-right text-[10px] tabular-nums text-ink/45">
+                          grid {driver.grid_position ?? "—"}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
+
+              <div className="space-y-5">
+                {top ? (
+                  <FactorChart
+                    driver={top.driver}
+                    team={top.team}
+                    probability={top.p}
+                    factors={top.top_factors}
+                    kind={top.explanation_kind}
+                  />
+                ) : null}
+
+                <div className="rounded-[20px] border border-ink/12 bg-white-warm p-5">
+                  <p className="eyebrow text-ink/55">Summary</p>
+                  <div className="mt-4 space-y-3 text-[13px] leading-relaxed text-ink/72">
+                    <p>
+                      Strongest signal on <strong>{data.summary.top_driver.driver}</strong>{" "}
+                      ({data.summary.top_driver.team}) at{" "}
+                      <strong className="tabular-nums">{(data.summary.top_driver.p * 100).toFixed(1)}%</strong>.
+                    </p>
+                    <p>
+                      Strongest team average:{" "}
+                      <strong>{data.summary.strongest_team.team}</strong>{" "}
+                      <span className="tabular-nums">
+                        {(data.summary.strongest_team.mean_p * 100).toFixed(1)}%
+                      </span>.
+                    </p>
+                    <p className="text-[11px] text-ink/50">
+                      Export <span className="tabular-nums">{data.model_version}</span> · generated{" "}
+                      <span className="tabular-nums">{data.generated_at}</span>. Republished automatically after every F1 session.
                     </p>
                   </div>
-                  <div className="text-[14px] font-semibold">{driver.grid_position ?? "—"}</div>
-                  <div className="flex items-center gap-3">
-                    <div className="relative h-3 flex-1 overflow-hidden rounded-full border border-ink/20 bg-[#f7f2ea]">
-                      <div
-                        className={`absolute inset-y-0 left-0 ${driver.actual ? "bg-mint" : "bg-[#d93e2b]"}`}
-                        style={{ width: `${Math.max(4, Math.round(driver.p * 100))}%` }}
-                      />
-                    </div>
-                    <span className="font-display text-[22px] tracking-tightest">
-                      {(driver.p * 100).toFixed(0)}%
-                    </span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {driver.top_factors.map((factor) => (
-                      <span
-                        key={`${driver.driver}-${factor.feature}`}
-                        className={`rounded-full border px-2.5 py-1 text-[10px] font-semibold ${
-                          factor.value >= 0 ? "border-ink/20 bg-mint/35" : "border-ink/20 bg-[#f6d4ce]"
-                        }`}
-                        title={`${factor.feature}: ${factor.value.toFixed(2)}`}
-                      >
-                        {featureLabel(factor.feature)} {factor.value >= 0 ? "↑" : "↓"}
-                        {Math.abs(factor.value).toFixed(2)}
-                      </span>
-                    ))}
-                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-5">
-            <div className="rounded-[26px] border-[2.5px] border-ink bg-[#efe7dc] p-5">
-              <p className="eyebrow text-ink/55">Summary</p>
-              <div className="mt-4 space-y-4 text-[14px] leading-relaxed text-ink/74">
-                <p>
-                  strongest driver <strong>{data.summary.top_driver.driver}</strong> for{" "}
-                  <strong>{data.summary.top_driver.team}</strong> at{" "}
-                  <strong>{(data.summary.top_driver.p * 100).toFixed(1)}%</strong>
-                </p>
-                <p>
-                  strongest team signal <strong>{data.summary.strongest_team.team}</strong> averaging{" "}
-                  <strong>{(data.summary.strongest_team.mean_p * 100).toFixed(1)}%</strong>
-                </p>
-                <p>
-                  explanation type <strong>{data.drivers[0]?.explanation_kind ?? "—"}</strong>
-                </p>
-                <p className="text-ink/55">
-                  export {data.model_version} · generated {data.generated_at}
-                </p>
-                <p className="text-[12px] text-ink/45">
-                  Retrained after every F1 session via GitHub Actions — predictions republish automatically.
-                </p>
               </div>
             </div>
+          </ScrollReveal>
+
+          <div className="mt-10 flex items-center justify-between gap-4 border-t border-ink/10 pt-6">
+            <Link
+              href="/projects/f1"
+              className="group inline-flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.18em] press-scale"
+            >
+              <ArrowBack className="h-[12px] w-[32px] transition-transform duration-300 group-hover:-translate-x-1" />
+              Back to F1 project
+            </Link>
+            <span className="eyebrow text-ink/45">
+              {data.target_display}
+            </span>
           </div>
         </div>
       </section>

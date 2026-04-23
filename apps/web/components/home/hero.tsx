@@ -43,7 +43,7 @@ export function Hero() {
           }}
           className="mt-12 grid gap-10 md:grid-cols-[1.2fr_0.8fr] items-end"
         >
-          <p className="max-w-2xl text-[18px] md:text-[22px] leading-snug text-cream/90">
+          <p className="max-w-[52ch] text-[18px] md:text-[22px] leading-snug text-cream/90">
             I build polished technical products and projects that show how AI coding tools
             accelerate thinking, execution, and explanation without replacing judgment.
           </p>

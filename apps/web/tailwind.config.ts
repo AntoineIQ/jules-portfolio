@@ -15,6 +15,8 @@ const config: Config = {
         yellow: "var(--yellow)",
         mint: "var(--mint)",
         "white-warm": "var(--white-warm)",
+        "f1-red": "var(--f1-red)",
+        "f1-dark": "var(--f1-dark)",
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],

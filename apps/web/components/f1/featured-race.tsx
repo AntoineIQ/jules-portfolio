@@ -41,42 +41,34 @@ export async function FeaturedRace() {
   const eventDate = bundles[0].data.event_date;
 
   return (
-    <section className="relative bg-[#0e0e10] px-6 py-20 text-cream md:px-10 md:py-28">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.08]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(135deg, rgba(255,255,255,0.5) 0 14px, transparent 14px 28px)",
-        }}
-      />
-      <div className="relative mx-auto grid max-w-wide gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+    <section className="relative bg-cream px-6 py-20 text-ink md:px-10 md:py-24">
+      <div className="mx-auto grid max-w-wide gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
           <div className="flex flex-wrap items-center gap-3">
             <span className="relative flex h-[10px] w-[10px]">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#d93e2b] opacity-60" />
-              <span className="relative inline-flex h-[10px] w-[10px] rounded-full bg-[#d93e2b]" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-f1-red opacity-50" />
+              <span className="relative inline-flex h-[10px] w-[10px] rounded-full bg-f1-red" />
             </span>
-            <span className="eyebrow text-cream/60">Latest race · Round {String(latestRound).padStart(2, "0")} · {latestSeason}</span>
+            <span className="eyebrow text-ink/55">Latest race · Round {String(latestRound).padStart(2, "0")} · {latestSeason}</span>
           </div>
-          <h2 className="mt-6 font-display uppercase text-hero-md text-yellow">
+          <h2 className="mt-5 font-display uppercase text-display-md">
             {eventName}.
           </h2>
-          <p className="mt-5 max-w-[50ch] text-[16px] leading-relaxed text-cream/75">
-            Flip through every target the model predicts — race points, podium, win, qualifying, sprint, head-to-head. The ranking below shows the top ten probabilities, colour-coded by whether the model got it right.
+          <p className="mt-5 max-w-[52ch] text-[15px] leading-relaxed text-ink/72">
+            Flip through every target the model predicts — race points, podium, win, qualifying, sprint, head-to-head. The ranking shows the top ten probabilities, colour-coded by whether the model got it right.
           </p>
-          <p className="mt-5 max-w-[50ch] text-[13px] leading-relaxed text-cream/45">
-            Race date {eventDate}. The pipeline will start pre-publishing predictions ahead of each session in a later pass — for now this shows the freshest race in the held-out set.
+          <p className="mt-4 max-w-[52ch] text-[12px] leading-relaxed text-ink/45">
+            Race date {eventDate}. The pipeline will pre-publish predictions ahead of each session in a later pass — for now this shows the freshest race in the held-out set.
           </p>
           <Link
             href={`/projects/f1/race/${latestSeason}/${String(latestRound).padStart(2, "0")}?target=race_points`}
-            className="group mt-10 inline-flex items-center gap-3 rounded-full border-[2px] border-cream/40 bg-cream/5 px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-cream transition-colors hover:border-cream hover:bg-cream/10"
+            className="group mt-8 inline-flex items-center gap-3 rounded-full border-[2px] border-ink px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-ink transition-colors hover:bg-ink hover:text-cream"
           >
             Full dossier
             <ArrowDiagonal className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
-        <div className="text-ink">
+        <div>
           <TargetSwitcher bundles={bundles} />
         </div>
       </div>
