@@ -19,7 +19,7 @@ type Project = {
   description: string;
   tags: string[];
   href?: string;
-  tone: "cobalt" | "pink" | "yellow";
+  tone: "cobalt" | "pink" | "yellow" | "f1";
 };
 
 const PROJECTS: Project[] = [
@@ -29,7 +29,7 @@ const PROJECTS: Project[] = [
       "A recruiter-facing machine learning project with a live Python inference API, a 3D season explorer, and historical evaluation that stays honest about misses.",
     tags: ["LightGBM", "Calibration", "Next.js", "FastAPI", "Railway"],
     href: "/projects/f1",
-    tone: "cobalt",
+    tone: "f1",
   },
   {
     title: ["Evaluation harness", "for coding", "agents."],
@@ -77,6 +77,15 @@ const TONE_MAP: Record<
     tagBorder: "border-ink",
     tagText: "text-ink",
     cta: "bg-ink text-cream",
+  },
+  f1: {
+    bg: "bg-[#0b0b0d]",
+    fg: "text-cream",
+    accent: "text-[#d93e2b]",
+    tagBg: "bg-[#1a1a1e]",
+    tagBorder: "border-cream/30",
+    tagText: "text-cream",
+    cta: "bg-[#d93e2b] text-cream",
   },
 };
 
