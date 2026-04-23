@@ -3,10 +3,13 @@ import { ArrowDiagonal } from "@/components/decoration/arrow";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { Marquee } from "@/components/layout/marquee";
 
+const EMAIL = "jules.tack@outlook.com";
+const AVAILABILITY = "Oct 2026";
+const FOOTER_NOTE = "Frontend systems · AI tooling · ML products";
+
 const CONTACT = [
-  { label: "Email", value: "jules.antoine.tack@gmail.com", href: "mailto:jules.antoine.tack@gmail.com" },
+  { label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
   { label: "GitHub", value: "github.com/AntoineIQ", href: "https://github.com/AntoineIQ" },
-  { label: "LinkedIn", value: "linkedin.com/in/jules-antoine-tack", href: "https://www.linkedin.com/in/jules-antoine-tack/" },
   { label: "CV", value: "Download PDF", href: "#" },
 ];
 
@@ -17,7 +20,7 @@ export function Footer() {
       <Marquee
         items={[
           "LET'S TALK",
-          "AVAILABLE · JUN 2026",
+          `AVAILABLE · ${AVAILABILITY.toUpperCase()}`,
           "GHENT / REMOTE",
           "BUILDING WITH AI",
           "EMPLOYER-READY",
@@ -48,10 +51,10 @@ export function Footer() {
 
             <ScrollReveal delay={0.1}>
               <a
-                href="mailto:jules.antoine.tack@gmail.com"
+                href={`mailto:${EMAIL}`}
                 className="group mt-10 inline-flex flex-wrap items-baseline gap-x-4 gap-y-1 font-display uppercase tracking-tightest text-yellow text-[clamp(32px,6vw,72px)] leading-[0.96] press-scale max-w-full"
               >
-                <span className="link-underline-grow break-all">jules.antoine.tack@gmail.com</span>
+                <span className="link-underline-grow break-all">{EMAIL}</span>
                 <ArrowDiagonal className="h-8 w-8 sm:h-12 sm:w-12 translate-y-1 shrink-0 transition-transform duration-300 group-hover:translate-x-2 group-hover:-translate-y-1" />
               </a>
             </ScrollReveal>
@@ -79,7 +82,7 @@ export function Footer() {
 
             <div className="mt-10 flex items-center gap-2">
               <span className="dot-pulse" aria-hidden />
-              <span className="eyebrow text-cream/60">Available · Jun 2026</span>
+              <span className="eyebrow text-cream/60">Available · {AVAILABILITY}</span>
             </div>
           </div>
         </div>
@@ -89,7 +92,7 @@ export function Footer() {
             © {year} · Jules Antoine Tack · Built, not templated
           </p>
           <p className="eyebrow text-cream/55">
-            v0.2 · Ghent / Remote · EN · FR · NL
+            {FOOTER_NOTE}
           </p>
         </div>
       </div>
