@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { ArrowBack } from "@/components/decoration/arrow";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { KineticText } from "@/components/motion/kinetic-text";
-import { LiveRaceProbe } from "@/components/f1/live-race-probe";
 import { loadManifest, loadRaceData } from "@/lib/f1-data";
 
 function featureLabel(feature: string) {
@@ -78,7 +77,7 @@ export default async function RacePage({
             </div>
             <ScrollReveal delay={0.08}>
               <p className="max-w-[58ch] text-[17px] leading-relaxed text-ink/72">
-                Historical evaluation for <strong>{data.target_display}</strong>. The ranking and top factors below are taken from the held-out export for this race, and the live probe at the bottom calls the current production model through the API.
+                Historical evaluation for <strong>{data.target_display}</strong>. Ranking and top factors are taken from the held-out export for this race. The model retrains after every F1 session via GitHub Actions and republishes fresh predictions automatically.
               </p>
             </ScrollReveal>
           </div>
@@ -187,10 +186,11 @@ export default async function RacePage({
                 <p className="text-ink/55">
                   export {data.model_version} · generated {data.generated_at}
                 </p>
+                <p className="text-[12px] text-ink/45">
+                  Retrained after every F1 session via GitHub Actions — predictions republish automatically.
+                </p>
               </div>
             </div>
-
-            <LiveRaceProbe season={season} round={round} target={target} />
           </div>
         </div>
       </section>

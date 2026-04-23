@@ -23,7 +23,7 @@ export default async function F1Page() {
         <div className="mx-auto max-w-wide">
           <ScrollReveal>
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <span className="eyebrow text-ink/60">№ 001 · flagship project · live system</span>
+              <span className="eyebrow text-ink/60">№ 001 · flagship project · self-refreshing</span>
               <Link href="/projects" className="group inline-flex items-center gap-3 press-scale">
                 <ArrowBack className="h-[14px] w-[44px] transition-transform duration-300 group-hover:-translate-x-1" />
                 <span className="eyebrow">All projects</span>
@@ -44,8 +44,8 @@ export default async function F1Page() {
               <ScrollReveal delay={0.08}>
                 <p className="mt-8 max-w-[56ch] text-[18px] md:text-[22px] leading-relaxed text-ink/82">
                   A recruiter-facing ML case study that doubles as a real product: historical season
-                  landscapes, race dossiers, calibrated evaluation, and a live Python inference API
-                  behind the site so the model is genuinely callable.
+                  landscapes, race dossiers, calibrated evaluation, and a session-aware GitHub Actions
+                  pipeline that retrains the model after every F1 weekend and republishes predictions.
                 </p>
               </ScrollReveal>
             </div>
@@ -81,11 +81,11 @@ export default async function F1Page() {
 
       <Marquee
         items={[
-          "LIVE PYTHON API",
+          "SELF-REFRESHING PIPELINE",
+          "RETRAINED EVERY SESSION",
           "STATIC STORYTELLING",
           "CALIBRATION FIRST",
           "SEVEN TARGETS",
-          "SELF-REFRESHING PIPELINE",
         ]}
         separator="●"
         speedSeconds={30}
@@ -111,7 +111,7 @@ export default async function F1Page() {
               <p className="max-w-[58ch] text-[17px] leading-relaxed text-ink/75">
                 The project hub explains the system, the season explorer turns a full year into a
                 topographic object, and the race dossier drills all the way down into driver-level
-                probabilities with factors and a live model probe.
+                probabilities with factors and the model&apos;s top explanatory features.
               </p>
             </ScrollReveal>
           </div>
@@ -127,7 +127,7 @@ export default async function F1Page() {
               {
                 href: `/projects/f1/race/2025/24?target=${manifest.primary_target}`,
                 title: "Race dossier",
-                body: "Driver ranking, top factors, and a live API call that re-runs the current model on demand.",
+                body: "Driver ranking, top factors, and held-out evaluation that regenerates automatically after each race.",
                 tone: "bg-[#f4eee4]",
               },
               {
@@ -203,9 +203,9 @@ export default async function F1Page() {
               <div className="rounded-[26px] border-[2.5px] border-ink bg-cream p-6 md:p-7">
                 <p className="eyebrow text-ink/55">Primary honesty check</p>
                 <p className="mt-3 max-w-[58ch] text-[15px] leading-relaxed text-ink/72">
-                  The main public story stays anchored on the held-out {insights.season} season. The live
-                  API proves the current model is callable, but the static pages keep the historical
-                  evaluation honest by preserving the numbers as they were tested.
+                  The main public story stays anchored on the held-out {insights.season} season.
+                  Predictions for each race are regenerated after every session, but the historical
+                  evaluation stays honest by preserving the numbers as they were first tested.
                 </p>
               </div>
             </ScrollReveal>
