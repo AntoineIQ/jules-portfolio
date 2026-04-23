@@ -21,7 +21,7 @@ export function Footer() {
         items={[
           "LET'S TALK",
           `AVAILABLE · ${AVAILABILITY.toUpperCase()}`,
-          "GHENT / REMOTE",
+          "MONTREUX · CH",
           "BUILDING WITH AI",
           "EMPLOYER-READY",
         ]}

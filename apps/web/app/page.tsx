@@ -16,7 +16,7 @@ export default function HomePage() {
           "FRONTEND SYSTEMS",
           "ML STORYTELLING",
           "DECISION-READY DEMOS",
-          "SHIPPED FROM GHENT",
+          "BUILDING FROM MONTREUX",
         ]}
         separator="●"
         speedSeconds={36}
