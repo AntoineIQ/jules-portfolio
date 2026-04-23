@@ -1,11 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  useMotionTemplate,
+  useReducedMotion,
+  type MotionValue,
+} from "framer-motion";
 import { ArrowDiagonal } from "@/components/decoration/arrow";
 import { KineticText } from "@/components/motion/kinetic-text";
 
 type Project = {
-  eyebrow: string;
   title: string[];
   description: string;
   tags: string[];
@@ -15,7 +24,6 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    eyebrow: "Flagship project",
     title: ["F1 machine", "learning", "project."],
     description:
       "A recruiter-facing machine learning project with a live Python inference API, a 3D season explorer, and historical evaluation that stays honest about misses.",
@@ -24,7 +32,6 @@ const PROJECTS: Project[] = [
     tone: "cobalt",
   },
   {
-    eyebrow: "In progress",
     title: ["Evaluation harness", "for coding", "agents."],
     description:
       "A lightweight, reproducible harness for stress-testing AI coding assistants on real tasks, with deterministic runs and review-ready reports.",
@@ -32,7 +39,6 @@ const PROJECTS: Project[] = [
     tone: "pink",
   },
   {
-    eyebrow: "Reserved",
     title: ["Reserved", "for the", "next project."],
     description:
       "Space kept for the next serious piece. I'd rather have three strong projects than ten projects worth skimming.",
@@ -75,15 +81,42 @@ const TONE_MAP: Record<
 };
 
 export function HorizontalWork() {
+  const reduce = useReducedMotion();
+  if (reduce) return <FallbackStack />;
   return (
-    <section className="relative bg-cream px-6 py-20 text-ink md:px-10 md:py-28">
-      <div className="mx-auto max-w-wide">
-        <div className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-14">
+    <>
+      <div className="lg:hidden">
+        <FallbackStack />
+      </div>
+      <div className="hidden lg:block">
+        <HorizontalTrack />
+      </div>
+    </>
+  );
+}
+
+function HorizontalTrack() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
+
+  const rawX = useTransform(scrollYProgress, [0, 1], [0, -66.6667]);
+  const smoothX = useSpring(rawX, { stiffness: 70, damping: 20, mass: 0.35 });
+  const trackTransform = useMotionTemplate`translate3d(${smoothX}%, 0px, 0px)`;
+
+  return (
+    <>
+      {/* Intro — scrolls past naturally before the pin starts, so it never overlaps a card */}
+      <div className="bg-cream text-ink px-6 md:px-10 pt-20 pb-16 md:pt-24 md:pb-20">
+        <div className="mx-auto max-w-wide flex items-end justify-between gap-6 flex-wrap">
           <div>
-            <span className="eyebrow text-ink/60">Featured work</span>
+            <span className="eyebrow text-ink/60">§ 01 · Featured work</span>
             <h2 className="mt-4 font-display uppercase text-hero-md">
               Three projects,
-              <span className="block">built to be explored.</span>
+              <span className="block">scroll to meet them.</span>
             </h2>
           </div>
           <Link
@@ -94,92 +127,130 @@ export function HorizontalWork() {
             <ArrowDiagonal className="h-4 w-4" />
           </Link>
         </div>
-
-        <div className="grid gap-6 xl:gap-8">
-          {PROJECTS.map((project) => (
-            <ProjectPanel key={project.title.join("-")} project={project} />
-          ))}
-        </div>
       </div>
-    </section>
+
+      <section
+        ref={sectionRef}
+        className="relative bg-cream text-ink"
+        style={{ height: "300vh" }}
+      >
+        <div className="sticky top-0 h-screen overflow-hidden">
+          <motion.div
+            className="flex h-full"
+            initial={false}
+            style={{
+              transform: trackTransform,
+              width: `${PROJECTS.length * 100}vw`,
+              willChange: "transform",
+            }}
+          >
+            {PROJECTS.map((p, i) => (
+              <Card key={p.title.join("-")} project={p} index={i} scrollYProgress={scrollYProgress} />
+            ))}
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 }
 
-function ProjectPanel({ project }: { project: Project }) {
+function Card({
+  project,
+  index,
+  scrollYProgress,
+}: {
+  project: Project;
+  index: number;
+  scrollYProgress: MotionValue<number>;
+}) {
   const tone = TONE_MAP[project.tone];
-  const content = (
+  const total = PROJECTS.length;
+  const center = (index + 0.5) / total;
+  const window = 0.5 / total;
+
+  // Subtle parallax on visual column only — no opacity fade (keeps cards crisp)
+  const visualY = useTransform(
+    scrollYProgress,
+    [center - window, center + window],
+    [30, -30],
+  );
+  const visualTransform = useMotionTemplate`translate3d(0px, ${visualY}px, 0px)`;
+
+  return (
     <article
-      className={`overflow-hidden rounded-[28px] border-[2.5px] border-ink ${tone.bg} ${tone.fg}`}
+      className={`shrink-0 w-screen h-full ${tone.bg} ${tone.fg} relative overflow-hidden`}
     >
-      <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,0.9fr)_minmax(420px,1.1fr)] xl:gap-12">
-        <div className="flex flex-col gap-6 p-8 md:p-12 xl:p-14">
-          <div className="flex items-center justify-between gap-4">
-            <span className="eyebrow opacity-70">{project.eyebrow}</span>
-          </div>
-
-          <h3 className="font-display uppercase leading-[0.88] tracking-tightest text-[clamp(42px,5.2vw,88px)]">
-            {project.title.map((line, index) => (
-              <span key={line} className={`block ${index === 1 ? tone.accent : ""}`}>
-                <KineticText delay={0.08 * index} stagger={0.045}>
-                  {line}
-                </KineticText>
-              </span>
-            ))}
-          </h3>
-
-          <p className="max-w-[46ch] text-[16px] leading-relaxed opacity-90 md:text-[18px]">
-            {project.description}
-          </p>
-
-          {project.tags.length > 0 ? (
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className={`rounded-full border-2 px-3 py-1 text-[12px] font-semibold tracking-tight ${tone.tagBg} ${tone.tagBorder} ${tone.tagText}`}
-                >
-                  {tag}
+      <div className="absolute inset-0 flex items-center">
+        <div className="mx-auto max-w-wide w-full px-6 md:px-10 pt-28 pb-20 xl:pt-32 xl:pb-24 grid grid-cols-1 xl:grid-cols-[minmax(0,0.86fr)_minmax(540px,1.14fr)] gap-10 xl:gap-14 items-center">
+          <div className="flex max-w-[48rem] flex-col gap-6">
+            <h3 className="font-display uppercase leading-[0.88] tracking-tightest text-[clamp(42px,6vw,104px)]">
+              {project.title.map((line, li) => (
+                <span key={li} className={`block ${li === 1 ? tone.accent : ""}`}>
+                  <KineticText delay={0.08 * li} stagger={0.05}>
+                    {line}
+                  </KineticText>
                 </span>
               ))}
-            </div>
-          ) : null}
+            </h3>
 
-          <div className="mt-2">
-            {project.href ? (
-              <Link
-                href={project.href}
-                className={`group inline-flex items-center gap-4 rounded-md px-7 py-4 press-scale ${tone.cta}`}
-              >
-                <span className="eyebrow">Explore project</span>
-                <ArrowDiagonal className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </Link>
-            ) : (
-              <span
-                className={`inline-flex items-center gap-4 rounded-md border-2 px-7 py-4 eyebrow opacity-80 ${
-                  project.tone === "cobalt" ? "border-cream" : "border-ink"
-                }`}
-              >
-                Write-up soon
-              </span>
+            <p className="max-w-[48ch] text-[16px] md:text-[18px] leading-relaxed opacity-90">
+              {project.description}
+            </p>
+
+            {project.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((t) => (
+                  <span
+                    key={t}
+                    className={`rounded-full border-2 px-3 py-1 text-[12px] font-semibold tracking-tight ${tone.tagBg} ${tone.tagBorder} ${tone.tagText}`}
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
             )}
-          </div>
-        </div>
 
-        <div className="relative min-h-[320px] p-8 pt-0 md:min-h-[420px] md:p-12 md:pt-0 xl:min-h-[560px] xl:p-14 xl:pl-0">
-          {project.tone === "cobalt" ? <VisualF1 /> : null}
-          {project.tone === "pink" ? <VisualEval /> : null}
-          {project.tone === "yellow" ? <VisualReserved /> : null}
+            <div className="mt-2">
+              {project.href ? (
+                <Link
+                  href={project.href}
+                  className={`group inline-flex items-center gap-4 rounded-md px-7 py-4 press-scale ${tone.cta}`}
+                >
+                  <span className="eyebrow">Read case study</span>
+                  <ArrowDiagonal className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+              ) : (
+                <span
+                  className={`inline-flex items-center gap-4 rounded-md border-2 px-7 py-4 eyebrow opacity-80 ${
+                    project.tone === "cobalt" ? "border-cream" : "border-ink"
+                  }`}
+                >
+                  Write-up soon
+                </span>
+              )}
+            </div>
+          </div>
+
+          <motion.div
+            className="relative h-[46vh] xl:h-[66vh]"
+            initial={false}
+            style={{ transform: visualTransform }}
+          >
+            {project.tone === "cobalt" && <VisualF1 />}
+            {project.tone === "pink" && <VisualEval />}
+            {project.tone === "yellow" && <VisualReserved />}
+          </motion.div>
         </div>
       </div>
     </article>
   );
-
-  return project.href ? <div>{content}</div> : content;
 }
+
+/* ---------------- per-project visuals (static, CSS-only motion) ---------------- */
 
 function VisualF1() {
   return (
-    <div className="absolute inset-8 overflow-hidden rounded-[24px] border-[2.5px] border-cream/40 bg-cobalt-deep/55 md:inset-12 xl:inset-y-14 xl:right-14 xl:left-0">
+    <div className="absolute inset-0 rounded-[24px] border-[2.5px] border-cream/40 bg-cobalt-deep/55 overflow-hidden">
       <svg
         viewBox="0 0 800 560"
         className="absolute inset-0 h-full w-full"
@@ -210,8 +281,8 @@ function VisualF1() {
         <circle cx="760" cy="140" r="7" fill="var(--pink)" />
       </svg>
       <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
-        <span className="eyebrow text-cream/80">Illustrative · static schematic</span>
-        <span className="eyebrow text-cream/60">Fig. 01 · telemetry</span>
+        <span className="eyebrow text-cream/80">Schematic · not live demo</span>
+        <span className="eyebrow text-cream/60">Fig. 01 · Telemetry</span>
       </div>
     </div>
   );
@@ -226,36 +297,35 @@ function VisualEval() {
     { text: "✓ 128 / 142 passed · 14 failures · 2 regressions", highlight: "signal" as const },
     { text: "→ report → ./runs/0147/report.html", highlight: "mint" as const },
   ];
-
   return (
-    <div className="absolute inset-8 overflow-hidden rounded-[24px] border-[2.5px] border-ink bg-cream shadow-[12px_12px_0_0_var(--ink)] md:inset-12 xl:inset-y-14 xl:right-14 xl:left-0">
+    <div className="absolute inset-0 rounded-[24px] border-[2.5px] border-ink bg-cream overflow-hidden shadow-[12px_12px_0_0_var(--ink)]">
       <div className="flex items-center gap-2 bg-ink px-4 py-3">
         <span className="h-3 w-3 rounded-full bg-pink" />
         <span className="h-3 w-3 rounded-full bg-yellow" />
         <span className="h-3 w-3 rounded-full bg-mint" />
         <span
-          className="ml-3 text-[11px] uppercase tracking-widest text-cream/80"
+          className="ml-3 text-[11px] text-cream/80 uppercase tracking-widest"
           style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace" }}
         >
           eval-harness · run 0147
         </span>
       </div>
       <div
-        className="p-6 text-[13px] leading-[1.9] text-ink md:p-8 md:text-[14px]"
+        className="p-6 md:p-8 text-[13px] md:text-[14px] leading-[1.9] text-ink"
         style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace" }}
       >
-        {lines.map((line, index) => (
+        {lines.map((l, i) => (
           <div
-            key={index}
+            key={i}
             className={
-              line.highlight === "signal"
-                ? "font-semibold text-pink"
-                : line.highlight === "mint"
-                  ? "font-semibold text-ink"
-                  : undefined
+              l.highlight === "signal"
+                ? "text-pink font-semibold"
+                : l.highlight === "mint"
+                ? "text-ink font-semibold"
+                : undefined
             }
           >
-            {line.text}
+            {l.text}
           </div>
         ))}
       </div>
@@ -265,7 +335,7 @@ function VisualEval() {
 
 function VisualReserved() {
   return (
-    <div className="absolute inset-8 flex items-center justify-center overflow-hidden rounded-[24px] border-[2.5px] border-dashed border-ink/60 bg-cream md:inset-12 xl:inset-y-14 xl:right-14 xl:left-0">
+    <div className="absolute inset-0 rounded-[24px] border-[2.5px] border-dashed border-ink/60 bg-cream overflow-hidden flex items-center justify-center">
       <svg className="absolute inset-0 h-full w-full opacity-40" aria-hidden>
         <defs>
           <pattern
@@ -281,24 +351,74 @@ function VisualReserved() {
         <rect width="100%" height="100%" fill="url(#hatch-res)" />
       </svg>
 
-      <div className="relative mx-8 max-w-[340px] rotate-[-4deg] rounded-[26px] border-[2.5px] border-ink bg-white-warm p-6 shadow-[12px_12px_0_0_var(--pink)] md:p-8">
-        <p className="eyebrow text-ink/50">Next slot</p>
-        <h4 className="mt-3 font-display text-[32px] uppercase leading-[0.9] tracking-tightest text-ink md:text-[40px]">
-          Something sharper is coming.
-        </h4>
-        <p className="mt-4 text-[14px] leading-relaxed text-ink/72 md:text-[15px]">
-          I keep one slot open so the next project earns its place instead of filling space.
-        </p>
-        <div className="mt-6 inline-flex items-center gap-2 rounded-full border-2 border-ink bg-cream px-3 py-1">
-          <span className="h-2.5 w-2.5 rounded-full bg-pink" />
-          <span className="eyebrow text-ink">Reserved</span>
+      <div className="relative w-[180px] h-[180px] md:w-[240px] md:h-[240px] rounded-full border-[2.5px] border-ink bg-pink flex items-center justify-center">
+        <div className="stamp-rotate absolute inset-0">
+          <svg viewBox="0 0 240 240" className="h-full w-full">
+            <defs>
+              <path
+                id="reservedCircle"
+                d="M 120,120 m -88,0 a 88,88 0 1,1 176,0 a 88,88 0 1,1 -176,0"
+              />
+            </defs>
+            <text
+              fontFamily="var(--font-display)"
+              fontSize="14"
+              fontWeight="700"
+              letterSpacing="4"
+              fill="var(--ink)"
+              textLength={2 * Math.PI * 88}
+              lengthAdjust="spacingAndGlyphs"
+            >
+              <textPath href="#reservedCircle" startOffset="0">
+                RESERVED · COMING · SOON · RESERVED · COMING · SOON ·
+              </textPath>
+            </text>
+          </svg>
         </div>
+        <span className="relative z-10 font-display text-[32px] md:text-[48px] leading-none uppercase tracking-tightest text-ink">
+          ★
+        </span>
       </div>
 
       <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-        <span className="eyebrow text-ink/60">Fig. — placeholder note</span>
+        <span className="eyebrow text-ink/60">Fig. — placeholder stamp</span>
         <span className="eyebrow text-ink/60">Status · reserved</span>
       </div>
     </div>
+  );
+}
+
+/* ---------------- reduced-motion fallback ---------------- */
+
+function FallbackStack() {
+  return (
+    <section className="relative bg-cream text-ink px-6 md:px-10 py-20 md:py-28">
+      <div className="mx-auto max-w-wide">
+        <div className="mb-12">
+          <span className="eyebrow text-ink/60">§ 01 · Featured work</span>
+          <h2 className="mt-4 font-display uppercase text-hero-md">Three projects.</h2>
+        </div>
+        <div className="grid gap-5">
+          {PROJECTS.map((p) => {
+            const tone = TONE_MAP[p.tone];
+            const inner = (
+              <article className={`rounded-[24px] border-[2.5px] border-ink ${tone.bg} ${tone.fg} p-8 md:p-12`}>
+                <h3 className="font-display uppercase text-[clamp(32px,5vw,72px)] leading-[0.92] tracking-tightest">
+                  {p.title.join(" ")}
+                </h3>
+                <p className="mt-5 max-w-[56ch]">{p.description}</p>
+              </article>
+            );
+            return p.href ? (
+              <Link key={p.title.join("-")} href={p.href}>
+                {inner}
+              </Link>
+            ) : (
+              <div key={p.title.join("-")}>{inner}</div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }
